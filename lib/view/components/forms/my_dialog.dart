@@ -1,12 +1,12 @@
+import 'package:coffeeproject/view/components/forms/my_button.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 //Use this for call dialog on pressed
 //()=> showDialog<Dialog>(context:context,builder:(BuildContext context) => MyDialog())
 
 class MyDialog extends StatelessWidget {
   const MyDialog({Key? key}) : super(key: key);
-  final primaryColor = const Color(0xff4338CA);
-  final accentColor = const Color(0xffffffff);
 
   @override
   Widget build(BuildContext context) {
@@ -29,82 +29,45 @@ class MyDialog extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(
-              backgroundColor: primaryColor,
-              radius: 25,
-              child: Image.network(
-                  "https://firebasestorage.googleapis.com/v0/b/flutterbricks-public.appspot.com/o/FlutterBricksLogo-Med.png?alt=media&token=7d03fedc-75b8-44d5-a4be-c1878de7ed52"),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: FaIcon(
+                FontAwesomeIcons.mugHot,
+                color: Color.fromARGB(255, 34, 34, 34),
+                size: 45,
+              ),
             ),
             const SizedBox(
-              height: 15,
+              height: 20,
             ),
-            const Text("How are you doing?",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold)),
+            Padding(
+              padding: const EdgeInsets.only(left: 4),
+              child: const Text("Your order is Done",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 46, 134, 55),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold)),
+            ),
             const SizedBox(
-              height: 3.5,
+              height: 16,
             ),
-            const Text("This is a sub text, use it to clarify",
-                style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w300)),
-            const SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SimpleBtn1(text: "Great", onPressed: () {}),
-                SimpleBtn1(
-                  text: "Not bad",
-                  onPressed: () {},
-                  invertedColors: true,
-                ),
-              ],
-            )
+            MyButton(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                lable: 'Done',
+                buttomColor: Color.fromARGB(255, 34, 34, 34),
+                width: 90,
+                fontWeight: FontWeight.bold,
+                lableColor: Color.fromARGB(255, 221, 217, 210),
+                borderRadius: BorderRadius.circular(10),
+                height: 30,
+                borderColor: Color.fromARGB(255, 221, 217, 210),
+                borderWidth: 0,
+                fontSize: 14)
           ],
         ),
       ),
     );
-  }
-}
-
-class SimpleBtn1 extends StatelessWidget {
-  final String text;
-  final Function() onPressed;
-  final bool invertedColors;
-  const SimpleBtn1(
-      {required this.text,
-      required this.onPressed,
-      this.invertedColors = false,
-      Key? key})
-      : super(key: key);
-  final primaryColor = const Color(0xff4338CA);
-  final accentColor = const Color(0xffffffff);
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ButtonStyle(
-            elevation: MaterialStateProperty.all(0),
-            alignment: Alignment.center,
-            side: MaterialStateProperty.all(
-                BorderSide(width: 1, color: primaryColor)),
-            padding: MaterialStateProperty.all(
-                const EdgeInsets.only(right: 25, left: 25, top: 0, bottom: 0)),
-            backgroundColor: MaterialStateProperty.all(
-                invertedColors ? accentColor : primaryColor),
-            shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            )),
-        onPressed: onPressed,
-        child: Text(
-          text,
-          style: TextStyle(
-              color: invertedColors ? primaryColor : accentColor, fontSize: 16),
-        ));
   }
 }

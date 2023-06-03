@@ -1,6 +1,6 @@
 import 'package:coffeeproject/view/components/my_navigationbar.dart';
-import 'package:coffeeproject/view/pages/orders/orderscreen.dart';
-import 'package:coffeeproject/view/pages/tables/tablesscreen.dart';
+import 'package:coffeeproject/view/pages/waiter/orders/orderscreen.dart';
+import 'package:coffeeproject/view/pages/waiter/tables/tablesscreen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

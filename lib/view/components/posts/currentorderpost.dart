@@ -31,7 +31,14 @@ class MyCurrentOrderPost extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: Badge(
-        label: Text("2"),
+        backgroundColor: Color.fromARGB(255, 221, 217, 210),
+        label: Text(
+          "8",
+          style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 34, 34, 34)),
+        ),
         child: Container(
           height: 120,
           decoration: BoxDecoration(
@@ -41,26 +48,26 @@ class MyCurrentOrderPost extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                width: 80,
-                height: 120,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadiusDirectional.only(
-                      topStart: Radius.circular(10),
-                      bottomStart: Radius.circular(10)),
-                  color: Colors.yellow,
-                ),
-                child: Center(
-                  child: Text(
-                    'LOADING ...',
-                    style: GoogleFonts.dosis(
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 34, 34, 34)),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  width: 80,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadiusDirectional.only(
+                        topStart: Radius.circular(10),
+                        bottomStart: Radius.circular(10)),
+                    color: Colors.yellow,
+                  ),
+                  child: Center(
+                    child: Text(
+                      'LOADING ...',
+                      style: GoogleFonts.dosis(
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 34, 34, 34)),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                width: 10,
               ),
               Column(
                 children: [

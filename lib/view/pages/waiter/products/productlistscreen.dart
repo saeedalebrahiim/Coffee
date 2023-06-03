@@ -1,4 +1,5 @@
 import 'package:coffeeproject/view/components/forms/my_button.dart';
+import 'package:coffeeproject/view/components/forms/my_dialog.dart';
 import 'package:coffeeproject/view/components/forms/my_searchbar.dart';
 import 'package:coffeeproject/view/components/my_categorydivider.dart';
 import 'package:coffeeproject/view/components/my_listview.dart';
@@ -116,7 +117,11 @@ class _ProducstScreenState extends State<ProducstScreen> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             MyButton(
-                onTap: () {},
+                onTap: () {
+                  showDialog<Dialog>(
+                      context: context,
+                      builder: (BuildContext context) => MyDialog());
+                },
                 lable: 'Submit',
                 buttomColor: Color.fromARGB(255, 221, 217, 210),
                 width: 80,
