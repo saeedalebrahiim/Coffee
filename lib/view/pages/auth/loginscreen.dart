@@ -1,8 +1,8 @@
 import 'package:coffeeproject/view/components/forms/my_button.dart';
 import 'package:coffeeproject/view/components/forms/my_textfield.dart';
-import 'package:coffeeproject/view/pages/home/homescreen.dart';
+import 'package:coffeeproject/view/pages/cachier/home/homescreen.dart';
+import 'package:coffeeproject/view/pages/waiter/home/homescreen.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -101,7 +101,7 @@ class LoginScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
+                        builder: (context) => const CachierHomeScreen(),
                       ));
                 },
                 borderColor: Color.fromARGB(255, 182, 167, 139),

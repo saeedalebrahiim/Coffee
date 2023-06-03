@@ -1,5 +1,5 @@
 import 'package:coffeeproject/view/pages/auth/loginscreen.dart';
-import 'package:coffeeproject/view/pages/products/productlistscreen.dart';
+import 'package:coffeeproject/view/pages/waiter/products/productlistscreen.dart';
 import 'package:flutter/material.dart';
 
 const String login = "login";

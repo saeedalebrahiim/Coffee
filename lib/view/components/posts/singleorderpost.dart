@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyOrdersPost extends StatelessWidget {
+class MySingleOrderPost extends StatelessWidget {
   final Function()? onPressed;
   final double imageWidth, imageHeight, borderWidth, titleSize, stringSize;
   final String imagePath, mainTitle, stringOne, count;
 
-  final Color postColor, postBorderColor;
+  final Color postColor, postBorderColor, orderStatusColor;
   final BorderRadius borderRadius;
-  const MyOrdersPost(
+  const MySingleOrderPost(
       {super.key,
       this.onPressed,
       required this.imageWidth,
@@ -21,7 +21,8 @@ class MyOrdersPost extends StatelessWidget {
       required this.postColor,
       required this.postBorderColor,
       required this.borderRadius,
-      required this.count});
+      required this.count,
+      required this.orderStatusColor});
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +35,8 @@ class MyOrdersPost extends StatelessWidget {
             borderRadius: borderRadius,
             border: Border.all(color: postBorderColor, width: borderWidth)),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SizedBox(
-              width: 10,
-            ),
             Column(
               children: [
                 const SizedBox(
@@ -66,6 +64,9 @@ class MyOrdersPost extends StatelessWidget {
                   height: 20,
                 ),
               ],
+            ),
+            SizedBox(
+              width: 50,
             ),
             Container(
               decoration: BoxDecoration(

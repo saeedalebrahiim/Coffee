@@ -5,8 +5,8 @@ import 'package:coffeeproject/view/components/posts/statusordertablepost.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class OrdersScreen extends StatelessWidget {
-  OrdersScreen({super.key});
+class CachierOrderScreen extends StatelessWidget {
+  CachierOrderScreen({super.key});
   final List tableList = [
     MyStatusTablePost(
       tableNumber: '1',
@@ -109,9 +109,9 @@ class OrdersScreen extends StatelessWidget {
               child: MyGridView(
                   posts: tableList,
                   gridCount: tableList.length,
-                  gridCrossCount: 3,
-                  gridViewHeight: 500,
-                  gridViewWidth: 500,
+                  gridCrossCount: 4,
+                  gridViewHeight: 600,
+                  gridViewWidth: 700,
                   padding: EdgeInsets.all(7),
                   scrollDirection: Axis.vertical),
             ),
