@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyCategoryDivider extends StatelessWidget {
-  const MyCategoryDivider({super.key});
+  final String engName, faName;
+  const MyCategoryDivider(
+      {super.key, required this.engName, required this.faName});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class MyCategoryDivider extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 5),
             child: Text(
-              'hot drinks',
+              engName,
               style: GoogleFonts.dosis(
                   color: Color.fromARGB(255, 221, 217, 210),
                   fontWeight: FontWeight.bold,
@@ -28,7 +30,7 @@ class MyCategoryDivider extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 5),
             child: Text(
-              'نوشیدنی گرم',
+              faName,
               style: TextStyle(
                   color: Color.fromARGB(255, 221, 217, 210),
                   fontWeight: FontWeight.bold,

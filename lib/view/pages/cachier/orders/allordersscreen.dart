@@ -1,7 +1,4 @@
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
-import 'package:coffeeproject/view/components/my_gridview.dart';
-import 'package:coffeeproject/view/components/posts/singleorderpost.dart';
-import 'package:coffeeproject/view/components/posts/statusordertablepost.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

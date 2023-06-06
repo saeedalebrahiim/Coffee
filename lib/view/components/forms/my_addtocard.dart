@@ -1,15 +1,17 @@
+import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:flutter/material.dart';
 
 class AddToCard extends StatefulWidget {
-  const AddToCard({super.key});
+  final Function()? onTapAdd;
+  final Function()? onTapRemove;
+  const AddToCard(
+      {super.key, required this.onTapAdd, required this.onTapRemove});
 
   @override
   State<AddToCard> createState() => _AddToCardState();
 }
 
 class _AddToCardState extends State<AddToCard> {
-  int count = 0;
-
   @override
   void initState() {
     super.initState();
@@ -33,11 +35,7 @@ class _AddToCardState extends State<AddToCard> {
             child: Column(
               children: [
                 InkWell(
-                  onTap: () {
-                    setState(() {
-                      count++;
-                    });
-                  },
+                  onTap: widget.onTapAdd,
                   child: Icon(Icons.add),
                 ),
                 SizedBox(height: 10),
@@ -47,13 +45,7 @@ class _AddToCardState extends State<AddToCard> {
                 ),
                 SizedBox(height: 0),
                 InkWell(
-                  onTap: () {
-                    if (count > 0) {
-                      setState(() {
-                        count--;
-                      });
-                    }
-                  },
+                  onTap: widget.onTapRemove,
                   child: Icon(Icons.minimize),
                 ),
               ],

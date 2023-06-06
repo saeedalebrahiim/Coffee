@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 int selectedIndex = 0;
+int count = 0;
 Color backgroundColor = Color.fromARGB(255, 34, 34, 34);
 Color primaryColor = Color.fromARGB(255, 171, 154, 122);
 Color secondaryColor = Color.fromARGB(255, 255, 251, 219);

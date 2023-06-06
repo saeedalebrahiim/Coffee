@@ -3,7 +3,7 @@ import 'package:coffeeproject/view/components/forms/my_textfield.dart';
 import 'package:flutter/material.dart';
 
 class MyProductPost extends StatelessWidget {
-  final Function()? onPressed;
+  final Function()? onTapAdd, onTapRemove;
   final double imageWidth, imageHeight, borderWidth, titleSize, stringSize;
   final String imagePath, mainTitle, stringOne;
 
@@ -11,7 +11,6 @@ class MyProductPost extends StatelessWidget {
   final BorderRadius borderRadius;
   const MyProductPost(
       {super.key,
-      this.onPressed,
       required this.imageWidth,
       required this.imageHeight,
       required this.borderWidth,
@@ -22,7 +21,9 @@ class MyProductPost extends StatelessWidget {
       required this.stringOne,
       required this.postColor,
       required this.postBorderColor,
-      required this.borderRadius});
+      required this.borderRadius,
+      this.onTapAdd,
+      this.onTapRemove});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +43,10 @@ class MyProductPost extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 20),
-              child: AddToCard(),
+              child: AddToCard(
+                onTapAdd: onTapAdd,
+                onTapRemove: onTapRemove,
+              ),
             ),
             Column(
               children: [
