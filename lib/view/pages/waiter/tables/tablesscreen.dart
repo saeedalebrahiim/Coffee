@@ -1,3 +1,4 @@
+import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/my_gridview.dart';
 import 'package:coffeeproject/view/components/posts/tablepost.dart';
 import 'package:flutter/material.dart';
@@ -8,50 +9,50 @@ class TablesScreen extends StatelessWidget {
   final List tableList = [
     MyTablePost(
       tableNumber: '1',
-      tableStatusColor: Color.fromARGB(255, 223, 77, 73),
+      tableStatusColor: fullTabaleColor,
     ),
     MyTablePost(
       tableNumber: '2',
-      tableStatusColor: Color.fromARGB(255, 253, 253, 150),
+      tableStatusColor: reserveTableColor,
     ),
     MyTablePost(
       tableNumber: '3',
-      tableStatusColor: Colors.grey,
+      tableStatusColor: emptyTableColor,
     ),
     MyTablePost(
       tableNumber: '4',
-      tableStatusColor: Colors.grey,
+      tableStatusColor: emptyTableColor,
     ),
     MyTablePost(
       tableNumber: '5',
-      tableStatusColor: Colors.grey,
+      tableStatusColor: emptyTableColor,
     ),
     MyTablePost(
       tableNumber: '6',
-      tableStatusColor: Colors.grey,
+      tableStatusColor: emptyTableColor,
     ),
     MyTablePost(
       tableNumber: '7',
-      tableStatusColor: Colors.grey,
+      tableStatusColor: emptyTableColor,
     ),
     MyTablePost(
       tableNumber: '8',
-      tableStatusColor: Colors.grey,
+      tableStatusColor: emptyTableColor,
     ),
     MyTablePost(
       tableNumber: '9',
-      tableStatusColor: Colors.grey,
+      tableStatusColor: emptyTableColor,
     ),
     MyTablePost(
       tableNumber: '10',
-      tableStatusColor: Colors.grey,
+      tableStatusColor: emptyTableColor,
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 34, 34, 34),
+      backgroundColor: backgroundColor,
       body: Center(
         child: SingleChildScrollView(
           child: Column(

@@ -1,6 +1,6 @@
+import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/my_gridview.dart';
-import 'package:coffeeproject/view/components/posts/singleorderpost.dart';
 import 'package:coffeeproject/view/components/posts/statusordertablepost.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,63 +10,63 @@ class OrdersScreen extends StatelessWidget {
   final List tableList = [
     MyStatusTablePost(
       tableNumber: '1',
-      statusColor: Colors.yellow,
+      statusColor: reserveTableColor,
       statusString: 'LODING ...',
     ),
     MyStatusTablePost(
       tableNumber: '2',
-      statusColor: Colors.green,
+      statusColor: readyOrderStatusColor,
       statusString: 'READY',
     ),
     MyStatusTablePost(
       tableNumber: '3',
-      statusColor: Colors.yellow,
+      statusColor: reserveTableColor,
       statusString: 'LODING ...',
     ),
     MyStatusTablePost(
       tableNumber: '4',
-      statusColor: Colors.grey,
-      statusString: '',
+      statusColor: emptyTableColor,
+      statusString: '...',
     ),
     MyStatusTablePost(
       tableNumber: '5',
-      statusColor: Colors.yellow,
+      statusColor: reserveTableColor,
       statusString: 'LODING ...',
     ),
     MyStatusTablePost(
       tableNumber: '6',
-      statusColor: Colors.yellow,
+      statusColor: reserveTableColor,
       statusString: 'LODING ...',
     ),
     MyStatusTablePost(
       tableNumber: '7',
-      statusColor: Colors.yellow,
+      statusColor: reserveTableColor,
       statusString: 'LODING ...',
     ),
     MyStatusTablePost(
       tableNumber: '8',
-      statusColor: Colors.grey,
-      statusString: '',
+      statusColor: emptyTableColor,
+      statusString: '...',
     ),
     MyStatusTablePost(
       tableNumber: '9',
-      statusColor: Colors.yellow,
-      statusString: 'LODING ...',
+      statusColor: reserveTableColor,
+      statusString: ' ...',
     ),
     MyStatusTablePost(
       tableNumber: '10',
-      statusColor: Colors.yellow,
-      statusString: 'LODING ...',
+      statusColor: emptyTableColor,
+      statusString: ' ...',
     ),
     MyStatusTablePost(
       tableNumber: '11',
-      statusColor: Colors.yellow,
-      statusString: 'LODING ...',
+      statusColor: emptyTableColor,
+      statusString: ' ...',
     ),
     MyStatusTablePost(
       tableNumber: '12',
-      statusColor: Colors.yellow,
-      statusString: 'LODING ...',
+      statusColor: emptyTableColor,
+      statusString: ' ...',
     ),
   ];
 

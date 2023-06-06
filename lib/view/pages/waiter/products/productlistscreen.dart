@@ -1,3 +1,4 @@
+import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/forms/my_button.dart';
 import 'package:coffeeproject/view/components/forms/my_dialog.dart';
 import 'package:coffeeproject/view/components/forms/my_searchbar.dart';
@@ -97,12 +98,6 @@ class _ProducstScreenState extends State<ProducstScreen> {
     )
   ];
 
-  getData() {
-    coldDrinksList = [];
-
-    categoryList = [];
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,10 +121,10 @@ class _ProducstScreenState extends State<ProducstScreen> {
                 buttomColor: Color.fromARGB(255, 221, 217, 210),
                 width: 80,
                 fontWeight: FontWeight.bold,
-                lableColor: Color.fromARGB(255, 34, 34, 34),
+                lableColor: backgroundColor,
                 borderRadius: BorderRadius.circular(5),
                 height: 26,
-                borderColor: Color.fromARGB(255, 34, 34, 34),
+                borderColor: backgroundColor,
                 borderWidth: 0.5,
                 fontSize: 12),
             SizedBox(
@@ -138,7 +133,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
           ],
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 34, 34, 34),
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
@@ -146,7 +141,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
             },
             icon: FaIcon(
               FontAwesomeIcons.arrowLeftLong,
-              color: Color.fromARGB(255, 182, 167, 139),
+              color: primaryColor,
               size: 20,
             )),
         title: Row(
@@ -156,7 +151,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
               padding: const EdgeInsets.only(top: 5),
               child: FaIcon(
                 FontAwesomeIcons.mugHot,
-                color: Color.fromARGB(255, 182, 167, 139),
+                color: primaryColor,
                 size: 12,
               ),
             ),
@@ -167,12 +162,12 @@ class _ProducstScreenState extends State<ProducstScreen> {
                 style: GoogleFonts.dosis(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 182, 167, 139)),
+                    color: primaryColor),
               ),
             ),
           ],
         ),
-        backgroundColor: Color.fromARGB(255, 34, 34, 34),
+        backgroundColor: backgroundColor,
       ),
       body: SingleChildScrollView(
         child: Column(

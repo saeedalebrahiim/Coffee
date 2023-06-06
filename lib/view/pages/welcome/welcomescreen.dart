@@ -1,3 +1,4 @@
+import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,7 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 34, 34, 34),
+      backgroundColor: backgroundColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +39,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   padding: const EdgeInsets.only(top: 7),
                   child: FaIcon(
                     FontAwesomeIcons.mugHot,
-                    color: Color.fromARGB(255, 182, 167, 139),
+                    color: primaryColor,
                     size: 22,
                   ),
                 ),
@@ -49,14 +50,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     style: GoogleFonts.dosis(
                         fontSize: 60,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 182, 167, 139)),
+                        color: primaryColor),
                   ),
                 ),
               ],
             ),
             Center(
               child: LoadingAnimationWidget.prograssiveDots(
-                color: Color.fromARGB(255, 182, 167, 139),
+                color: primaryColor,
                 size: 50,
               ),
             )

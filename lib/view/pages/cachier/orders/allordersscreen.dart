@@ -27,7 +27,7 @@ class AllOrdersScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 4),
                   child: Text(
-                    'Orders',
+                    'All Orders',
                     style: GoogleFonts.dosis(
                         color: Color.fromARGB(255, 221, 217, 210),
                         fontSize: 18),

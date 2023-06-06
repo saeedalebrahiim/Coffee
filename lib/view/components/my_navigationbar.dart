@@ -26,7 +26,7 @@ class MyNavigationBar extends StatelessWidget {
               padding: const EdgeInsets.only(top: 5),
               child: FaIcon(
                 FontAwesomeIcons.mugHot,
-                color: Color.fromARGB(255, 182, 167, 139),
+                color: primaryColor,
                 size: 12,
               ),
             ),
@@ -37,14 +37,14 @@ class MyNavigationBar extends StatelessWidget {
                 style: GoogleFonts.dosis(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 182, 167, 139)),
+                    color: primaryColor),
               ),
             ),
           ],
         ),
-        backgroundColor: Color.fromARGB(255, 34, 34, 34),
+        backgroundColor: backgroundColor,
       ),
-      backgroundColor: const Color.fromARGB(255, 231, 226, 218),
+      backgroundColor: backgroundColor,
       body: Consumer<NavigationState>(
         builder: ((context, value, child) => myBody.elementAt(selectedIndex)),
       ),
@@ -52,20 +52,20 @@ class MyNavigationBar extends StatelessWidget {
         height: 40,
         animationDuration: const Duration(milliseconds: 300),
         index: selectedIndex,
-        backgroundColor: Color.fromARGB(255, 137, 112, 71),
+        backgroundColor: primaryColor,
         onTap: (value) {
           context.read<NavigationState>().changeIndex(value);
         },
-        color: const Color.fromARGB(255, 34, 34, 34),
+        color: backgroundColor,
         items: [
           Icon(
             Icons.table_bar,
-            color: Color.fromARGB(255, 137, 112, 71),
+            color: primaryColor,
             size: 28,
           ),
           Icon(
             Icons.coffee,
-            color: Color.fromARGB(255, 137, 112, 71),
+            color: primaryColor,
             size: 28,
           ),
         ],

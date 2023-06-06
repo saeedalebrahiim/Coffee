@@ -1,6 +1,6 @@
+import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/forms/my_button.dart';
 import 'package:coffeeproject/view/components/forms/my_textfield.dart';
-import 'package:coffeeproject/view/pages/cachier/home/homescreen.dart';
 import 'package:coffeeproject/view/pages/waiter/home/homescreen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 34, 34, 34),
+      backgroundColor: backgroundColor,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -23,18 +23,17 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              const Icon(
+              Icon(
                 Icons.lock,
                 size: 90,
-                color: Color.fromARGB(255, 171, 154, 122),
+                color: primaryColor,
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
                 'Wellcome back you\'ve been missed !',
-                style: TextStyle(
-                    color: Color.fromARGB(255, 255, 253, 241), fontSize: 16),
+                style: TextStyle(color: secondaryColor, fontSize: 16),
               ),
               const SizedBox(
                 height: 25,
@@ -43,16 +42,16 @@ class LoginScreen extends StatelessWidget {
                 hintText: 'Username',
                 obscureText: false,
                 controller: userNameController,
-                borderColor: Color.fromARGB(255, 182, 167, 139),
+                borderColor: primaryColor,
                 borderRadius: BorderRadius.circular(10),
                 borderSize: 1,
-                cursorColor: Color.fromARGB(255, 182, 167, 139),
-                fillColor: Color.fromARGB(255, 255, 253, 241),
-                focusBorderColor: Color.fromARGB(255, 182, 167, 139),
+                cursorColor: primaryColor,
+                fillColor: secondaryColor,
+                focusBorderColor: primaryColor,
                 fontSize: 14,
                 focusBorderSize: 1,
                 fontWeight: FontWeight.bold,
-                hintColor: Color.fromARGB(255, 255, 251, 219),
+                hintColor: secondaryColor,
                 height: 70,
                 width: 190,
               ),
@@ -60,16 +59,16 @@ class LoginScreen extends StatelessWidget {
                 hintText: 'Password',
                 obscureText: true,
                 controller: passwordController,
-                borderColor: Color.fromARGB(255, 182, 167, 139),
+                borderColor: primaryColor,
                 borderRadius: BorderRadius.circular(10),
                 borderSize: 1,
-                cursorColor: Color.fromARGB(255, 182, 167, 139),
-                fillColor: Color.fromARGB(255, 255, 253, 241),
-                focusBorderColor: Color.fromARGB(255, 182, 167, 139),
+                cursorColor: primaryColor,
+                fillColor: secondaryColor,
+                focusBorderColor: primaryColor,
                 fontSize: 14,
                 focusBorderSize: 1,
                 fontWeight: FontWeight.bold,
-                hintColor: Color.fromARGB(255, 255, 251, 219),
+                hintColor: secondaryColor,
                 height: 70,
                 width: 190,
               ),
@@ -83,8 +82,7 @@ class LoginScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Text(
                       'Forget password ?',
-                      style:
-                          TextStyle(color: Color.fromARGB(255, 255, 253, 241)),
+                      style: TextStyle(color: secondaryColor),
                     ),
                   ),
                   const SizedBox(
@@ -101,17 +99,17 @@ class LoginScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const CachierHomeScreen(),
+                        builder: (context) => const HomeScreen(),
                       ));
                 },
-                borderColor: Color.fromARGB(255, 182, 167, 139),
+                borderColor: primaryColor,
                 borderRadius: BorderRadius.circular(10),
                 borderWidth: 0.5,
-                buttomColor: Color.fromARGB(255, 171, 154, 122),
+                buttomColor: primaryColor,
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 height: 40,
-                lableColor: Color.fromARGB(255, 255, 251, 219),
+                lableColor: secondaryColor,
                 width: 160,
               ),
               const SizedBox(
@@ -122,19 +120,16 @@ class LoginScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                        child:
-                            Divider(thickness: 0.5, color: Colors.grey[500])),
+                        child: Divider(thickness: 0.5, color: secondaryColor)),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text(
                         'Or continue with',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 255, 251, 219)),
+                        style: TextStyle(color: secondaryColor),
                       ),
                     ),
                     Expanded(
-                        child:
-                            Divider(thickness: 0.5, color: Colors.grey[500])),
+                        child: Divider(thickness: 0.5, color: secondaryColor)),
                   ],
                 ),
               ),
@@ -149,7 +144,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Not a member ?',
-                    style: TextStyle(color: Color.fromARGB(255, 255, 251, 219)),
+                    style: TextStyle(color: secondaryColor),
                   ),
                   const SizedBox(
                     width: 2,
