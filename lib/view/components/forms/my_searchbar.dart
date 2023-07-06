@@ -1,3 +1,4 @@
+import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:flutter/material.dart';
 
 class MySearchBar extends StatelessWidget {
@@ -10,7 +11,7 @@ class MySearchBar extends StatelessWidget {
       child: Container(
         height: 40,
         decoration: BoxDecoration(
-            color: Color.fromARGB(255, 221, 217, 210),
+            color: secondaryColor,
             border: Border.all(color: Color.fromARGB(255, 221, 217, 210)),
             borderRadius: BorderRadius.circular(12)),
         child: Row(

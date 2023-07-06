@@ -3,6 +3,7 @@ import 'package:coffeeproject/view/components/forms/my_button.dart';
 import 'package:coffeeproject/view/components/forms/my_textfield.dart';
 import 'package:coffeeproject/view/pages/waiter/home/homescreen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -14,7 +15,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: Color.fromARGB(255, 2, 16, 25),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -26,14 +27,15 @@ class LoginScreen extends StatelessWidget {
               Icon(
                 Icons.lock,
                 size: 90,
-                color: primaryColor,
+                color: Color.fromARGB(255, 203, 180, 167),
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
                 'Wellcome back you\'ve been missed !',
-                style: TextStyle(color: secondaryColor, fontSize: 16),
+                style: TextStyle(
+                    color: Color.fromARGB(255, 244, 245, 246), fontSize: 16),
               ),
               const SizedBox(
                 height: 25,
@@ -46,7 +48,7 @@ class LoginScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 borderSize: 1,
                 cursorColor: primaryColor,
-                fillColor: secondaryColor,
+                fillColor: Color.fromARGB(255, 244, 245, 246),
                 focusBorderColor: primaryColor,
                 fontSize: 14,
                 focusBorderSize: 1,
@@ -63,7 +65,7 @@ class LoginScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 borderSize: 1,
                 cursorColor: primaryColor,
-                fillColor: secondaryColor,
+                fillColor: Color.fromARGB(255, 244, 245, 246),
                 focusBorderColor: primaryColor,
                 fontSize: 14,
                 focusBorderSize: 1,
@@ -82,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Text(
                       'Forget password ?',
-                      style: TextStyle(color: secondaryColor),
+                      style: TextStyle(color: Color.fromARGB(255, 2, 16, 25)),
                     ),
                   ),
                   const SizedBox(
@@ -105,7 +107,7 @@ class LoginScreen extends StatelessWidget {
                 borderColor: primaryColor,
                 borderRadius: BorderRadius.circular(10),
                 borderWidth: 0.5,
-                buttomColor: primaryColor,
+                buttomColor: Color.fromARGB(255, 122, 143, 172),
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 height: 40,
@@ -120,31 +122,34 @@ class LoginScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                        child: Divider(thickness: 0.5, color: secondaryColor)),
+                        child: Divider(
+                            thickness: 0.5,
+                            color: Color.fromARGB(255, 2, 16, 25))),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text(
-                        'Or continue with',
-                        style: TextStyle(color: secondaryColor),
+                        'Insert coffee to begin',
+                        style: GoogleFonts.dosis(
+                            color: Color.fromARGB(255, 2, 16, 25),
+                            fontSize: 17),
                       ),
                     ),
                     Expanded(
-                        child: Divider(thickness: 0.5, color: secondaryColor)),
+                        child: Divider(
+                            thickness: 0.5,
+                            color: Color.fromARGB(255, 2, 16, 25))),
                   ],
                 ),
               ),
               const SizedBox(
-                height: 20,
-              ),
-              const SizedBox(
-                height: 25,
+                height: 40,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'Not a member ?',
-                    style: TextStyle(color: secondaryColor),
+                    style: TextStyle(color: Color.fromARGB(255, 2, 16, 25)),
                   ),
                   const SizedBox(
                     width: 2,

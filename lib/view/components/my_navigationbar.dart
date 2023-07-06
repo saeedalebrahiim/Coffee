@@ -19,29 +19,83 @@ class MyNavigationBar extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 5),
-              child: FaIcon(
-                FontAwesomeIcons.mugHot,
-                color: primaryColor,
-                size: 12,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 37),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 2),
+                child: FaIcon(
+                  FontAwesomeIcons.mugHot,
+                  color: primaryColorTwo,
+                  size: 12,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(),
-              child: Text(
-                'Terrace',
-                style: GoogleFonts.dosis(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: primaryColor),
+              Row(
+                children: [
+                  Text(
+                    ' GOLJA',
+                    style: GoogleFonts.patrickHandSc(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: primaryColorTwo),
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 2),
+                        child: RotatedBox(
+                          quarterTurns: 2,
+                          child: Text(
+                            'A',
+                            style: GoogleFonts.patrickHandSc(
+                                fontSize: 26,
+                                fontWeight: FontWeight.bold,
+                                color: primaryColorTwo),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 55),
+                        child: Text(
+                          'M',
+                          style: GoogleFonts.patrickHandSc(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: primaryColorTwo),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
+        //  Row(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //     Padding(
+        //       padding: const EdgeInsets.only(top: 5),
+        //       child: FaIcon(
+        //         FontAwesomeIcons.mugHot,
+        //         color: primaryColor,
+        //         size: 12,
+        //       ),
+        //     ),
+        //     Padding(
+        //       padding: const EdgeInsets.only(),
+        //       child: Text(
+        //         'Terrace',
+        //         style: GoogleFonts.dosis(
+        //             fontSize: 24,
+        //             fontWeight: FontWeight.bold,
+        //             color: primaryColor),
+        //       ),
+        //     ),
+        //   ],
+        // ),,
         backgroundColor: backgroundColor,
       ),
       backgroundColor: backgroundColor,

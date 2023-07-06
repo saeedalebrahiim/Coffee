@@ -1,69 +1,68 @@
+import 'package:coffeeproject/model/models/orderstatus_model.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
-import 'package:coffeeproject/view/components/my_gridview.dart';
-import 'package:coffeeproject/view/components/posts/singleorderpost.dart';
 import 'package:coffeeproject/view/components/posts/statusordertablepost.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CachierOrderScreen extends StatelessWidget {
   CachierOrderScreen({super.key});
-  final List tableList = [
-    MyStatusTablePost(
+  final List<OrderStatusModel> tableList = [
+    OrderStatusModel(
       tableNumber: '1',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    MyStatusTablePost(
+    OrderStatusModel(
       tableNumber: '2',
       statusColor: Colors.green,
       statusString: 'READY',
     ),
-    MyStatusTablePost(
+    OrderStatusModel(
       tableNumber: '3',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    MyStatusTablePost(
+    OrderStatusModel(
       tableNumber: '4',
       statusColor: Colors.grey,
       statusString: '',
     ),
-    MyStatusTablePost(
+    OrderStatusModel(
       tableNumber: '5',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    MyStatusTablePost(
+    OrderStatusModel(
       tableNumber: '6',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    MyStatusTablePost(
+    OrderStatusModel(
       tableNumber: '7',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    MyStatusTablePost(
+    OrderStatusModel(
       tableNumber: '8',
       statusColor: Colors.grey,
       statusString: '',
     ),
-    MyStatusTablePost(
+    OrderStatusModel(
       tableNumber: '9',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    MyStatusTablePost(
+    OrderStatusModel(
       tableNumber: '10',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    MyStatusTablePost(
+    OrderStatusModel(
       tableNumber: '11',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    MyStatusTablePost(
+    OrderStatusModel(
       tableNumber: '12',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
@@ -106,15 +105,27 @@ class CachierOrderScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: MyGridView(
-                  posts: tableList,
-                  gridCount: tableList.length,
-                  gridCrossCount: 4,
-                  gridViewHeight: 600,
-                  gridViewWidth: 700,
-                  padding: EdgeInsets.all(7),
-                  scrollDirection: Axis.vertical),
-            ),
+              child: SizedBox(
+                width: 700,
+                height: 600,
+                child: GridView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: tableList.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4),
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.all(7),
+                      child: MyStatusTablePost(
+                        tableNumber: tableList[index].tableNumber,
+                        statusColor: tableList[index].statusColor,
+                        statusString: tableList[index].statusString,
+                      ),
+                    );
+                  },
+                ),
+              ),
+            )
           ],
         ),
       ),

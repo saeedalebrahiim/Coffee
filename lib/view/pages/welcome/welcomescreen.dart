@@ -1,6 +1,5 @@
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
@@ -20,45 +19,51 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   navigate() async {
     await Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).pushNamed("login");
+      Navigator.of(context).pushNamed("productScreen");
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: secondaryColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 7),
-                  child: FaIcon(
-                    FontAwesomeIcons.mugHot,
-                    color: primaryColor,
-                    size: 22,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(),
-                  child: Text(
-                    'Terrace',
+            Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Marzocco',
                     style: GoogleFonts.dosis(
-                        fontSize: 60,
+                        color: primaryColor,
                         fontWeight: FontWeight.bold,
-                        color: primaryColor),
+                        fontSize: 45),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 5),
+                    child: Image(
+                      image: AssetImage('lib/assets/images/logo.png'),
+                      width: 40,
+                      height: 40,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 15,
             ),
             Center(
-              child: LoadingAnimationWidget.prograssiveDots(
+              child: LoadingAnimationWidget.staggeredDotsWave(
                 color: primaryColor,
-                size: 50,
+                size: 40,
               ),
             )
           ],

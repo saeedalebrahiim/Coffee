@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ProductModel {
+class SingleOrderModel {
+  final Function()? onPressed;
   final double imageWidth, imageHeight, borderWidth, titleSize, stringSize;
-  final String imagePath, mainTitle, stringOne, tags, perTitle;
+  final String imagePath, mainTitle, stringOne, count;
 
-  final Color postColor, postBorderColor;
+  final Color postColor, postBorderColor, orderStatusColor;
   final BorderRadius borderRadius;
-  ProductModel(
-      {required this.imageWidth,
+  const SingleOrderModel(
+      {this.onPressed,
+      required this.imageWidth,
       required this.imageHeight,
       required this.borderWidth,
       required this.titleSize,
@@ -18,6 +20,6 @@ class ProductModel {
       required this.postColor,
       required this.postBorderColor,
       required this.borderRadius,
-      required this.tags,
-      required this.perTitle});
+      required this.count,
+      required this.orderStatusColor});
 }

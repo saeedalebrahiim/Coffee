@@ -1,3 +1,4 @@
+import 'package:coffeeproject/model/models/singleorder_model.dart';
 import 'package:coffeeproject/view/components/posts/singleorderpost.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -5,8 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 class SingleOrderScreen extends StatelessWidget {
   SingleOrderScreen({super.key});
-  final List orders = [
-    MySingleOrderPost(
+  final List<SingleOrderModel> orders = [
+    SingleOrderModel(
       imageWidth: 120,
       imageHeight: 120,
       borderWidth: 0,
@@ -21,7 +22,7 @@ class SingleOrderScreen extends StatelessWidget {
       count: '4',
       orderStatusColor: Colors.green,
     ),
-    MySingleOrderPost(
+    SingleOrderModel(
       imageWidth: 120,
       imageHeight: 120,
       borderWidth: 0,
@@ -36,7 +37,7 @@ class SingleOrderScreen extends StatelessWidget {
       count: '4',
       orderStatusColor: Colors.green,
     ),
-    MySingleOrderPost(
+    SingleOrderModel(
       imageWidth: 120,
       imageHeight: 120,
       borderWidth: 0,
@@ -98,7 +99,20 @@ class SingleOrderScreen extends StatelessWidget {
             for (var element in orders)
               Padding(
                 padding: const EdgeInsets.all(10),
-                child: element,
+                child: MySingleOrderPost(
+                    imageWidth: element.imageWidth,
+                    imageHeight: element.imageHeight,
+                    borderWidth: element.imageHeight,
+                    titleSize: element.imageHeight,
+                    stringSize: element.imageHeight,
+                    imagePath: element.imagePath,
+                    mainTitle: element.mainTitle,
+                    stringOne: element.stringOne,
+                    postColor: element.postColor,
+                    postBorderColor: element.postBorderColor,
+                    borderRadius: element.borderRadius,
+                    count: element.count,
+                    orderStatusColor: element.orderStatusColor),
               ),
           ],
         ),

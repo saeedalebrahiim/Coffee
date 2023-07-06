@@ -31,22 +31,23 @@ class MyCategoryPost extends StatelessWidget {
               children: [
                 FaIcon(
                   categoryIcon,
-                  size: 30,
+                  size: 34,
                 ),
                 SizedBox(
-                  height: 9,
+                  height: 15,
                 ),
                 Text(
                   engName,
                   style: GoogleFonts.dosis(
-                      fontWeight: FontWeight.bold, fontSize: 12),
+                      fontWeight: FontWeight.bold, fontSize: 15),
                 ),
                 SizedBox(
-                  height: 7,
+                  height: 5,
                 ),
                 Text(
                   perName,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                  style: GoogleFonts.notoKufiArabic(
+                      fontWeight: FontWeight.bold, fontSize: 10),
                 )
               ],
             ),
