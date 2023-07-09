@@ -6,7 +6,7 @@ class MyCategoryPost extends StatelessWidget {
   final Function()? onTap;
   final IconData categoryIcon;
   final String engName, perName;
-  MyCategoryPost({
+  const MyCategoryPost({
     super.key,
     required this.categoryIcon,
     required this.engName,
@@ -20,7 +20,7 @@ class MyCategoryPost extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(width: 1),
         borderRadius: BorderRadius.circular(10),
-        color: Color.fromARGB(255, 221, 217, 210),
+        color: const Color.fromARGB(255, 221, 217, 210),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -33,7 +33,7 @@ class MyCategoryPost extends StatelessWidget {
                   categoryIcon,
                   size: 34,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Text(
@@ -41,7 +41,63 @@ class MyCategoryPost extends StatelessWidget {
                   style: GoogleFonts.dosis(
                       fontWeight: FontWeight.bold, fontSize: 15),
                 ),
-                SizedBox(
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  perName,
+                  style: GoogleFonts.notoKufiArabic(
+                      fontWeight: FontWeight.bold, fontSize: 10),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MyCategoryPostAdmin extends StatelessWidget {
+  final Function()? onTap;
+  final IconData categoryIcon;
+  final String engName, perName;
+  const MyCategoryPostAdmin({
+    super.key,
+    required this.categoryIcon,
+    required this.engName,
+    required this.perName,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(width: 1),
+        borderRadius: BorderRadius.circular(10),
+        color: const Color.fromARGB(255, 221, 217, 210),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: InkWell(
+            onTap: onTap,
+            child: Column(
+              children: [
+                FaIcon(
+                  categoryIcon,
+                  size: 34,
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  engName,
+                  style: GoogleFonts.dosis(
+                      fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+                const SizedBox(
                   height: 5,
                 ),
                 Text(

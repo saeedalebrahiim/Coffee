@@ -20,7 +20,7 @@ class MyTablePost extends StatelessWidget {
           )
         ],
         borderRadius: BorderRadius.circular(10),
-        color: Color.fromARGB(255, 221, 217, 210),
+        color: const Color.fromARGB(255, 221, 217, 210),
       ),
       child: InkWell(
         onTap: () {
@@ -28,8 +28,8 @@ class MyTablePost extends StatelessWidget {
         },
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

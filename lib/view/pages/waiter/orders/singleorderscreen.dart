@@ -16,8 +16,8 @@ class SingleOrderScreen extends StatelessWidget {
       imagePath: 'lib/assets/images/testimage.avif',
       mainTitle: 'Coffee',
       stringOne: '40/000',
-      postColor: Color.fromARGB(255, 221, 217, 210),
-      postBorderColor: Color.fromARGB(255, 221, 217, 210),
+      postColor: const Color.fromARGB(255, 221, 217, 210),
+      postBorderColor: const Color.fromARGB(255, 221, 217, 210),
       borderRadius: BorderRadius.circular(10),
       count: '4',
       orderStatusColor: Colors.green,
@@ -31,8 +31,8 @@ class SingleOrderScreen extends StatelessWidget {
       imagePath: 'lib/assets/images/testimage.avif',
       mainTitle: 'Coffee',
       stringOne: '40/000',
-      postColor: Color.fromARGB(255, 221, 217, 210),
-      postBorderColor: Color.fromARGB(255, 221, 217, 210),
+      postColor: const Color.fromARGB(255, 221, 217, 210),
+      postBorderColor: const Color.fromARGB(255, 221, 217, 210),
       borderRadius: BorderRadius.circular(10),
       count: '4',
       orderStatusColor: Colors.green,
@@ -46,8 +46,8 @@ class SingleOrderScreen extends StatelessWidget {
       imagePath: 'lib/assets/images/testimage.avif',
       mainTitle: 'Coffee',
       stringOne: '40/000',
-      postColor: Color.fromARGB(255, 221, 217, 210),
-      postBorderColor: Color.fromARGB(255, 221, 217, 210),
+      postColor: const Color.fromARGB(255, 221, 217, 210),
+      postBorderColor: const Color.fromARGB(255, 221, 217, 210),
       borderRadius: BorderRadius.circular(10),
       count: '4',
       orderStatusColor: Colors.green,
@@ -57,13 +57,13 @@ class SingleOrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 34, 34, 34),
+      backgroundColor: const Color.fromARGB(255, 34, 34, 34),
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: FaIcon(
+            icon: const FaIcon(
               FontAwesomeIcons.arrowLeftLong,
               color: Color.fromARGB(255, 182, 167, 139),
               size: 20,
@@ -71,8 +71,8 @@ class SingleOrderScreen extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 5),
+            const Padding(
+              padding: EdgeInsets.only(top: 5),
               child: FaIcon(
                 FontAwesomeIcons.mugHot,
                 color: Color.fromARGB(255, 182, 167, 139),
@@ -86,12 +86,12 @@ class SingleOrderScreen extends StatelessWidget {
                 style: GoogleFonts.dosis(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 182, 167, 139)),
+                    color: const Color.fromARGB(255, 182, 167, 139)),
               ),
             ),
           ],
         ),
-        backgroundColor: Color.fromARGB(255, 34, 34, 34),
+        backgroundColor: const Color.fromARGB(255, 34, 34, 34),
       ),
       body: SingleChildScrollView(
         child: Column(

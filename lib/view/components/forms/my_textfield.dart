@@ -19,6 +19,7 @@ class MyTextField extends StatelessWidget {
       required this.cursorColor,
       required this.fontWeight});
 
+  // ignore: prefer_typing_uninitialized_variables
   final controller;
   final String hintText;
   final bool obscureText;

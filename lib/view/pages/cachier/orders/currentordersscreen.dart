@@ -7,62 +7,62 @@ import 'package:google_fonts/google_fonts.dart';
 class CachierOrderScreen extends StatelessWidget {
   CachierOrderScreen({super.key});
   final List<OrderStatusModel> tableList = [
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '1',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '2',
       statusColor: Colors.green,
       statusString: 'READY',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '3',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '4',
       statusColor: Colors.grey,
       statusString: '',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '5',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '6',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '7',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '8',
       statusColor: Colors.grey,
       statusString: '',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '9',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '10',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '11',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '12',
       statusColor: Colors.yellow,
       statusString: 'LODING ...',
@@ -72,16 +72,16 @@ class CachierOrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 34, 34, 34),
+      backgroundColor: const Color.fromARGB(255, 34, 34, 34),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                MyDivider(
+                const MyDivider(
                     thickness: 0.5,
                     horizontalPadding: 12,
                     dividerColor: Color.fromARGB(255, 221, 217, 210)),
@@ -90,17 +90,17 @@ class CachierOrderScreen extends StatelessWidget {
                   child: Text(
                     'Orders',
                     style: GoogleFonts.dosis(
-                        color: Color.fromARGB(255, 221, 217, 210),
+                        color: const Color.fromARGB(255, 221, 217, 210),
                         fontSize: 18),
                   ),
                 ),
-                MyDivider(
+                const MyDivider(
                     thickness: 0.5,
                     horizontalPadding: 12,
                     dividerColor: Color.fromARGB(255, 221, 217, 210))
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
@@ -111,11 +111,11 @@ class CachierOrderScreen extends StatelessWidget {
                 child: GridView.builder(
                   scrollDirection: Axis.vertical,
                   itemCount: tableList.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4),
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: EdgeInsets.all(7),
+                      padding: const EdgeInsets.all(7),
                       child: MyStatusTablePost(
                         tableNumber: tableList[index].tableNumber,
                         statusColor: tableList[index].statusColor,

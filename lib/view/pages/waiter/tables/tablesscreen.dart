@@ -3,7 +3,6 @@ import 'package:coffeeproject/model/models/table_model.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
 import 'package:coffeeproject/view/components/posts/tablepost.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TablesScreen extends StatelessWidget {
@@ -55,7 +54,7 @@ class TablesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: MyDrawer(),
+      endDrawer: const MyDrawer(),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
@@ -79,11 +78,12 @@ class TablesScreen extends StatelessWidget {
                   child: GridView.builder(
                     scrollDirection: Axis.vertical,
                     itemCount: tableList.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
                     itemBuilder: (context, index) {
                       return Padding(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         child: MyTablePost(
                           tableNumber: tableList[index].tableNumber,
                           tableStatusColor: tableList[index].tableStatusColor,

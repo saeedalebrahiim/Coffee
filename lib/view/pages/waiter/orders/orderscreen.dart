@@ -74,7 +74,7 @@ class OrdersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: MyDrawer(),
+      endDrawer: const MyDrawer(),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
@@ -85,16 +85,16 @@ class OrdersScreen extends StatelessWidget {
         ),
         backgroundColor: backgroundColor,
       ),
-      backgroundColor: Color.fromARGB(255, 34, 34, 34),
+      backgroundColor: const Color.fromARGB(255, 34, 34, 34),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                MyDivider(
+                const MyDivider(
                     thickness: 0.5,
                     horizontalPadding: 12,
                     dividerColor: Color.fromARGB(255, 221, 217, 210)),
@@ -103,17 +103,17 @@ class OrdersScreen extends StatelessWidget {
                   child: Text(
                     'Orders',
                     style: GoogleFonts.dosis(
-                        color: Color.fromARGB(255, 221, 217, 210),
+                        color: const Color.fromARGB(255, 221, 217, 210),
                         fontSize: 18),
                   ),
                 ),
-                MyDivider(
+                const MyDivider(
                     thickness: 0.5,
                     horizontalPadding: 12,
                     dividerColor: Color.fromARGB(255, 221, 217, 210))
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             // Padding(
@@ -137,11 +137,12 @@ class OrdersScreen extends StatelessWidget {
                   child: GridView.builder(
                     scrollDirection: Axis.vertical,
                     itemCount: tableList.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 4),
                     itemBuilder: (context, index) {
                       return Padding(
-                        padding: EdgeInsets.all(7),
+                        padding: const EdgeInsets.all(7),
                         child: MyStatusTablePost(
                           tableNumber: tableList[index].tableNumber,
                           statusColor: tableList[index].statusColor,

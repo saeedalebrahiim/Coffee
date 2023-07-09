@@ -16,7 +16,7 @@ class MyStatusTablePost extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(width: 1),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.grey,
             blurRadius: 1,
@@ -24,7 +24,7 @@ class MyStatusTablePost extends StatelessWidget {
           )
         ],
         borderRadius: BorderRadius.circular(10),
-        color: Color.fromARGB(255, 221, 217, 210),
+        color: const Color.fromARGB(255, 221, 217, 210),
       ),
       child: InkWell(
         onTap: () {
@@ -37,7 +37,7 @@ class MyStatusTablePost extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 2,
             ),
             Center(
@@ -52,7 +52,7 @@ class MyStatusTablePost extends StatelessWidget {
               child: Container(
                 height: 30,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadiusDirectional.only(
+                  borderRadius: const BorderRadiusDirectional.only(
                       bottomEnd: Radius.circular(10),
                       bottomStart: Radius.circular(10)),
                   color: statusColor,
@@ -62,7 +62,7 @@ class MyStatusTablePost extends StatelessWidget {
                     statusString,
                     style: GoogleFonts.dosis(
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 34, 34, 34)),
+                        color: const Color.fromARGB(255, 34, 34, 34)),
                   ),
                 ),
               ),

@@ -29,8 +29,8 @@ class MyDialog extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10),
+            const Padding(
+              padding: EdgeInsets.only(left: 10),
               child: FaIcon(
                 FontAwesomeIcons.mugHot,
                 color: Color.fromARGB(255, 34, 34, 34),
@@ -40,9 +40,9 @@ class MyDialog extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 4),
-              child: const Text("Your order is Done",
+            const Padding(
+              padding: EdgeInsets.only(left: 4),
+              child: Text("Your order is Done",
                   style: TextStyle(
                       color: Color.fromARGB(255, 46, 134, 55),
                       fontSize: 18,
@@ -56,13 +56,13 @@ class MyDialog extends StatelessWidget {
                   Navigator.pop(context);
                 },
                 lable: 'Done',
-                buttomColor: Color.fromARGB(255, 34, 34, 34),
+                buttomColor: const Color.fromARGB(255, 34, 34, 34),
                 width: 90,
                 fontWeight: FontWeight.bold,
-                lableColor: Color.fromARGB(255, 221, 217, 210),
+                lableColor: const Color.fromARGB(255, 221, 217, 210),
                 borderRadius: BorderRadius.circular(10),
                 height: 30,
-                borderColor: Color.fromARGB(255, 221, 217, 210),
+                borderColor: const Color.fromARGB(255, 221, 217, 210),
                 borderWidth: 0,
                 fontSize: 14)
           ],

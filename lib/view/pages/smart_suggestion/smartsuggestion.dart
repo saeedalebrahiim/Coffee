@@ -1,5 +1,4 @@
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/view/components/forms/my_button.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
 import 'package:coffeeproject/view/components/posts/productpost.dart';
@@ -10,7 +9,7 @@ import 'package:chips_choice/chips_choice.dart';
 
 class MultiSelect extends StatefulWidget {
   final List<String> items;
-  MultiSelect({super.key, required this.items});
+  const MultiSelect({super.key, required this.items});
 
   @override
   State<MultiSelect> createState() => _MultiSelectState();
@@ -39,7 +38,7 @@ class _MultiSelectState extends State<MultiSelect> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text("Select topics"),
+      title: const Text("Select topics"),
       content: SingleChildScrollView(
         child: ListBody(
           children: widget.items
@@ -53,8 +52,8 @@ class _MultiSelectState extends State<MultiSelect> {
         ),
       ),
       actions: [
-        TextButton(onPressed: _cancel, child: Text('Cancel')),
-        ElevatedButton(onPressed: _submit, child: Text('Submit'))
+        TextButton(onPressed: _cancel, child: const Text('Cancel')),
+        ElevatedButton(onPressed: _submit, child: const Text('Submit'))
       ],
     );
   }
@@ -108,12 +107,12 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: MyDrawer(),
+      endDrawer: const MyDrawer(),
       bottomSheet: Container(
         decoration: BoxDecoration(
             border: Border.all(
-                color: Color.fromARGB(255, 221, 217, 210), width: 0.1),
-            color: Color.fromARGB(255, 34, 34, 34)),
+                color: const Color.fromARGB(255, 221, 217, 210), width: 0.1),
+            color: const Color.fromARGB(255, 34, 34, 34)),
         width: double.infinity,
         height: 45,
         child: Row(
@@ -166,7 +165,7 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
       backgroundColor: backgroundColor,
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
 
@@ -193,8 +192,8 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
                     imagePath: 'lib/assets/images/11.png',
                     mainTitle: 'Latte',
                     stringOne: '70/000',
-                    postColor: Color.fromARGB(255, 221, 217, 210),
-                    postBorderColor: Color.fromARGB(255, 221, 217, 210),
+                    postColor: const Color.fromARGB(255, 221, 217, 210),
+                    postBorderColor: const Color.fromARGB(255, 221, 217, 210),
                     borderRadius: BorderRadius.circular(10),
                     tags: '#Hot drink #Milk #Sweet',
                     perTitle: 'لـته',
@@ -203,7 +202,7 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
@@ -214,7 +213,7 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
                   dividerColor: secondaryColor),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
@@ -225,7 +224,7 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           ChipsChoice<String>.multiple(
@@ -240,12 +239,12 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
             wrapped: true,
             choiceCheckmark: true,
             choiceStyle: C2ChipStyle.filled(
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(25),
               ),
               selectedStyle: C2ChipStyle(
                 backgroundColor: secondaryColor,
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(25),
                 ),
               ),

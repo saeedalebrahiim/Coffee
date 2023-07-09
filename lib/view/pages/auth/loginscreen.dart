@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 2, 16, 25),
+      backgroundColor: const Color.fromARGB(255, 2, 16, 25),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              Icon(
+              const Icon(
                 Icons.lock,
                 size: 90,
                 color: Color.fromARGB(255, 203, 180, 167),
@@ -32,7 +32,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 'Wellcome back you\'ve been missed !',
                 style: TextStyle(
                     color: Color.fromARGB(255, 244, 245, 246), fontSize: 16),
@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 borderSize: 1,
                 cursorColor: primaryColor,
-                fillColor: Color.fromARGB(255, 244, 245, 246),
+                fillColor: const Color.fromARGB(255, 244, 245, 246),
                 focusBorderColor: primaryColor,
                 fontSize: 14,
                 focusBorderSize: 1,
@@ -65,7 +65,7 @@ class LoginScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 borderSize: 1,
                 cursorColor: primaryColor,
-                fillColor: Color.fromARGB(255, 244, 245, 246),
+                fillColor: const Color.fromARGB(255, 244, 245, 246),
                 focusBorderColor: primaryColor,
                 fontSize: 14,
                 focusBorderSize: 1,
@@ -77,17 +77,17 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    padding: EdgeInsets.symmetric(horizontal: 25.0),
                     child: Text(
                       'Forget password ?',
                       style: TextStyle(color: Color.fromARGB(255, 2, 16, 25)),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 15,
                   ),
                 ],
@@ -107,7 +107,7 @@ class LoginScreen extends StatelessWidget {
                 borderColor: primaryColor,
                 borderRadius: BorderRadius.circular(10),
                 borderWidth: 0.5,
-                buttomColor: Color.fromARGB(255, 122, 143, 172),
+                buttomColor: const Color.fromARGB(255, 122, 143, 172),
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 height: 40,
@@ -121,7 +121,7 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                         child: Divider(
                             thickness: 0.5,
                             color: Color.fromARGB(255, 2, 16, 25))),
@@ -130,11 +130,11 @@ class LoginScreen extends StatelessWidget {
                       child: Text(
                         'Insert coffee to begin',
                         style: GoogleFonts.dosis(
-                            color: Color.fromARGB(255, 2, 16, 25),
+                            color: const Color.fromARGB(255, 2, 16, 25),
                             fontSize: 17),
                       ),
                     ),
-                    Expanded(
+                    const Expanded(
                         child: Divider(
                             thickness: 0.5,
                             color: Color.fromARGB(255, 2, 16, 25))),
@@ -144,17 +144,17 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'Not a member ?',
                     style: TextStyle(color: Color.fromARGB(255, 2, 16, 25)),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 2,
                   ),
-                  const Text(
+                  Text(
                     ' Register now',
                     style: TextStyle(
                         color: Colors.blue, fontWeight: FontWeight.bold),

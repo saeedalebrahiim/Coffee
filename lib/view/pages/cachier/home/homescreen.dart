@@ -13,7 +13,7 @@ class CachierHomeScreen extends StatefulWidget {
 class _CachierHomeScreenState extends State<CachierHomeScreen> {
   List myBody = [
     CachierOrderScreen(),
-    AllOrdersScreen(),
+    const AllOrdersScreen(),
   ];
 
   @override

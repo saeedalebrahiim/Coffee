@@ -1,3 +1,4 @@
+import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,50 +37,56 @@ class MyProductPost extends StatelessWidget {
             borderRadius: borderRadius,
             border: Border.all(color: postBorderColor, width: borderWidth)),
         child: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
-          child: Column(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                        image: AssetImage(imagePath), fit: BoxFit.cover)),
-                width: imageWidth,
-                height: imageHeight,
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Text(mainTitle,
+          physics: const NeverScrollableScrollPhysics(),
+          child: Center(
+            child: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              direction: Axis.vertical,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                          image: AssetImage(imagePath), fit: BoxFit.cover)),
+                  width: imageWidth,
+                  height: imageHeight,
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(mainTitle,
+                    style: GoogleFonts.dosis(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    )),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(perTitle,
+                    style: GoogleFonts.notoNaskhArabic(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                    )),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  "$stringOne T",
                   style: GoogleFonts.dosis(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  )),
-              SizedBox(
-                height: 5,
-              ),
-              Text(perTitle,
-                  style: GoogleFonts.notoNaskhArabic(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14,
-                  )),
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                stringOne + " T",
-                style: GoogleFonts.dosis(
-                    fontSize: 15, fontWeight: FontWeight.w500),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                tags,
-                style: GoogleFonts.dosis(
-                    fontSize: 15, fontWeight: FontWeight.w500),
-              ),
-            ],
+                      fontSize: 15, fontWeight: FontWeight.w500),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const MyAddToCard(),
+
+                // Text(
+                //   tags,
+                //   style: GoogleFonts.dosis(
+                //       fontSize: 15, fontWeight: FontWeight.w500),
+                // ),
+              ],
+            ),
           ),
         ),
       ),

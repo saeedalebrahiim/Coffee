@@ -52,20 +52,20 @@ class MySingleOrderPost extends StatelessWidget {
                   stringOne,
                   style: TextStyle(fontSize: stringSize),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Text(
-                  count + ' : تعداد',
+                  '$count : تعداد',
                   style: TextStyle(
                       fontSize: stringSize, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               width: 50,
             ),
             Container(

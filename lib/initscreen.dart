@@ -1,14 +1,14 @@
 import 'package:coffeeproject/view/pages/welcome/welcomescreen.dart';
 import 'package:flutter/material.dart';
 
-class initScreen extends StatefulWidget {
-  const initScreen({super.key});
+class InitScreen extends StatefulWidget {
+  const InitScreen({super.key});
 
   @override
-  State<initScreen> createState() => _initScreenState();
+  State<InitScreen> createState() => _InitScreenState();
 }
 
-class _initScreenState extends State<initScreen> {
+class _InitScreenState extends State<InitScreen> {
   @override
   Widget build(BuildContext context) {
     return const WelcomeScreen();

@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AllOrdersScreen extends StatelessWidget {
-  AllOrdersScreen({super.key});
+  const AllOrdersScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 34, 34, 34),
+      backgroundColor: const Color.fromARGB(255, 34, 34, 34),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                MyDivider(
+                const MyDivider(
                     thickness: 0.5,
                     horizontalPadding: 12,
                     dividerColor: Color.fromARGB(255, 221, 217, 210)),
@@ -26,17 +26,17 @@ class AllOrdersScreen extends StatelessWidget {
                   child: Text(
                     'All Orders',
                     style: GoogleFonts.dosis(
-                        color: Color.fromARGB(255, 221, 217, 210),
+                        color: const Color.fromARGB(255, 221, 217, 210),
                         fontSize: 18),
                   ),
                 ),
-                MyDivider(
+                const MyDivider(
                     thickness: 0.5,
                     horizontalPadding: 12,
                     dividerColor: Color.fromARGB(255, 221, 217, 210))
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
           ],

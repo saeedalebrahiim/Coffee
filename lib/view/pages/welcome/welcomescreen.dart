@@ -43,11 +43,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         fontWeight: FontWeight.bold,
                         fontSize: 45),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 5),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 5),
                     child: Image(
                       image: AssetImage('lib/assets/images/logo.png'),
                       width: 40,
@@ -57,7 +57,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Center(

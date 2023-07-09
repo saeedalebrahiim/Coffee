@@ -1,58 +1,211 @@
 import 'package:coffeeproject/model/globals/globals.dart';
+import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class AddToCard extends StatefulWidget {
-  final Function()? onTapAdd;
-  final Function()? onTapRemove;
-  const AddToCard(
-      {super.key, required this.onTapAdd, required this.onTapRemove});
+class MyAddToCard extends StatefulWidget {
+  const MyAddToCard({
+    super.key,
+  });
 
   @override
-  State<AddToCard> createState() => _AddToCardState();
+  State<MyAddToCard> createState() => _MyAddToCardState();
 }
 
-class _AddToCardState extends State<AddToCard> {
-  @override
-  void initState() {
-    super.initState();
-    getData();
-  }
-
-  getData() {}
-
+class _MyAddToCardState extends State<MyAddToCard> {
+  int count = 0;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color.fromARGB(255, 221, 217, 210),
-      width: 20,
-      height: 100,
-      child: Column(
-        children: [
-          Container(
-            color: Color.fromARGB(255, 221, 217, 210),
-            width: 20,
-            height: 100,
-            child: Column(
-              children: [
-                InkWell(
-                  onTap: widget.onTapAdd,
-                  child: Icon(Icons.add),
-                ),
-                SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.only(left: 4.5),
-                  child: Text(count.toString()),
-                ),
-                SizedBox(height: 0),
-                InkWell(
-                  onTap: widget.onTapRemove,
-                  child: Icon(Icons.minimize),
-                ),
-              ],
+    return SizedBox(
+      width: 110,
+      height: 30,
+      child: Visibility(
+        visible: count > 0,
+        replacement: RawMaterialButton(
+          onPressed: () {
+            setState(() {
+              count++;
+            });
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: primaryColor),
+              borderRadius: BorderRadius.circular(50),
+              color: secondaryColor,
             ),
-          )
-        ],
+            width: 90,
+            height: 25,
+            child: Center(
+              child: Row(
+                children: [
+                  MyDivider(
+                      thickness: 0.3,
+                      horizontalPadding: 0,
+                      dividerColor: secondaryColor),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 9),
+                    child: Text(
+                      "Order",
+                      style: GoogleFonts.dosis(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: primaryColor),
+                    ),
+                  ),
+                  MyDivider(
+                      thickness: 0.3,
+                      horizontalPadding: 0,
+                      dividerColor: secondaryColor),
+                ],
+              ),
+            ),
+          ),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50),
+            color: secondaryColor,
+          ),
+          width: 80,
+          height: 20,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    count++;
+                  });
+                },
+                child: Container(
+                  width: 30,
+                  height: 30,
+                  decoration: BoxDecoration(
+                      color: primaryColor,
+                      border: Border.all(color: primaryColor),
+                      borderRadius: BorderRadius.circular(50)),
+                  child: Icon(
+                    Icons.add,
+                    size: 18,
+                    color: secondaryColor,
+                  ),
+                ),
+              ),
+              Text(
+                '${count}x',
+                style: GoogleFonts.dosis(
+                    fontWeight: FontWeight.bold, fontSize: 17),
+              ),
+              InkWell(
+                onTap: () {
+                  if (count > 0) {
+                    setState(() {
+                      count--;
+                    });
+                  }
+                },
+                child: Container(
+                  width: 30,
+                  height: 30,
+                  decoration: BoxDecoration(
+                      color: primaryColor,
+                      border: Border.all(color: primaryColor),
+                      borderRadius: BorderRadius.circular(50)),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.minimize,
+                        size: 18,
+                        color: secondaryColor,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
 }
+
+// ignore: must_be_immutable
+// class MyAddToCardTwo extends StatefulWidget {
+//   MyAddToCardTwo({
+//     super.key,
+//     required this.count,
+//     required this.productId,
+//   });
+//   late int count;
+//   final String productId;
+
+//   @override
+//   State<MyAddToCardTwo> createState() => _MyAddToCardTwoState();
+// }
+
+// class _MyAddToCardTwoState extends State<MyAddToCardTwo> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return SizedBox(
+//       width: 30,
+//       height: 90,
+//       child: Container(
+//         decoration: BoxDecoration(
+//           borderRadius: BorderRadius.circular(50),
+//           color: primaryColor,
+//         ),
+//         width: 80,
+//         height: 20,
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//           children: [
+//             InkWell(
+//               onTap: () async {},
+//               child: Container(
+//                 width: 25,
+//                 height: 25,
+//                 decoration: BoxDecoration(
+//                     color: secondColor,
+//                     border: Border.all(color: primaryColor),
+//                     borderRadius: BorderRadius.circular(50)),
+//                 child: Icon(
+//                   Icons.add,
+//                   size: 15,
+//                   color: primaryColor,
+//                 ),
+//               ),
+//             ),
+//             Text(
+//               '${widget.count}x',
+//               style: GoogleFonts.dosis(
+//                   fontWeight: FontWeight.bold, fontSize: 15.5),
+//             ),
+//             InkWell(
+//               onTap: () async {
+//                 if (widget.count > 0) {}
+//               },
+//               child: Container(
+//                 width: 25,
+//                 height: 25,
+//                 decoration: BoxDecoration(
+//                     color: secondColor,
+//                     border: Border.all(color: primaryColor),
+//                     borderRadius: BorderRadius.circular(50)),
+//                 child: Column(
+//                   children: [
+//                     Icon(
+//                       Icons.minimize,
+//                       size: 15,
+//                       color: primaryColor,
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

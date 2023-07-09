@@ -9,6 +9,6 @@ const String smartSuggestion = "smartSuggestion";
 
 Map<String, Widget Function(BuildContext)> routes = <String, WidgetBuilder>{
   "login": (context) => LoginScreen(),
-  "productScreen": (context) => ProducstScreen(),
-  "smartSuggestion": (context) => SmartSuggestionScreen(),
+  "productScreen": (context) => const ProducstScreen(),
+  "smartSuggestion": (context) => const SmartSuggestionScreen(),
 };
