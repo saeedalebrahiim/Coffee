@@ -35,7 +35,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 98),
+                  padding: const EdgeInsets.only(left: 104),
                   child: Lottie.asset('lib/assets/images/animation.json',
                       height: 42, width: 80, fit: BoxFit.fitWidth),
                 ),
@@ -49,7 +49,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   style: GoogleFonts.dosis(
                       color: primaryColor,
                       fontWeight: FontWeight.bold,
-                      fontSize: 45),
+                      fontSize: 50),
                 ),
 
                 // const Padding(
