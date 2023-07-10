@@ -1,7 +1,7 @@
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -18,7 +18,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   }
 
   navigate() async {
-    await Future.delayed(const Duration(seconds: 3), () {
+    await Future.delayed(const Duration(seconds: 5), () {
       Navigator.of(context).pushNamed("productScreen");
     });
   }
@@ -31,41 +31,46 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Marzocco',
-                    style: GoogleFonts.dosis(
-                        color: primaryColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 45),
-                  ),
-                  const SizedBox(
-                    width: 15,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 5),
-                    child: Image(
-                      image: AssetImage('lib/assets/images/logo.png'),
-                      width: 40,
-                      height: 40,
-                    ),
-                  )
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 98),
+                  child: Lottie.asset('lib/assets/images/animation.json',
+                      height: 42, width: 80, fit: BoxFit.fitWidth),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Marzocco',
+                  style: GoogleFonts.dosis(
+                      color: primaryColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 45),
+                ),
+
+                // const Padding(
+                //   padding: EdgeInsets.only(bottom: 5),
+                //   child: Image(
+                //     image: AssetImage('lib/assets/images/logo.png'),
+                //     width: 40,
+                //     height: 40,
+                //   ),
+                // )
+              ],
             ),
             const SizedBox(
-              height: 15,
+              height: 200,
             ),
-            Center(
-              child: LoadingAnimationWidget.staggeredDotsWave(
-                color: primaryColor,
-                size: 40,
-              ),
-            )
+            // Center(
+            //   child: LoadingAnimationWidget.staggeredDotsWave(
+            //     color: primaryColor,
+            //     size: 40,
+            //   ),
+            // )
           ],
         ),
       ),
