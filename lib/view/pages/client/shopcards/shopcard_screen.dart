@@ -86,11 +86,15 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                                     child: Row(
                                       textDirection: TextDirection.ltr,
                                       children: [
-                                        Text(
-                                          'Espresso',
-                                          style: GoogleFonts.dosis(
-                                              color: secondaryColor,
-                                              fontSize: 18),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(bottom: 5),
+                                          child: Text(
+                                            'Espresso',
+                                            style: GoogleFonts.dosis(
+                                                color: secondaryColor,
+                                                fontSize: 18),
+                                          ),
                                         ),
                                         MyDivider(
                                             thickness: 0.3,
