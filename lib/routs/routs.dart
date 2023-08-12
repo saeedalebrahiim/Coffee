@@ -1,6 +1,6 @@
-import 'package:coffeeproject/view/pages/auth/loginscreen.dart';
-import 'package:coffeeproject/view/pages/smart_suggestion/smartsuggestion.dart';
-import 'package:coffeeproject/view/pages/waiter/products/productlistscreen.dart';
+import 'package:coffeeproject/view/pages/shared/auth/loginscreen.dart';
+import 'package:coffeeproject/view/pages/client/smart_suggestion/smartsuggestion.dart';
+import 'package:coffeeproject/view/pages/client/products/productlistscreen.dart';
 import 'package:flutter/material.dart';
 
 const String login = "login";

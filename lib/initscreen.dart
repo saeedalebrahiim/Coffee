@@ -1,4 +1,4 @@
-import 'package:coffeeproject/view/pages/welcome/welcomescreen.dart';
+import 'package:coffeeproject/view/pages/shared/welcome/welcomescreen.dart';
 import 'package:flutter/material.dart';
 
 class InitScreen extends StatefulWidget {

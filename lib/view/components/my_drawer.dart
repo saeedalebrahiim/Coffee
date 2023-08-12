@@ -1,7 +1,7 @@
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/view/admin/adminpages/home/adminhome_screen.dart';
+import 'package:coffeeproject/view/pages/admin/adminpages/home/adminhome_screen.dart';
 import 'package:coffeeproject/view/pages/waiter/orders/orderscreen.dart';
-import 'package:coffeeproject/view/pages/waiter/products/productlistscreen.dart';
+import 'package:coffeeproject/view/pages/client/products/productlistscreen.dart';
 import 'package:coffeeproject/view/pages/waiter/tables/tablesscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

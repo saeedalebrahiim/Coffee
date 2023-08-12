@@ -31,11 +31,11 @@ class MyCategoryDivider extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 5),
             child: Text(
-              faName,
-              style: GoogleFonts.notoKufiArabic(
+              engName,
+              style: GoogleFonts.dosis(
                   color: secondaryColor,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 13),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16),
             ),
           )
         ],

@@ -62,11 +62,7 @@ class MyProductPost extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-                Text(perTitle,
-                    style: GoogleFonts.notoNaskhArabic(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14,
-                    )),
+
                 const SizedBox(
                   height: 5,
                 ),

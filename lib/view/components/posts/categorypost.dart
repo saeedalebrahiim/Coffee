@@ -29,26 +29,24 @@ class MyCategoryPost extends StatelessWidget {
             onTap: onTap,
             child: Column(
               children: [
+                const SizedBox(
+                  height: 10,
+                ),
                 FaIcon(
                   categoryIcon,
-                  size: 34,
+                  size: 40,
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 20,
                 ),
                 Text(
                   engName,
                   style: GoogleFonts.dosis(
-                      fontWeight: FontWeight.bold, fontSize: 15),
+                      fontWeight: FontWeight.bold, fontSize: 17),
                 ),
                 const SizedBox(
                   height: 5,
                 ),
-                Text(
-                  perName,
-                  style: GoogleFonts.notoKufiArabic(
-                      fontWeight: FontWeight.bold, fontSize: 10),
-                )
               ],
             ),
           ),

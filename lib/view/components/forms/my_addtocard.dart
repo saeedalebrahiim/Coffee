@@ -130,6 +130,91 @@ class _MyAddToCardState extends State<MyAddToCard> {
   }
 }
 
+class MyShopCardAddToCard extends StatefulWidget {
+  const MyShopCardAddToCard({
+    super.key,
+  });
+
+  @override
+  State<MyShopCardAddToCard> createState() => _MyShopCardAddToCardState();
+}
+
+class _MyShopCardAddToCardState extends State<MyShopCardAddToCard> {
+  int count = 0;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 110,
+      height: 30,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          color: backgroundColor,
+        ),
+        width: 80,
+        height: 20,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            InkWell(
+              onTap: () {
+                setState(() {
+                  count++;
+                });
+              },
+              child: Container(
+                width: 28,
+                height: 28,
+                decoration: BoxDecoration(
+                    color: secondaryColor,
+                    border: Border.all(color: secondaryColor),
+                    borderRadius: BorderRadius.circular(50)),
+                child: Icon(
+                  Icons.add,
+                  size: 18,
+                  color: backgroundColor,
+                ),
+              ),
+            ),
+            Text(
+              '${count}x',
+              style: GoogleFonts.dosis(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: secondaryColor),
+            ),
+            InkWell(
+              onTap: () {
+                if (count > 0) {
+                  setState(() {
+                    count--;
+                  });
+                }
+              },
+              child: Container(
+                width: 28,
+                height: 28,
+                decoration: BoxDecoration(
+                    color: secondaryColor,
+                    border: Border.all(color: secondaryColor),
+                    borderRadius: BorderRadius.circular(50)),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.minimize,
+                      size: 17,
+                      color: backgroundColor,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 // ignore: must_be_immutable
 // class MyAddToCardTwo extends StatefulWidget {
 //   MyAddToCardTwo({

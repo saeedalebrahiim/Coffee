@@ -1,5 +1,5 @@
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/view/admin/adminpages/products/adminproducts_screen.dart';
+import 'package:coffeeproject/view/pages/admin/adminpages/products/adminproducts_screen.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
 import 'package:flutter/material.dart';

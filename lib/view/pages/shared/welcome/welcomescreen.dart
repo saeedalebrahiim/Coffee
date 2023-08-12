@@ -1,4 +1,5 @@
 import 'package:coffeeproject/model/globals/globals.dart';
+import 'package:coffeeproject/view/pages/client/products/productlistscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -19,7 +20,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   navigate() async {
     await Future.delayed(const Duration(seconds: 5), () {
-      Navigator.of(context).pushNamed("productScreen");
+      Navigator.of(context).pushAndRemoveUntil(
+          PageRouteBuilder(
+              pageBuilder: (_, __, ___) => ProducstScreen(),
+              transitionDuration: const Duration(milliseconds: 500),
+              transitionsBuilder: (_, a, __, c) => FadeTransition(
+                    opacity: a,
+                    child: c,
+                  )),
+          (route) => false);
     });
   }
 
