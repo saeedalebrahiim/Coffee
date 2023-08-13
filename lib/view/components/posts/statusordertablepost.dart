@@ -55,7 +55,7 @@ class MyStatusTablePost extends StatelessWidget {
             InkWell(
               onTap: () => showDialog<Dialog>(
                   context: context,
-                  builder: (BuildContext context) => MyStatusDialog()),
+                  builder: (BuildContext context) => const MyStatusDialog()),
               child: Container(
                 height: 30,
                 decoration: BoxDecoration(

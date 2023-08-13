@@ -177,7 +177,7 @@ class _MyDrawerState extends State<MyDrawer> {
               onTap: () {
                 Navigator.of(context).pushAndRemoveUntil(
                     PageRouteBuilder(
-                        pageBuilder: (_, __, ___) => BunkerScreen(),
+                        pageBuilder: (_, __, ___) => const BunkerScreen(),
                         transitionDuration: const Duration(milliseconds: 500),
                         transitionsBuilder: (_, a, __, c) => FadeTransition(
                               opacity: a,

@@ -1,4 +1,3 @@
-import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,12 +18,12 @@ class MyCategoryDivider extends StatelessWidget {
             child: Text(
               engName,
               style: GoogleFonts.dosis(
-                  color: Color.fromARGB(255, 37, 36, 34),
+                  color: const Color.fromARGB(255, 37, 36, 34),
                   fontWeight: FontWeight.bold,
                   fontSize: 16),
             ),
           ),
-          MyDivider(
+          const MyDivider(
               thickness: 0.5,
               horizontalPadding: 10,
               dividerColor: Color.fromARGB(255, 37, 36, 34)),
@@ -33,7 +32,7 @@ class MyCategoryDivider extends StatelessWidget {
             child: Text(
               engName,
               style: GoogleFonts.dosis(
-                  color: Color.fromARGB(255, 37, 36, 34),
+                  color: const Color.fromARGB(255, 37, 36, 34),
                   fontWeight: FontWeight.bold,
                   fontSize: 16),
             ),

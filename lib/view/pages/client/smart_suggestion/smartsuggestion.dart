@@ -152,7 +152,7 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
               onPressed: () {
                 Navigator.of(context).pushAndRemoveUntil(
                     PageRouteBuilder(
-                        pageBuilder: (_, __, ___) => ProducstScreen(),
+                        pageBuilder: (_, __, ___) => const ProducstScreen(),
                         transitionDuration: const Duration(milliseconds: 500),
                         transitionsBuilder: (_, a, __, c) => FadeTransition(
                               opacity: a,

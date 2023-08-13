@@ -54,7 +54,7 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             InkWell(
@@ -77,7 +77,7 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             InkWell(
@@ -100,7 +100,7 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             InkWell(
@@ -161,7 +161,7 @@ class _MyWaiterStatusDialogState extends State<MyWaiterStatusDialog> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             InkWell(
@@ -184,7 +184,7 @@ class _MyWaiterStatusDialogState extends State<MyWaiterStatusDialog> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             InkWell(
@@ -207,7 +207,7 @@ class _MyWaiterStatusDialogState extends State<MyWaiterStatusDialog> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             InkWell(

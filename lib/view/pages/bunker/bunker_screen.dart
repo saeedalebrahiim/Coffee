@@ -1,5 +1,4 @@
 import 'package:coffeeproject/controller/provider/products_state.dart';
-import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/model/models/productcategory_model.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
 import 'package:coffeeproject/view/components/posts/categorypost.dart';
@@ -68,18 +67,18 @@ class _BunkerScreenState extends State<BunkerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         endDrawer: const MyDrawer(),
-        backgroundColor: Color.fromARGB(255, 243, 234, 226),
+        backgroundColor: const Color.fromARGB(255, 243, 234, 226),
         appBar: AppBar(
             elevation: 0,
             centerTitle: true,
             title: Text(
               'Marzocco',
               style: GoogleFonts.dosis(
-                  color: Color.fromARGB(255, 37, 36, 34),
+                  color: const Color.fromARGB(255, 37, 36, 34),
                   fontWeight: FontWeight.bold,
                   fontSize: 30),
             ),
-            backgroundColor: Color.fromARGB(255, 198, 172, 143)),
+            backgroundColor: const Color.fromARGB(255, 198, 172, 143)),
         body: SingleChildScrollView(
           child: Column(
             children: AnimationConfiguration.toStaggeredList(
@@ -91,7 +90,7 @@ class _BunkerScreenState extends State<BunkerScreen> {
                   )),
               children: [
                 Container(
-                  color: Color.fromARGB(255, 198, 172, 143),
+                  color: const Color.fromARGB(255, 198, 172, 143),
                   width: double.infinity,
                   height: 240,
                   child: Padding(

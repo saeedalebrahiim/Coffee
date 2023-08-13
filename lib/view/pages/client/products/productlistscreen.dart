@@ -1,5 +1,4 @@
 import 'package:coffeeproject/controller/provider/products_state.dart';
-import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/model/models/product_model.dart';
 import 'package:coffeeproject/model/models/productcategory_model.dart';
 import 'package:coffeeproject/view/components/forms/my_searchbar.dart';
@@ -221,15 +220,15 @@ class _ProducstScreenState extends State<ProducstScreen> {
           child: Container(
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color.fromARGB(255, 198, 172, 143),
+                color: const Color.fromARGB(255, 198, 172, 143),
                 border: Border.all(
-                    width: 2, color: Color.fromARGB(255, 37, 36, 34))),
+                    width: 2, color: const Color.fromARGB(255, 37, 36, 34))),
             width: 77,
             height: 77,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
+                const Icon(
                   Icons.keyboard_command_key,
                   size: 28,
                   color: Color.fromARGB(255, 37, 36, 34),
@@ -238,7 +237,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
                   'Smart',
                   style: GoogleFonts.dosis(
                     fontSize: 12,
-                    color: Color.fromARGB(255, 37, 36, 34),
+                    color: const Color.fromARGB(255, 37, 36, 34),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -246,7 +245,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
                   'Suggest',
                   style: GoogleFonts.dosis(
                       fontSize: 12,
-                      color: Color.fromARGB(255, 37, 36, 34),
+                      color: const Color.fromARGB(255, 37, 36, 34),
                       fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
@@ -257,11 +256,11 @@ class _ProducstScreenState extends State<ProducstScreen> {
           ),
         ),
         endDrawer: const MyDrawer(),
-        backgroundColor: Color.fromARGB(255, 243, 234, 226),
+        backgroundColor: const Color.fromARGB(255, 243, 234, 226),
         appBar: AppBar(
-          shape: LinearBorder.bottom(side: BorderSide(width: 2)),
+          shape: LinearBorder.bottom(side: const BorderSide(width: 2)),
           actionsIconTheme:
-              IconThemeData(color: Color.fromARGB(255, 37, 36, 34)),
+              const IconThemeData(color: Color.fromARGB(255, 37, 36, 34)),
           elevation: 0,
           centerTitle: true,
           leading: IconButton(
@@ -276,7 +275,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
                             )),
                     (route) => false);
               },
-              icon: FaIcon(
+              icon: const FaIcon(
                 FontAwesomeIcons.cartShopping,
                 color: Color.fromARGB(255, 37, 36, 34),
                 size: 20,
@@ -284,11 +283,11 @@ class _ProducstScreenState extends State<ProducstScreen> {
           title: Text(
             'Marzocco',
             style: GoogleFonts.dosis(
-                color: Color.fromARGB(255, 37, 36, 34),
+                color: const Color.fromARGB(255, 37, 36, 34),
                 fontWeight: FontWeight.bold,
                 fontSize: 25),
           ),
-          backgroundColor: Color.fromARGB(255, 198, 172, 143),
+          backgroundColor: const Color.fromARGB(255, 198, 172, 143),
         ),
         body: SingleChildScrollView(
           child: Column(

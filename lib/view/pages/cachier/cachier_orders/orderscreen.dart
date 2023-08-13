@@ -137,8 +137,9 @@ class OrdersScreen extends StatelessWidget {
                   child: GridView.builder(
                     scrollDirection: Axis.vertical,
                     itemCount: tableList.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3),
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.all(7),

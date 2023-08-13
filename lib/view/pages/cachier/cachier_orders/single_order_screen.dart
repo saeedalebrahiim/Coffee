@@ -83,7 +83,7 @@ class _SingleCachierOrderScreenState extends State<SingleCachierOrderScreen> {
                     width: 300,
                     height: MediaQuery.of(context).size.height,
                     child: ListView.builder(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: 10,
                       itemBuilder: (BuildContext context, int index) => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 7),
@@ -104,7 +104,7 @@ class _SingleCachierOrderScreenState extends State<SingleCachierOrderScreen> {
                                     fontWeight: FontWeight.w500, fontSize: 15),
                               ),
                             ),
-                            trailing: MyWaiterAddToCard()),
+                            trailing: const MyWaiterAddToCard()),
                       ),
                     ),
                   ),

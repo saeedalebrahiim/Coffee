@@ -29,17 +29,17 @@ class _MyAddToCardState extends State<MyAddToCard> {
           },
           child: Container(
             decoration: BoxDecoration(
-              border:
-                  Border.all(color: Color.fromARGB(255, 37, 36, 34), width: 2),
+              border: Border.all(
+                  color: const Color.fromARGB(255, 37, 36, 34), width: 2),
               borderRadius: BorderRadius.circular(50),
-              color: Color.fromARGB(255, 198, 172, 143),
+              color: const Color.fromARGB(255, 198, 172, 143),
             ),
             width: 90,
             height: 28,
             child: Center(
               child: Row(
                 children: [
-                  MyDivider(
+                  const MyDivider(
                       thickness: 0.3,
                       horizontalPadding: 0,
                       dividerColor: Color.fromARGB(255, 37, 36, 34)),
@@ -50,10 +50,10 @@ class _MyAddToCardState extends State<MyAddToCard> {
                       style: GoogleFonts.dosis(
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
-                          color: Color.fromARGB(255, 37, 36, 34)),
+                          color: const Color.fromARGB(255, 37, 36, 34)),
                     ),
                   ),
-                  MyDivider(
+                  const MyDivider(
                       thickness: 0.3,
                       horizontalPadding: 0,
                       dividerColor: Color.fromARGB(255, 37, 36, 34)),
@@ -65,7 +65,7 @@ class _MyAddToCardState extends State<MyAddToCard> {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: Color.fromARGB(255, 198, 172, 143),
+            color: const Color.fromARGB(255, 198, 172, 143),
           ),
           width: 80,
           height: 20,

@@ -26,7 +26,8 @@ class TablesScreen extends StatelessWidget {
         tableNumber: '4',
         statusString: 'Ready',
         statusColor: readyOrderStatusColor),
-    TableModel(tableNumber: '5', statusString: '...', statusColor: Colors.grey),
+    const TableModel(
+        tableNumber: '5', statusString: '...', statusColor: Colors.grey),
     TableModel(
         tableNumber: '6',
         statusString: 'Loding ...',
@@ -35,8 +36,10 @@ class TablesScreen extends StatelessWidget {
         tableNumber: '7',
         statusString: 'Loding ...',
         statusColor: loadingTableColor),
-    TableModel(tableNumber: '8', statusString: '...', statusColor: Colors.grey),
-    TableModel(tableNumber: '9', statusString: '...', statusColor: Colors.grey)
+    const TableModel(
+        tableNumber: '8', statusString: '...', statusColor: Colors.grey),
+    const TableModel(
+        tableNumber: '9', statusString: '...', statusColor: Colors.grey)
   ];
 
   @override

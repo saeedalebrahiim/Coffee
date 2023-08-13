@@ -1,16 +1,11 @@
 import 'package:coffeeproject/controller/provider/products_state.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/model/models/product_model.dart';
 import 'package:coffeeproject/model/models/productcategory_model.dart';
 import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/forms/my_searchbar.dart';
-import 'package:coffeeproject/view/components/my_categorydivider.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
 import 'package:coffeeproject/view/components/posts/categorypost.dart';
-import 'package:coffeeproject/view/components/posts/productpost.dart';
-import 'package:coffeeproject/view/pages/client/shopcards/shopcard_screen.dart';
-import 'package:coffeeproject/view/pages/client/smart_suggestion/smartsuggestion.dart';
 import 'package:coffeeproject/view/pages/waiter/tables/tablesscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -189,7 +184,7 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
                     width: 300,
                     height: MediaQuery.of(context).size.height,
                     child: ListView.builder(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: 10,
                       itemBuilder: (BuildContext context, int index) => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 7),
@@ -210,7 +205,7 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
                                     fontWeight: FontWeight.w500, fontSize: 15),
                               ),
                             ),
-                            trailing: MyWaiterAddToCard()),
+                            trailing: const MyWaiterAddToCard()),
                       ),
                     ),
                   ),

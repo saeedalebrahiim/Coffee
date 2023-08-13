@@ -25,7 +25,7 @@ class MyTablePost extends StatelessWidget {
         onTap: () {
           Navigator.of(context).pushAndRemoveUntil(
               PageRouteBuilder(
-                  pageBuilder: (_, __, ___) => SubOrderScreen(),
+                  pageBuilder: (_, __, ___) => const SubOrderScreen(),
                   transitionDuration: const Duration(milliseconds: 500),
                   transitionsBuilder: (_, a, __, c) => FadeTransition(
                         opacity: a,
@@ -75,7 +75,7 @@ class MyTablePost extends StatelessWidget {
             InkWell(
               onTap: () => showDialog<Dialog>(
                   context: context,
-                  builder: (BuildContext context) => MyWaiterStatusDialog()),
+                  builder: (BuildContext context) => const MyWaiterStatusDialog()),
               child: Container(
                 height: 35,
                 decoration: BoxDecoration(

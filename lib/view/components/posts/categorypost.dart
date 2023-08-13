@@ -23,7 +23,7 @@ class MyCategoryPost extends StatelessWidget {
           border: Border.all(
             width: 2,
             style: BorderStyle.solid,
-            color: Color.fromARGB(255, 37, 36, 34),
+            color: const Color.fromARGB(255, 37, 36, 34),
           )),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -38,7 +38,7 @@ class MyCategoryPost extends StatelessWidget {
                 FaIcon(
                   categoryIcon,
                   size: 40,
-                  color: Color.fromARGB(255, 37, 36, 34),
+                  color: const Color.fromARGB(255, 37, 36, 34),
                 ),
                 const SizedBox(
                   height: 20,
@@ -48,7 +48,7 @@ class MyCategoryPost extends StatelessWidget {
                   style: GoogleFonts.dosis(
                       fontWeight: FontWeight.bold,
                       fontSize: 17,
-                      color: Color.fromARGB(255, 37, 36, 34)),
+                      color: const Color.fromARGB(255, 37, 36, 34)),
                 ),
                 const SizedBox(
                   height: 5,
