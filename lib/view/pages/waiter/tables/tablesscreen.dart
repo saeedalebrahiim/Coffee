@@ -11,45 +11,32 @@ class TablesScreen extends StatelessWidget {
 
   final List<TableModel> tableList = [
     TableModel(
-      tableNumber: '1',
-      tableStatusColor: fullTabaleColor,
-    ),
+        tableNumber: '1',
+        statusString: 'Loding ...',
+        statusColor: loadingTableColor),
     TableModel(
-      tableNumber: '2',
-      tableStatusColor: reserveTableColor,
-    ),
+        tableNumber: '2',
+        statusString: 'Loding ...',
+        statusColor: loadingTableColor),
     TableModel(
-      tableNumber: '3',
-      tableStatusColor: emptyTableColor,
-    ),
+        tableNumber: '3',
+        statusString: 'Loding ...',
+        statusColor: loadingTableColor),
     TableModel(
-      tableNumber: '4',
-      tableStatusColor: emptyTableColor,
-    ),
+        tableNumber: '4',
+        statusString: 'Ready',
+        statusColor: readyOrderStatusColor),
+    TableModel(tableNumber: '5', statusString: '...', statusColor: Colors.grey),
     TableModel(
-      tableNumber: '5',
-      tableStatusColor: emptyTableColor,
-    ),
+        tableNumber: '6',
+        statusString: 'Loding ...',
+        statusColor: loadingTableColor),
     TableModel(
-      tableNumber: '6',
-      tableStatusColor: emptyTableColor,
-    ),
-    TableModel(
-      tableNumber: '7',
-      tableStatusColor: emptyTableColor,
-    ),
-    TableModel(
-      tableNumber: '8',
-      tableStatusColor: emptyTableColor,
-    ),
-    TableModel(
-      tableNumber: '9',
-      tableStatusColor: emptyTableColor,
-    ),
-    TableModel(
-      tableNumber: '10',
-      tableStatusColor: emptyTableColor,
-    ),
+        tableNumber: '7',
+        statusString: 'Loding ...',
+        statusColor: loadingTableColor),
+    TableModel(tableNumber: '8', statusString: '...', statusColor: Colors.grey),
+    TableModel(tableNumber: '9', statusString: '...', statusColor: Colors.grey)
   ];
 
   @override
@@ -95,9 +82,9 @@ class TablesScreen extends StatelessWidget {
                           return Padding(
                             padding: const EdgeInsets.all(10),
                             child: MyTablePost(
+                              statusString: tableList[index].statusString,
+                              statusColor: tableList[index].statusColor,
                               tableNumber: tableList[index].tableNumber,
-                              tableStatusColor:
-                                  tableList[index].tableStatusColor,
                             ),
                           );
                         },

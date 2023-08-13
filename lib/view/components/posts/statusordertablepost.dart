@@ -1,3 +1,4 @@
+import 'package:coffeeproject/view/components/dialogs/status_dialog.dart';
 import 'package:coffeeproject/view/pages/cachier/cachier_orders/single_order_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -48,11 +49,13 @@ class MyStatusTablePost extends StatelessWidget {
               child: Text(
                 tableNumber,
                 style: GoogleFonts.dosis(
-                    fontWeight: FontWeight.bold, fontSize: 25),
+                    fontWeight: FontWeight.bold, fontSize: 35),
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => showDialog<Dialog>(
+                  context: context,
+                  builder: (BuildContext context) => MyStatusDialog()),
               child: Container(
                 height: 30,
                 decoration: BoxDecoration(

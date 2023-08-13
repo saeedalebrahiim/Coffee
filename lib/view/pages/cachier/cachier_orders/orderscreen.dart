@@ -11,7 +11,7 @@ class OrdersScreen extends StatelessWidget {
   final List<OrderStatusModel> tableList = [
     OrderStatusModel(
       tableNumber: '1',
-      statusColor: reserveTableColor,
+      statusColor: loadingTableColor,
       statusString: 'LODING ...',
     ),
     OrderStatusModel(
@@ -21,7 +21,7 @@ class OrdersScreen extends StatelessWidget {
     ),
     OrderStatusModel(
       tableNumber: '3',
-      statusColor: reserveTableColor,
+      statusColor: loadingTableColor,
       statusString: 'LODING ...',
     ),
     OrderStatusModel(
@@ -31,17 +31,17 @@ class OrdersScreen extends StatelessWidget {
     ),
     OrderStatusModel(
       tableNumber: '5',
-      statusColor: reserveTableColor,
+      statusColor: loadingTableColor,
       statusString: 'LODING ...',
     ),
     OrderStatusModel(
       tableNumber: '6',
-      statusColor: reserveTableColor,
+      statusColor: loadingTableColor,
       statusString: 'LODING ...',
     ),
     OrderStatusModel(
       tableNumber: '7',
-      statusColor: reserveTableColor,
+      statusColor: loadingTableColor,
       statusString: 'LODING ...',
     ),
     OrderStatusModel(
@@ -51,7 +51,7 @@ class OrdersScreen extends StatelessWidget {
     ),
     OrderStatusModel(
       tableNumber: '9',
-      statusColor: reserveTableColor,
+      statusColor: emptyTableColor,
       statusString: ' ...',
     ),
     OrderStatusModel(

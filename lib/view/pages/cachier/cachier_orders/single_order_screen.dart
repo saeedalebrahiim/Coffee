@@ -50,44 +50,6 @@ class _SingleCachierOrderScreenState extends State<SingleCachierOrderScreen> {
           ),
           backgroundColor: backgroundColor,
         ),
-        bottomSheet: Container(
-          height: 50,
-          decoration: BoxDecoration(color: backgroundColor),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.of(context).pushAndRemoveUntil(
-                      PageRouteBuilder(
-                          pageBuilder: (_, __, ___) => OrdersScreen(),
-                          transitionDuration: const Duration(milliseconds: 500),
-                          transitionsBuilder: (_, a, __, c) => FadeTransition(
-                                opacity: a,
-                                child: c,
-                              )),
-                      (route) => false);
-                },
-                child: Container(
-                  width: 120,
-                  height: 30,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: secondaryColor),
-                  child: Center(
-                    child: Text(
-                      'COMPLETE',
-                      style: GoogleFonts.dosis(
-                          color: backgroundColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 17),
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
         body: SingleChildScrollView(
           child: Column(
             children: AnimationConfiguration.toStaggeredList(

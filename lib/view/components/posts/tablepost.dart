@@ -1,25 +1,23 @@
+import 'package:coffeeproject/view/components/dialogs/status_dialog.dart';
 import 'package:coffeeproject/view/pages/waiter/sub_order/sub_order_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyTablePost extends StatelessWidget {
   final String tableNumber;
-  final Color tableStatusColor;
+  final String statusString;
+  final Color statusColor;
   const MyTablePost(
-      {super.key, required this.tableNumber, required this.tableStatusColor});
+      {super.key,
+      required this.tableNumber,
+      required this.statusString,
+      required this.statusColor});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(width: 1),
-        boxShadow: [
-          BoxShadow(
-            color: tableStatusColor,
-            blurRadius: 1,
-            spreadRadius: 6,
-          )
-        ],
         borderRadius: BorderRadius.circular(10),
         color: const Color.fromARGB(255, 221, 217, 210),
       ),
@@ -36,9 +34,10 @@ class MyTablePost extends StatelessWidget {
               (route) => false);
         },
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(5.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -63,7 +62,8 @@ class MyTablePost extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 6),
                       child: Text(
                         tableNumber,
-                        style: GoogleFonts.alice(fontSize: 50),
+                        style: GoogleFonts.dosis(
+                            fontSize: 35, fontWeight: FontWeight.w600),
                       ),
                     ),
                   ),
@@ -72,13 +72,26 @@ class MyTablePost extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                children: [
-                  Expanded(
-                      child: Divider(thickness: 0.5, color: Colors.grey[500])),
-                ],
+            InkWell(
+              onTap: () => showDialog<Dialog>(
+                  context: context,
+                  builder: (BuildContext context) => MyWaiterStatusDialog()),
+              child: Container(
+                height: 35,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadiusDirectional.only(
+                      bottomEnd: Radius.circular(10),
+                      bottomStart: Radius.circular(10)),
+                  color: statusColor,
+                ),
+                child: Center(
+                  child: Text(
+                    statusString,
+                    style: GoogleFonts.dosis(
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromARGB(255, 34, 34, 34)),
+                  ),
+                ),
               ),
             ),
           ],
