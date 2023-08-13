@@ -21,7 +21,7 @@ class _SingleCachierOrderScreenState extends State<SingleCachierOrderScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         endDrawer: const MyDrawer(),
-        backgroundColor: backgroundColor,
+        backgroundColor: secondaryColor,
         appBar: AppBar(
           leading: IconButton(
               onPressed: () {
@@ -48,7 +48,7 @@ class _SingleCachierOrderScreenState extends State<SingleCachierOrderScreen> {
                 fontWeight: FontWeight.bold,
                 fontSize: 25),
           ),
-          backgroundColor: backgroundColor,
+          backgroundColor: primaryColor,
         ),
         body: SingleChildScrollView(
           child: Column(

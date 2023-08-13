@@ -33,9 +33,9 @@ class MyProductPost extends StatelessWidget {
         height: 240,
         width: 200,
         decoration: BoxDecoration(
-            color: postColor,
+            color: Colors.white,
             borderRadius: borderRadius,
-            border: Border.all(color: postBorderColor, width: borderWidth)),
+            border: Border.all(color: Colors.black, width: 2)),
         child: SingleChildScrollView(
           physics: const NeverScrollableScrollPhysics(),
           child: Center(

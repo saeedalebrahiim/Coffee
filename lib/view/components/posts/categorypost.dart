@@ -18,10 +18,13 @@ class MyCategoryPost extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(width: 1),
-        borderRadius: BorderRadius.circular(10),
-        color: const Color.fromARGB(255, 221, 217, 210),
-      ),
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
+          border: Border.all(
+            width: 2,
+            style: BorderStyle.solid,
+            color: Color.fromARGB(255, 37, 36, 34),
+          )),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
@@ -35,6 +38,7 @@ class MyCategoryPost extends StatelessWidget {
                 FaIcon(
                   categoryIcon,
                   size: 40,
+                  color: Color.fromARGB(255, 37, 36, 34),
                 ),
                 const SizedBox(
                   height: 20,
@@ -42,7 +46,9 @@ class MyCategoryPost extends StatelessWidget {
                 Text(
                   engName,
                   style: GoogleFonts.dosis(
-                      fontWeight: FontWeight.bold, fontSize: 17),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                      color: Color.fromARGB(255, 37, 36, 34)),
                 ),
                 const SizedBox(
                   height: 5,

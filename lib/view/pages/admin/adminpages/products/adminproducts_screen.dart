@@ -55,9 +55,9 @@ class AdminProductsScreen extends StatelessWidget {
           style: GoogleFonts.dosis(
               color: secondaryColor, fontWeight: FontWeight.bold, fontSize: 25),
         ),
-        backgroundColor: backgroundColor,
+        backgroundColor: primaryColor,
       ),
-      backgroundColor: backgroundColor,
+      backgroundColor: secondaryColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

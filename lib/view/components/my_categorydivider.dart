@@ -19,7 +19,7 @@ class MyCategoryDivider extends StatelessWidget {
             child: Text(
               engName,
               style: GoogleFonts.dosis(
-                  color: secondaryColor,
+                  color: Color.fromARGB(255, 37, 36, 34),
                   fontWeight: FontWeight.bold,
                   fontSize: 16),
             ),
@@ -27,13 +27,13 @@ class MyCategoryDivider extends StatelessWidget {
           MyDivider(
               thickness: 0.5,
               horizontalPadding: 10,
-              dividerColor: secondaryColor),
+              dividerColor: Color.fromARGB(255, 37, 36, 34)),
           Padding(
             padding: const EdgeInsets.only(bottom: 5),
             child: Text(
               engName,
               style: GoogleFonts.dosis(
-                  color: secondaryColor,
+                  color: Color.fromARGB(255, 37, 36, 34),
                   fontWeight: FontWeight.bold,
                   fontSize: 16),
             ),

@@ -35,7 +35,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: secondaryColor,
+      backgroundColor: Color.fromARGB(255, 198, 172, 143),
+      // secondaryColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -56,7 +57,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 Text(
                   'Marzocco',
                   style: GoogleFonts.dosis(
-                      color: primaryColor,
+                      color: Color.fromARGB(255, 21, 97, 109),
+                      // primaryColor,
                       fontWeight: FontWeight.bold,
                       fontSize: 50),
                 ),

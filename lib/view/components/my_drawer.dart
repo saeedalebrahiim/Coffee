@@ -1,5 +1,6 @@
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/pages/admin/adminpages/home/adminhome_screen.dart';
+import 'package:coffeeproject/view/pages/bunker/bunker_screen.dart';
 import 'package:coffeeproject/view/pages/cachier/cachier_orders/orderscreen.dart';
 import 'package:coffeeproject/view/pages/client/products/productlistscreen.dart';
 import 'package:coffeeproject/view/pages/waiter/tables/tablesscreen.dart';
@@ -149,6 +150,34 @@ class _MyDrawerState extends State<MyDrawer> {
                 Navigator.of(context).pushAndRemoveUntil(
                     PageRouteBuilder(
                         pageBuilder: (_, __, ___) => const AdminHomeScreen(),
+                        transitionDuration: const Duration(milliseconds: 500),
+                        transitionsBuilder: (_, a, __, c) => FadeTransition(
+                              opacity: a,
+                              child: c,
+                            )),
+                    (route) => false);
+              },
+            ),
+          ),
+          Center(
+            child: ListTile(
+              leading: Icon(
+                Icons.arrow_left,
+                color: primaryColor,
+                size: 23,
+              ),
+              title: Text(
+                textAlign: TextAlign.end,
+                'BUNKER',
+                style: GoogleFonts.dosis(
+                    color: primaryColor,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600),
+              ),
+              onTap: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ___) => BunkerScreen(),
                         transitionDuration: const Duration(milliseconds: 500),
                         transitionsBuilder: (_, a, __, c) => FadeTransition(
                               opacity: a,

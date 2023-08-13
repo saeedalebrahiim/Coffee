@@ -29,33 +29,34 @@ class _MyAddToCardState extends State<MyAddToCard> {
           },
           child: Container(
             decoration: BoxDecoration(
-              border: Border.all(color: primaryColor),
+              border:
+                  Border.all(color: Color.fromARGB(255, 37, 36, 34), width: 2),
               borderRadius: BorderRadius.circular(50),
-              color: secondaryColor,
+              color: Color.fromARGB(255, 198, 172, 143),
             ),
             width: 90,
-            height: 25,
+            height: 28,
             child: Center(
               child: Row(
                 children: [
                   MyDivider(
                       thickness: 0.3,
                       horizontalPadding: 0,
-                      dividerColor: secondaryColor),
+                      dividerColor: Color.fromARGB(255, 37, 36, 34)),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 9),
                     child: Text(
                       "Order",
                       style: GoogleFonts.dosis(
                           fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: primaryColor),
+                          fontWeight: FontWeight.w600,
+                          color: Color.fromARGB(255, 37, 36, 34)),
                     ),
                   ),
                   MyDivider(
                       thickness: 0.3,
                       horizontalPadding: 0,
-                      dividerColor: secondaryColor),
+                      dividerColor: Color.fromARGB(255, 37, 36, 34)),
                 ],
               ),
             ),
@@ -64,7 +65,7 @@ class _MyAddToCardState extends State<MyAddToCard> {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: secondaryColor,
+            color: Color.fromARGB(255, 198, 172, 143),
           ),
           width: 80,
           height: 20,
@@ -149,7 +150,7 @@ class _MyShopCardAddToCardState extends State<MyShopCardAddToCard> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: backgroundColor,
+          color: blackColor,
         ),
         width: 80,
         height: 20,
@@ -172,16 +173,14 @@ class _MyShopCardAddToCardState extends State<MyShopCardAddToCard> {
                 child: Icon(
                   Icons.add,
                   size: 18,
-                  color: backgroundColor,
+                  color: whiteColor,
                 ),
               ),
             ),
             Text(
               '${count}x',
               style: GoogleFonts.dosis(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  color: secondaryColor),
+                  fontWeight: FontWeight.bold, fontSize: 16, color: whiteColor),
             ),
             InkWell(
               onTap: () {
@@ -203,7 +202,7 @@ class _MyShopCardAddToCardState extends State<MyShopCardAddToCard> {
                     Icon(
                       Icons.minimize,
                       size: 17,
-                      color: backgroundColor,
+                      color: whiteColor,
                     ),
                   ],
                 ),
@@ -252,7 +251,7 @@ class _MyWaiterAddToCardState extends State<MyWaiterAddToCard> {
                 width: 28,
                 height: 28,
                 decoration: BoxDecoration(
-                    color: backgroundColor,
+                    color: blackColor,
                     border: Border.all(color: secondaryColor),
                     borderRadius: BorderRadius.circular(50)),
                 child: Icon(
@@ -265,9 +264,7 @@ class _MyWaiterAddToCardState extends State<MyWaiterAddToCard> {
             Text(
               '${count}x',
               style: GoogleFonts.dosis(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  color: backgroundColor),
+                  fontWeight: FontWeight.bold, fontSize: 16, color: whiteColor),
             ),
             InkWell(
               onTap: () {
@@ -281,7 +278,7 @@ class _MyWaiterAddToCardState extends State<MyWaiterAddToCard> {
                 width: 28,
                 height: 28,
                 decoration: BoxDecoration(
-                    color: backgroundColor,
+                    color: blackColor,
                     border: Border.all(color: secondaryColor),
                     borderRadius: BorderRadius.circular(50)),
                 child: Column(

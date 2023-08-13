@@ -77,7 +77,7 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         endDrawer: const MyDrawer(),
-        backgroundColor: backgroundColor,
+        backgroundColor: secondaryColor,
         appBar: AppBar(
           centerTitle: true,
           title: Text(
@@ -87,11 +87,11 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
                 fontWeight: FontWeight.bold,
                 fontSize: 25),
           ),
-          backgroundColor: backgroundColor,
+          backgroundColor: primaryColor,
         ),
         bottomSheet: Container(
           height: 50,
-          decoration: BoxDecoration(color: backgroundColor),
+          decoration: BoxDecoration(color: primaryColor),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -117,7 +117,7 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
                     child: Text(
                       'SUBMIT',
                       style: GoogleFonts.dosis(
-                          color: backgroundColor,
+                          color: blackColor,
                           fontWeight: FontWeight.w700,
                           fontSize: 17),
                     ),

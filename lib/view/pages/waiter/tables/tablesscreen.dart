@@ -53,9 +53,9 @@ class TablesScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 25),
           ),
-          backgroundColor: backgroundColor,
+          backgroundColor: primaryColor,
         ),
-        backgroundColor: backgroundColor,
+        backgroundColor: secondaryColor,
         body: Center(
           child: SingleChildScrollView(
             child: Column(

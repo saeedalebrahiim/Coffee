@@ -83,7 +83,7 @@ class OrdersScreen extends StatelessWidget {
           style: GoogleFonts.dosis(
               color: secondaryColor, fontWeight: FontWeight.bold, fontSize: 25),
         ),
-        backgroundColor: backgroundColor,
+        backgroundColor: primaryColor,
       ),
       backgroundColor: const Color.fromARGB(255, 34, 34, 34),
       body: SingleChildScrollView(

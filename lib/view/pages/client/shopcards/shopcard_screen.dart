@@ -20,7 +20,7 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         endDrawer: const MyDrawer(),
-        backgroundColor: backgroundColor,
+        backgroundColor: secondaryColor,
         appBar: AppBar(
           centerTitle: true,
           leading: IconButton(
@@ -47,7 +47,7 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                 fontWeight: FontWeight.bold,
                 fontSize: 25),
           ),
-          backgroundColor: backgroundColor,
+          backgroundColor: primaryColor,
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -182,7 +182,7 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                                     child: Text(
                                       'ORDER',
                                       style: GoogleFonts.dosis(
-                                          color: backgroundColor,
+                                          color: blackColor,
                                           fontWeight: FontWeight.w700,
                                           fontSize: 17),
                                     ),

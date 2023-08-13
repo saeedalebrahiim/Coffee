@@ -40,14 +40,14 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
                 width: 130,
                 height: 40,
                 decoration: BoxDecoration(
-                    border: Border.all(color: backgroundColor),
+                    border: Border.all(color: blackColor),
                     borderRadius: BorderRadius.circular(5),
                     color: readyOrderStatusColor),
                 child: Center(
                   child: Text(
                     'READY',
                     style: GoogleFonts.dosis(
-                        color: backgroundColor,
+                        color: blackColor,
                         fontWeight: FontWeight.w700,
                         fontSize: 17),
                   ),
@@ -63,14 +63,14 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
                 width: 130,
                 height: 40,
                 decoration: BoxDecoration(
-                    border: Border.all(color: backgroundColor),
+                    border: Border.all(color: blackColor),
                     borderRadius: BorderRadius.circular(5),
                     color: reserveTabaleColor),
                 child: Center(
                   child: Text(
                     'RESERVE',
                     style: GoogleFonts.dosis(
-                        color: backgroundColor,
+                        color: blackColor,
                         fontWeight: FontWeight.w700,
                         fontSize: 17),
                   ),
@@ -86,14 +86,14 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
                 width: 130,
                 height: 40,
                 decoration: BoxDecoration(
-                    border: Border.all(color: backgroundColor),
+                    border: Border.all(color: blackColor),
                     borderRadius: BorderRadius.circular(5),
                     color: Colors.grey),
                 child: Center(
                   child: Text(
                     'EMPTY',
                     style: GoogleFonts.dosis(
-                        color: backgroundColor,
+                        color: blackColor,
                         fontWeight: FontWeight.w700,
                         fontSize: 17),
                   ),
@@ -111,14 +111,14 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
                 width: 130,
                 height: 40,
                 decoration: BoxDecoration(
-                    border: Border.all(color: backgroundColor),
+                    border: Border.all(color: blackColor),
                     borderRadius: BorderRadius.circular(5),
                     color: Colors.white),
                 child: Center(
                   child: Text(
                     'Back',
                     style: GoogleFonts.dosis(
-                        color: backgroundColor,
+                        color: blackColor,
                         fontWeight: FontWeight.w700,
                         fontSize: 17),
                   ),
@@ -170,14 +170,14 @@ class _MyWaiterStatusDialogState extends State<MyWaiterStatusDialog> {
                 width: 130,
                 height: 40,
                 decoration: BoxDecoration(
-                    border: Border.all(color: backgroundColor),
+                    border: Border.all(color: blackColor),
                     borderRadius: BorderRadius.circular(5),
                     color: reserveTabaleColor),
                 child: Center(
                   child: Text(
                     'RESERVE',
                     style: GoogleFonts.dosis(
-                        color: backgroundColor,
+                        color: blackColor,
                         fontWeight: FontWeight.w700,
                         fontSize: 17),
                   ),
@@ -193,14 +193,14 @@ class _MyWaiterStatusDialogState extends State<MyWaiterStatusDialog> {
                 width: 130,
                 height: 40,
                 decoration: BoxDecoration(
-                    border: Border.all(color: backgroundColor),
+                    border: Border.all(color: blackColor),
                     borderRadius: BorderRadius.circular(5),
                     color: Colors.grey),
                 child: Center(
                   child: Text(
                     'EMPTY',
                     style: GoogleFonts.dosis(
-                        color: backgroundColor,
+                        color: blackColor,
                         fontWeight: FontWeight.w700,
                         fontSize: 17),
                   ),
@@ -218,14 +218,14 @@ class _MyWaiterStatusDialogState extends State<MyWaiterStatusDialog> {
                 width: 130,
                 height: 40,
                 decoration: BoxDecoration(
-                    border: Border.all(color: backgroundColor),
+                    border: Border.all(color: blackColor),
                     borderRadius: BorderRadius.circular(5),
                     color: Colors.white),
                 child: Center(
                   child: Text(
                     'Back',
                     style: GoogleFonts.dosis(
-                        color: backgroundColor,
+                        color: blackColor,
                         fontWeight: FontWeight.w700,
                         fontSize: 17),
                   ),

@@ -172,9 +172,9 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
                 fontWeight: FontWeight.bold,
                 fontSize: 25),
           ),
-          backgroundColor: backgroundColor,
+          backgroundColor: primaryColor,
         ),
-        backgroundColor: backgroundColor,
+        backgroundColor: secondaryColor,
         body: Column(
           children: AnimationConfiguration.toStaggeredList(
             duration: const Duration(milliseconds: 375),

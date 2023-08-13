@@ -221,8 +221,9 @@ class _ProducstScreenState extends State<ProducstScreen> {
           child: Container(
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: backgroundColor,
-                border: Border.all(width: 1, color: secondaryColor)),
+                color: Color.fromARGB(255, 198, 172, 143),
+                border: Border.all(
+                    width: 2, color: Color.fromARGB(255, 37, 36, 34))),
             width: 77,
             height: 77,
             child: Column(
@@ -231,13 +232,13 @@ class _ProducstScreenState extends State<ProducstScreen> {
                 Icon(
                   Icons.keyboard_command_key,
                   size: 28,
-                  color: secondaryColor,
+                  color: Color.fromARGB(255, 37, 36, 34),
                 ),
                 Text(
                   'Smart',
                   style: GoogleFonts.dosis(
                     fontSize: 12,
-                    color: secondaryColor,
+                    color: Color.fromARGB(255, 37, 36, 34),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -245,7 +246,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
                   'Suggest',
                   style: GoogleFonts.dosis(
                       fontSize: 12,
-                      color: secondaryColor,
+                      color: Color.fromARGB(255, 37, 36, 34),
                       fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
@@ -256,8 +257,12 @@ class _ProducstScreenState extends State<ProducstScreen> {
           ),
         ),
         endDrawer: const MyDrawer(),
-        backgroundColor: backgroundColor,
+        backgroundColor: Color.fromARGB(255, 243, 234, 226),
         appBar: AppBar(
+          shape: LinearBorder.bottom(side: BorderSide(width: 2)),
+          actionsIconTheme:
+              IconThemeData(color: Color.fromARGB(255, 37, 36, 34)),
+          elevation: 0,
           centerTitle: true,
           leading: IconButton(
               onPressed: () {
@@ -273,17 +278,17 @@ class _ProducstScreenState extends State<ProducstScreen> {
               },
               icon: FaIcon(
                 FontAwesomeIcons.cartShopping,
-                color: secondaryColor,
+                color: Color.fromARGB(255, 37, 36, 34),
                 size: 20,
               )),
           title: Text(
             'Marzocco',
             style: GoogleFonts.dosis(
-                color: secondaryColor,
+                color: Color.fromARGB(255, 37, 36, 34),
                 fontWeight: FontWeight.bold,
                 fontSize: 25),
           ),
-          backgroundColor: backgroundColor,
+          backgroundColor: Color.fromARGB(255, 198, 172, 143),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -336,6 +341,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
                     faName: ProductsState.ctgNameFa,
                   ),
                 ),
+
                 const SizedBox(
                   height: 8,
                 ),
