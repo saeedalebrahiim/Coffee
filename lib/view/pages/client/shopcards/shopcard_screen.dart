@@ -77,7 +77,7 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                               scrollDirection: Axis.vertical,
                               itemBuilder: (context, index) => Column(
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   Padding(
@@ -100,21 +100,25 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                                             thickness: 0.3,
                                             horizontalPadding: 5,
                                             dividerColor: secondaryColor),
-                                        MyShopCardAddToCard(),
+                                        const MyShopCardAddToCard(),
                                         MyDivider(
                                             thickness: 0.3,
                                             horizontalPadding: 5,
                                             dividerColor: secondaryColor),
-                                        Text(
-                                          '140/000',
-                                          style: GoogleFonts.dosis(
-                                              color: secondaryColor,
-                                              fontSize: 17),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(bottom: 3),
+                                          child: Text(
+                                            '140/000',
+                                            style: GoogleFonts.dosis(
+                                                color: secondaryColor,
+                                                fontSize: 17),
+                                          ),
                                         ),
                                       ],
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   Row(
@@ -130,7 +134,7 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 8,
                         ),
                         Container(
@@ -153,7 +157,7 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                                         fontWeight: FontWeight.w600,
                                         fontSize: 17),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 8,
                                   ),
                                   Text(
@@ -163,7 +167,7 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                                   ),
                                 ],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 30,
                               ),
                               InkWell(

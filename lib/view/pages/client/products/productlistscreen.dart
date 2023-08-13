@@ -210,7 +210,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
           onPressed: () {
             Navigator.of(context).pushAndRemoveUntil(
                 PageRouteBuilder(
-                    pageBuilder: (_, __, ___) => SmartSuggestionScreen(),
+                    pageBuilder: (_, __, ___) => const SmartSuggestionScreen(),
                     transitionDuration: const Duration(milliseconds: 500),
                     transitionsBuilder: (_, a, __, c) => FadeTransition(
                           opacity: a,
@@ -248,7 +248,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
                       color: secondaryColor,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 )
               ],
@@ -263,7 +263,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
               onPressed: () {
                 Navigator.of(context).pushAndRemoveUntil(
                     PageRouteBuilder(
-                        pageBuilder: (_, __, ___) => ShopCardScreen(),
+                        pageBuilder: (_, __, ___) => const ShopCardScreen(),
                         transitionDuration: const Duration(milliseconds: 500),
                         transitionsBuilder: (_, a, __, c) => FadeTransition(
                               opacity: a,

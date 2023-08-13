@@ -22,7 +22,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     await Future.delayed(const Duration(seconds: 5), () {
       Navigator.of(context).pushAndRemoveUntil(
           PageRouteBuilder(
-              pageBuilder: (_, __, ___) => ProducstScreen(),
+              pageBuilder: (_, __, ___) => const ProducstScreen(),
               transitionDuration: const Duration(milliseconds: 500),
               transitionsBuilder: (_, a, __, c) => FadeTransition(
                     opacity: a,
