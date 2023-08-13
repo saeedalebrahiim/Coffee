@@ -1,6 +1,6 @@
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/pages/admin/adminpages/home/adminhome_screen.dart';
-import 'package:coffeeproject/view/pages/waiter/orders/orderscreen.dart';
+import 'package:coffeeproject/view/pages/cachier/cachier_orders/orderscreen.dart';
 import 'package:coffeeproject/view/pages/client/products/productlistscreen.dart';
 import 'package:coffeeproject/view/pages/waiter/tables/tablesscreen.dart';
 import 'package:flutter/material.dart';
@@ -62,11 +62,15 @@ class _MyDrawerState extends State<MyDrawer> {
                     fontWeight: FontWeight.w600),
               ),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ProducstScreen(),
-                    ));
+                Navigator.of(context).pushAndRemoveUntil(
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ___) => const ProducstScreen(),
+                        transitionDuration: const Duration(milliseconds: 500),
+                        transitionsBuilder: (_, a, __, c) => FadeTransition(
+                              opacity: a,
+                              child: c,
+                            )),
+                    (route) => false);
               },
             ),
           ),
@@ -86,11 +90,15 @@ class _MyDrawerState extends State<MyDrawer> {
                     fontWeight: FontWeight.w600),
               ),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => TablesScreen(),
-                    ));
+                Navigator.of(context).pushAndRemoveUntil(
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ___) => TablesScreen(),
+                        transitionDuration: const Duration(milliseconds: 500),
+                        transitionsBuilder: (_, a, __, c) => FadeTransition(
+                              opacity: a,
+                              child: c,
+                            )),
+                    (route) => false);
               },
             ),
           ),
@@ -110,11 +118,15 @@ class _MyDrawerState extends State<MyDrawer> {
                     fontWeight: FontWeight.w600),
               ),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => OrdersScreen(),
-                    ));
+                Navigator.of(context).pushAndRemoveUntil(
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ___) => OrdersScreen(),
+                        transitionDuration: const Duration(milliseconds: 500),
+                        transitionsBuilder: (_, a, __, c) => FadeTransition(
+                              opacity: a,
+                              child: c,
+                            )),
+                    (route) => false);
               },
             ),
           ),
@@ -134,11 +146,15 @@ class _MyDrawerState extends State<MyDrawer> {
                     fontWeight: FontWeight.w600),
               ),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AdminHomeScreen(),
-                    ));
+                Navigator.of(context).pushAndRemoveUntil(
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ___) => const AdminHomeScreen(),
+                        transitionDuration: const Duration(milliseconds: 500),
+                        transitionsBuilder: (_, a, __, c) => FadeTransition(
+                              opacity: a,
+                              child: c,
+                            )),
+                    (route) => false);
               },
             ),
           ),

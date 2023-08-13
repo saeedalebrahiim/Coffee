@@ -1,4 +1,4 @@
-import 'package:coffeeproject/view/pages/waiter/orders/singleorderscreen.dart';
+import 'package:coffeeproject/view/pages/cachier/cachier_orders/single_order_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,11 +28,15 @@ class MyStatusTablePost extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => SingleOrderScreen(),
-              ));
+          Navigator.of(context).pushAndRemoveUntil(
+              PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => const SingleCachierOrderScreen(),
+                  transitionDuration: const Duration(milliseconds: 500),
+                  transitionsBuilder: (_, a, __, c) => FadeTransition(
+                        opacity: a,
+                        child: c,
+                      )),
+              (route) => false);
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

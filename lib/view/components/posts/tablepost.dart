@@ -1,3 +1,4 @@
+import 'package:coffeeproject/view/pages/waiter/sub_order/sub_order_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,7 +25,15 @@ class MyTablePost extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.of(context).pushNamed("productScreen");
+          Navigator.of(context).pushAndRemoveUntil(
+              PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => SubOrderScreen(),
+                  transitionDuration: const Duration(milliseconds: 500),
+                  transitionsBuilder: (_, a, __, c) => FadeTransition(
+                        opacity: a,
+                        child: c,
+                      )),
+              (route) => false);
         },
         child: Column(
           children: [

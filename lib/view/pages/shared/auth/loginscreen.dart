@@ -1,7 +1,6 @@
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/forms/my_button.dart';
 import 'package:coffeeproject/view/components/forms/my_textfield.dart';
-import 'package:coffeeproject/view/pages/waiter/home/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -98,11 +97,11 @@ class LoginScreen extends StatelessWidget {
               MyButton(
                 lable: 'Sign Up',
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ));
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => const HomeScreen(),
+                  //     ));
                 },
                 borderColor: primaryColor,
                 borderRadius: BorderRadius.circular(10),

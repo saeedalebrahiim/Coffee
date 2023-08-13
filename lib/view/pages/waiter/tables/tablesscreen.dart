@@ -3,6 +3,7 @@ import 'package:coffeeproject/model/models/table_model.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
 import 'package:coffeeproject/view/components/posts/tablepost.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TablesScreen extends StatelessWidget {
@@ -54,49 +55,59 @@ class TablesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: const MyDrawer(),
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: Text(
-          'Marzocco',
-          style: GoogleFonts.dosis(
-              color: secondaryColor, fontWeight: FontWeight.bold, fontSize: 25),
+        endDrawer: const MyDrawer(),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          centerTitle: true,
+          title: Text(
+            'Marzocco',
+            style: GoogleFonts.dosis(
+                color: secondaryColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 25),
+          ),
+          backgroundColor: backgroundColor,
         ),
         backgroundColor: backgroundColor,
-      ),
-      backgroundColor: backgroundColor,
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  width: 300,
-                  height: 600,
-                  child: GridView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: tableList.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2),
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: MyTablePost(
-                          tableNumber: tableList[index].tableNumber,
-                          tableStatusColor: tableList[index].tableStatusColor,
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              )
-            ],
+        body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              children: AnimationConfiguration.toStaggeredList(
+                duration: const Duration(milliseconds: 375),
+                childAnimationBuilder: (widget) => SlideAnimation(
+                    horizontalOffset: 50,
+                    child: FadeInAnimation(
+                      child: widget,
+                    )),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: 300,
+                      height: 600,
+                      child: GridView.builder(
+                        scrollDirection: Axis.vertical,
+                        itemCount: tableList.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2),
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: MyTablePost(
+                              tableNumber: tableList[index].tableNumber,
+                              tableStatusColor:
+                                  tableList[index].tableStatusColor,
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
