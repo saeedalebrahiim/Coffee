@@ -218,7 +218,6 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
                             const Color.fromARGB(255, 221, 217, 210),
                         borderRadius: BorderRadius.circular(10),
                         tags: '#Hot drink #Milk #Sweet',
-                        perTitle: 'لـته',
                       ),
                     ),
                   ],

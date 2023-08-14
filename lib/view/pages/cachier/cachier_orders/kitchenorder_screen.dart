@@ -9,64 +9,52 @@ import 'package:google_fonts/google_fonts.dart';
 class OrdersCachierScreen extends StatelessWidget {
   OrdersCachierScreen({super.key});
   final List<OrderStatusModel> tableList = [
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '1',
-      statusColor: loadingTableColor,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '2',
-      statusColor: readyOrderStatusColor,
       statusString: 'READY',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '3',
-      statusColor: loadingTableColor,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '4',
-      statusColor: emptyTableColor,
       statusString: '...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '5',
-      statusColor: loadingTableColor,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '6',
-      statusColor: loadingTableColor,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '7',
-      statusColor: loadingTableColor,
       statusString: 'LODING ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '8',
-      statusColor: emptyTableColor,
       statusString: '...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '9',
-      statusColor: emptyTableColor,
       statusString: ' ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '10',
-      statusColor: emptyTableColor,
       statusString: ' ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '11',
-      statusColor: emptyTableColor,
       statusString: ' ...',
     ),
-    OrderStatusModel(
+    const OrderStatusModel(
       tableNumber: '12',
-      statusColor: emptyTableColor,
       statusString: ' ...',
     ),
   ];
@@ -138,8 +126,13 @@ class OrdersCachierScreen extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.all(7),
                         child: MyStatusTablePost(
+                          statusColor:
+                              tableList[index].statusString == "LOADING ..."
+                                  ? loadingTableColor
+                                  : tableList[index].statusString == "..."
+                                      ? emptyTableColor
+                                      : readyOrderStatusColor,
                           tableNumber: tableList[index].tableNumber,
-                          statusColor: tableList[index].statusColor,
                           statusString: tableList[index].statusString,
                         ),
                       );

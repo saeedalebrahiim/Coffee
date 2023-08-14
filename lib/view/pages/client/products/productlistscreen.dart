@@ -32,8 +32,6 @@ class _ProducstScreenState extends State<ProducstScreen> {
   late List<ProductModel> hotDrinksList = [
     ProductModel(
       mainTitle: 'Espresso',
-      imageWidth: 100,
-      imageHeight: 100,
       borderWidth: 0,
       titleSize: 16,
       stringSize: 14,
@@ -43,11 +41,8 @@ class _ProducstScreenState extends State<ProducstScreen> {
       postBorderColor: const Color.fromARGB(255, 221, 217, 210),
       borderRadius: BorderRadius.circular(10),
       tags: '#tags #tags #tags',
-      perTitle: 'اسپرسو',
     ),
     ProductModel(
-      imageWidth: 100,
-      imageHeight: 100,
       borderWidth: 0,
       titleSize: 16,
       stringSize: 14,
@@ -58,11 +53,8 @@ class _ProducstScreenState extends State<ProducstScreen> {
       postBorderColor: const Color.fromARGB(255, 221, 217, 210),
       borderRadius: BorderRadius.circular(10),
       tags: '#tags #tags #tags',
-      perTitle: 'لـته',
     ),
     ProductModel(
-      imageWidth: 100,
-      imageHeight: 100,
       borderWidth: 0,
       titleSize: 16,
       stringSize: 14,
@@ -73,11 +65,8 @@ class _ProducstScreenState extends State<ProducstScreen> {
       postBorderColor: const Color.fromARGB(255, 221, 217, 210),
       borderRadius: BorderRadius.circular(10),
       tags: '#tags #tags #tags',
-      perTitle: 'لـته',
     ),
     ProductModel(
-      imageWidth: 100,
-      imageHeight: 100,
       borderWidth: 0,
       titleSize: 16,
       stringSize: 14,
@@ -88,13 +77,10 @@ class _ProducstScreenState extends State<ProducstScreen> {
       postBorderColor: const Color.fromARGB(255, 221, 217, 210),
       borderRadius: BorderRadius.circular(10),
       tags: '#tags #tags #tags',
-      perTitle: 'چـایی',
     ),
   ];
   late List<ProductModel> coldDrinks = [
     ProductModel(
-      imageWidth: 100,
-      imageHeight: 100,
       borderWidth: 0,
       titleSize: 16,
       stringSize: 14,
@@ -105,12 +91,9 @@ class _ProducstScreenState extends State<ProducstScreen> {
       postBorderColor: const Color.fromARGB(255, 221, 217, 210),
       borderRadius: BorderRadius.circular(10),
       tags: '#tags #tags #tags',
-      perTitle: 'لـته',
     ),
     ProductModel(
       mainTitle: 'Espresso',
-      imageWidth: 100,
-      imageHeight: 100,
       borderWidth: 0,
       titleSize: 16,
       stringSize: 14,
@@ -120,11 +103,8 @@ class _ProducstScreenState extends State<ProducstScreen> {
       postBorderColor: const Color.fromARGB(255, 221, 217, 210),
       borderRadius: BorderRadius.circular(10),
       tags: '#tags #tags #tags',
-      perTitle: 'اسپرسو',
     ),
     ProductModel(
-      imageWidth: 100,
-      imageHeight: 100,
       borderWidth: 0,
       titleSize: 16,
       stringSize: 14,
@@ -135,11 +115,8 @@ class _ProducstScreenState extends State<ProducstScreen> {
       postBorderColor: const Color.fromARGB(255, 221, 217, 210),
       borderRadius: BorderRadius.circular(10),
       tags: '#tags #tags #tags',
-      perTitle: 'لـته',
     ),
     ProductModel(
-      imageWidth: 100,
-      imageHeight: 100,
       borderWidth: 0,
       titleSize: 16,
       stringSize: 14,
@@ -150,7 +127,6 @@ class _ProducstScreenState extends State<ProducstScreen> {
       postBorderColor: const Color.fromARGB(255, 221, 217, 210),
       borderRadius: BorderRadius.circular(10),
       tags: '#tags #tags #tags',
-      perTitle: 'چـایی',
     ),
   ];
   late List<ProductCategoryModel> categoryList = [
@@ -376,7 +352,6 @@ class _ProducstScreenState extends State<ProducstScreen> {
                             borderRadius:
                                 ProductsState.products[index].borderRadius,
                             tags: ProductsState.products[index].tags,
-                            perTitle: ProductsState.products[index].perTitle,
                           );
                         },
                       ),

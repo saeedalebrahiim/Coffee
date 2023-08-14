@@ -1,5 +1,5 @@
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/model/models/table_model.dart';
+import 'package:coffeeproject/model/models/orderstatus_model.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
 import 'package:coffeeproject/view/components/posts/tablepost.dart';
 import 'package:flutter/material.dart';
@@ -9,37 +9,43 @@ import 'package:google_fonts/google_fonts.dart';
 class TablesScreen extends StatelessWidget {
   TablesScreen({super.key});
 
-  final List<TableModel> tableList = [
-    TableModel(
-        tableNumber: '1',
-        statusString: 'Loding ...',
-        statusColor: loadingTableColor),
-    TableModel(
-        tableNumber: '2',
-        statusString: 'Loding ...',
-        statusColor: loadingTableColor),
-    TableModel(
-        tableNumber: '3',
-        statusString: 'Loding ...',
-        statusColor: loadingTableColor),
-    TableModel(
-        tableNumber: '4',
-        statusString: 'Ready',
-        statusColor: readyOrderStatusColor),
-    const TableModel(
-        tableNumber: '5', statusString: '...', statusColor: Colors.grey),
-    TableModel(
-        tableNumber: '6',
-        statusString: 'Loding ...',
-        statusColor: loadingTableColor),
-    TableModel(
-        tableNumber: '7',
-        statusString: 'Loding ...',
-        statusColor: loadingTableColor),
-    const TableModel(
-        tableNumber: '8', statusString: '...', statusColor: Colors.grey),
-    const TableModel(
-        tableNumber: '9', statusString: '...', statusColor: Colors.grey)
+  final List<OrderStatusModel> tableList = [
+    const OrderStatusModel(
+      tableNumber: '1',
+      statusString: 'Loding ...',
+    ),
+    const OrderStatusModel(
+      tableNumber: '2',
+      statusString: 'Loding ...',
+    ),
+    const OrderStatusModel(
+      tableNumber: '3',
+      statusString: 'Loding ...',
+    ),
+    const OrderStatusModel(
+      tableNumber: '4',
+      statusString: 'Ready',
+    ),
+    const OrderStatusModel(
+      tableNumber: '5',
+      statusString: '...',
+    ),
+    const OrderStatusModel(
+      tableNumber: '6',
+      statusString: 'Loding ...',
+    ),
+    const OrderStatusModel(
+      tableNumber: '7',
+      statusString: 'Loding ...',
+    ),
+    const OrderStatusModel(
+      tableNumber: '8',
+      statusString: '...',
+    ),
+    const OrderStatusModel(
+      tableNumber: '9',
+      statusString: '...',
+    )
   ];
 
   @override
@@ -88,7 +94,12 @@ class TablesScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(10),
                             child: MyTablePost(
                               statusString: tableList[index].statusString,
-                              statusColor: tableList[index].statusColor,
+                              statusColor:
+                                  tableList[index].statusString == "LOADING ..."
+                                      ? loadingTableColor
+                                      : tableList[index].statusString == "..."
+                                          ? emptyTableColor
+                                          : readyOrderStatusColor,
                               tableNumber: tableList[index].tableNumber,
                             ),
                           );

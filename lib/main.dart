@@ -1,22 +1,15 @@
-import 'package:coffeeproject/controller/provider/navigationbarstate.dart';
-import 'package:coffeeproject/controller/provider/products_state.dart';
 import 'package:coffeeproject/initscreen.dart';
+import 'package:coffeeproject/model/db/product_entity.dart';
 import 'package:coffeeproject/routs/routs.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(
-        create: (_) => NavigationState(),
-      ),
-      ChangeNotifierProvider(
-        create: (_) => ProductsState(),
-      ),
-    ],
-    child: const MyApp(),
-  ));
+Future<void> main() async {
+  await Hive.initFlutter("KatteDb");
+  Hive.registerAdapter(ProductEntityAdapter());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {

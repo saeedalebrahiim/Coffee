@@ -3,26 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyProductPost extends StatelessWidget {
-  final double imageWidth, imageHeight, borderWidth, titleSize, stringSize;
-  final String imagePath, mainTitle, stringOne, tags, perTitle;
+  final double? imageWidth, imageHeight, borderWidth, titleSize, stringSize;
+  final String imagePath, mainTitle, stringOne, tags;
 
-  final Color postColor, postBorderColor;
-  final BorderRadius borderRadius;
+  final Color? postColor, postBorderColor;
+  final BorderRadius? borderRadius;
   const MyProductPost({
     super.key,
-    required this.imageWidth,
-    required this.imageHeight,
-    required this.borderWidth,
-    required this.titleSize,
-    required this.stringSize,
+    this.imageWidth,
+    this.imageHeight,
+    this.borderWidth,
+    this.titleSize,
+    this.stringSize,
     required this.imagePath,
     required this.mainTitle,
     required this.stringOne,
-    required this.postColor,
-    required this.postBorderColor,
-    required this.borderRadius,
+    this.postColor,
+    this.postBorderColor,
+    this.borderRadius,
     required this.tags,
-    required this.perTitle,
   });
 
   @override
@@ -34,7 +33,7 @@ class MyProductPost extends StatelessWidget {
         width: 200,
         decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: borderRadius,
+            borderRadius: borderRadius ?? BorderRadius.circular(10),
             border: Border.all(color: Colors.black, width: 2)),
         child: SingleChildScrollView(
           physics: const NeverScrollableScrollPhysics(),
@@ -48,8 +47,8 @@ class MyProductPost extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
                           image: AssetImage(imagePath), fit: BoxFit.cover)),
-                  width: imageWidth,
-                  height: imageHeight,
+                  width: imageWidth ?? 100,
+                  height: imageHeight ?? 100,
                 ),
                 const SizedBox(
                   height: 5,
@@ -62,7 +61,6 @@ class MyProductPost extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-
                 const SizedBox(
                   height: 5,
                 ),
@@ -75,12 +73,6 @@ class MyProductPost extends StatelessWidget {
                   height: 15,
                 ),
                 const MyAddToCard(),
-
-                // Text(
-                //   tags,
-                //   style: GoogleFonts.dosis(
-                //       fontSize: 15, fontWeight: FontWeight.w500),
-                // ),
               ],
             ),
           ),

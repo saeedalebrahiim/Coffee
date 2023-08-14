@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
 class ProductModel {
-  final double imageWidth, imageHeight, borderWidth, titleSize, stringSize;
-  final String imagePath, mainTitle, stringOne, tags, perTitle;
+  final double? imageWidth, imageHeight, borderWidth, titleSize, stringSize;
+  final String imagePath, mainTitle, stringOne, tags;
 
-  final Color postColor, postBorderColor;
-  final BorderRadius borderRadius;
-  ProductModel(
-      {required this.imageWidth,
-      required this.imageHeight,
-      required this.borderWidth,
-      required this.titleSize,
-      required this.stringSize,
-      required this.imagePath,
-      required this.mainTitle,
-      required this.stringOne,
-      required this.postColor,
-      required this.postBorderColor,
-      required this.borderRadius,
-      required this.tags,
-      required this.perTitle});
+  final Color? postColor, postBorderColor;
+  final BorderRadius? borderRadius;
+  ProductModel({
+    this.imageWidth,
+    this.imageHeight,
+    this.borderWidth,
+    this.titleSize,
+    this.stringSize,
+    required this.imagePath,
+    required this.mainTitle,
+    required this.stringOne,
+    this.postColor,
+    this.postBorderColor,
+    this.borderRadius,
+    required this.tags,
+  });
 }

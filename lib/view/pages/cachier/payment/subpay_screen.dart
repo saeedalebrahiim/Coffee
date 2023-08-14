@@ -197,7 +197,7 @@ class _SubPayScreenState extends State<SubPayScreen> {
                                       color: primaryColor),
                                   child: Center(
                                     child: Text(
-                                      'ORDER',
+                                      'PAY',
                                       style: GoogleFonts.dosis(
                                           color: blackColor,
                                           fontWeight: FontWeight.w700,
