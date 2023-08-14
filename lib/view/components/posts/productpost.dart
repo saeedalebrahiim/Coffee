@@ -69,10 +69,10 @@ class MyProductPost extends StatelessWidget {
                 Text(
                   "$stringOne T",
                   style: GoogleFonts.dosis(
-                      fontSize: 15, fontWeight: FontWeight.w500),
+                      fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 const MyAddToCard(),
 

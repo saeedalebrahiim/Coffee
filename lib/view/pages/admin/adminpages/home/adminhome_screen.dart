@@ -1,5 +1,4 @@
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/view/pages/admin/adminpages/products/adminproducts_screen.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
 import 'package:flutter/material.dart';
@@ -13,12 +12,16 @@ class AdminHomeScreen extends StatelessWidget {
     return Scaffold(
       endDrawer: const MyDrawer(),
       appBar: AppBar(
+        iconTheme: IconThemeData(color: blackColor),
+        shape:
+            LinearBorder.bottom(side: BorderSide(color: blackColor, width: 2)),
+        elevation: 0,
         automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(
           'Marzocco',
           style: GoogleFonts.dosis(
-              color: secondaryColor, fontWeight: FontWeight.bold, fontSize: 25),
+              color: blackColor, fontWeight: FontWeight.bold, fontSize: 25),
         ),
         backgroundColor: primaryColor,
       ),
@@ -28,39 +31,21 @@ class AdminHomeScreen extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(
-                height: 20,
+                height: 40,
               ),
               Wrap(
                 spacing: 100,
                 runSpacing: 50,
                 children: [
                   InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const AdminProductsScreen(),
-                          ));
-                    },
+                    onTap: () {},
                     child: Container(
                       width: 200,
                       height: 240,
                       decoration: BoxDecoration(
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Colors.grey,
-                              spreadRadius: 0.1,
-                              blurRadius: 0.1)
-                        ],
-                        borderRadius: BorderRadius.circular(12),
-                        gradient: LinearGradient(
-                            colors: [
-                              secondaryColor,
-                              primaryColor,
-                            ],
-                            begin: Alignment.topRight,
-                            end: Alignment.bottomLeft),
-                      ),
+                          borderRadius: BorderRadius.circular(12),
+                          color: primaryColor,
+                          border: Border.all(color: blackColor, width: 2)),
                       child: Column(
                         children: [
                           const SizedBox(
@@ -94,21 +79,9 @@ class AdminHomeScreen extends StatelessWidget {
                       width: 200,
                       height: 240,
                       decoration: BoxDecoration(
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Colors.grey,
-                              spreadRadius: 0.1,
-                              blurRadius: 0.1)
-                        ],
-                        borderRadius: BorderRadius.circular(12),
-                        gradient: LinearGradient(
-                            colors: [
-                              secondaryColor,
-                              primaryColor,
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight),
-                      ),
+                          borderRadius: BorderRadius.circular(12),
+                          color: primaryColor,
+                          border: Border.all(color: blackColor, width: 2)),
                       child: Column(
                         children: [
                           const SizedBox(
@@ -146,7 +119,7 @@ class AdminHomeScreen extends StatelessWidget {
                     MyDivider(
                         thickness: 0.2,
                         horizontalPadding: 20,
-                        dividerColor: secondaryColor),
+                        dividerColor: blackColor),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8),
                       child: Text(
@@ -154,13 +127,13 @@ class AdminHomeScreen extends StatelessWidget {
                         style: GoogleFonts.dosis(
                             fontWeight: FontWeight.w500,
                             fontSize: 18,
-                            color: secondaryColor),
+                            color: blackColor),
                       ),
                     ),
                     MyDivider(
                         thickness: 0.2,
                         horizontalPadding: 20,
-                        dividerColor: secondaryColor),
+                        dividerColor: blackColor),
                   ],
                 ),
               ),
@@ -174,21 +147,9 @@ class AdminHomeScreen extends StatelessWidget {
                       width: 200,
                       height: 240,
                       decoration: BoxDecoration(
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Colors.grey,
-                              spreadRadius: 0.1,
-                              blurRadius: 0.1)
-                        ],
-                        borderRadius: BorderRadius.circular(12),
-                        gradient: LinearGradient(
-                            colors: [
-                              secondaryColor,
-                              primaryColor,
-                            ],
-                            begin: Alignment.topRight,
-                            end: Alignment.bottomLeft),
-                      ),
+                          borderRadius: BorderRadius.circular(12),
+                          color: primaryColor,
+                          border: Border.all(color: blackColor, width: 2)),
                       child: Column(
                         children: [
                           const SizedBox(
@@ -222,21 +183,9 @@ class AdminHomeScreen extends StatelessWidget {
                       width: 200,
                       height: 240,
                       decoration: BoxDecoration(
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Colors.grey,
-                              spreadRadius: 0.1,
-                              blurRadius: 0.1)
-                        ],
-                        borderRadius: BorderRadius.circular(12),
-                        gradient: LinearGradient(
-                            colors: [
-                              secondaryColor,
-                              primaryColor,
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight),
-                      ),
+                          borderRadius: BorderRadius.circular(12),
+                          color: primaryColor,
+                          border: Border.all(color: blackColor, width: 2)),
                       child: Column(
                         children: [
                           const SizedBox(

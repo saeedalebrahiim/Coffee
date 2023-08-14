@@ -1,5 +1,6 @@
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/dialogs/status_dialog.dart';
+import 'package:coffeeproject/view/components/forms/my_statusbutton.dart';
 import 'package:coffeeproject/view/pages/cachier/cachier_orders/single_order_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -46,28 +47,12 @@ class MyStatusTablePost extends StatelessWidget {
                     fontWeight: FontWeight.bold, fontSize: 35),
               ),
             ),
-            InkWell(
-              onTap: () => showDialog<Dialog>(
-                  context: context,
-                  builder: (BuildContext context) => const MyStatusDialog()),
-              child: Container(
-                height: 30,
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadiusDirectional.only(
-                      bottomEnd: Radius.circular(10),
-                      bottomStart: Radius.circular(10)),
-                  color: statusColor,
-                ),
-                child: Center(
-                  child: Text(
-                    statusString,
-                    style: GoogleFonts.dosis(
-                        fontWeight: FontWeight.bold,
-                        color: const Color.fromARGB(255, 34, 34, 34)),
-                  ),
-                ),
-              ),
-            ),
+            StatusButtonWidget(
+                onTap: () => showDialog<Dialog>(
+                    context: context,
+                    builder: (BuildContext context) => const MyStatusDialog()),
+                statusColor: statusColor,
+                statusString: statusString)
           ],
         ),
       ),

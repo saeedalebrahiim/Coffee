@@ -125,8 +125,9 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
                 },
                 child: Container(
                   width: 120,
-                  height: 30,
+                  height: 33,
                   decoration: BoxDecoration(
+                      border: Border.all(color: blackColor, width: 2),
                       borderRadius: BorderRadius.circular(5),
                       color: secondaryColor),
                   child: Center(

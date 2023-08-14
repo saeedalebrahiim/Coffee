@@ -2,20 +2,21 @@ import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
+import 'package:coffeeproject/view/pages/cachier/cachier_orders/orderscreen.dart';
 import 'package:coffeeproject/view/pages/client/products/productlistscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ShopCardScreen extends StatefulWidget {
-  const ShopCardScreen({super.key});
+class SubPayScreen extends StatefulWidget {
+  const SubPayScreen({super.key});
 
   @override
-  State<ShopCardScreen> createState() => _ShopCardScreenState();
+  State<SubPayScreen> createState() => _SubPayScreenState();
 }
 
-class _ShopCardScreenState extends State<ShopCardScreen> {
+class _SubPayScreenState extends State<SubPayScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +32,7 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
               onPressed: () {
                 Navigator.of(context).pushAndRemoveUntil(
                     PageRouteBuilder(
-                        pageBuilder: (_, __, ___) => const ProducstScreen(),
+                        pageBuilder: (_, __, ___) => OrdersScreen(),
                         transitionDuration: const Duration(milliseconds: 500),
                         transitionsBuilder: (_, a, __, c) => FadeTransition(
                               opacity: a,
@@ -104,7 +105,17 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                                             thickness: 0.3,
                                             horizontalPadding: 5,
                                             dividerColor: blackColor),
-                                        const MyShopCardAddToCard(),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(bottom: 5),
+                                          child: Text(
+                                            '4x',
+                                            style: GoogleFonts.dosis(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18,
+                                                color: blackColor),
+                                          ),
+                                        ),
                                         MyDivider(
                                             thickness: 0.3,
                                             horizontalPadding: 5,

@@ -1,5 +1,7 @@
 import 'package:coffeeproject/model/globals/globals.dart';
+import 'package:coffeeproject/view/pages/cachier/payment/subpay_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //Use this for call dialog on pressed
@@ -97,6 +99,52 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
                         fontWeight: FontWeight.w700,
                         fontSize: 17),
                   ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ___) => const SubPayScreen(),
+                        transitionDuration: const Duration(milliseconds: 500),
+                        transitionsBuilder: (_, a, __, c) => FadeTransition(
+                              opacity: a,
+                              child: c,
+                            )),
+                    (route) => false);
+              },
+              child: Container(
+                width: 180,
+                height: 40,
+                decoration: BoxDecoration(
+                    border: Border.all(color: blackColor),
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.amber),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'PAY',
+                      style: GoogleFonts.dosis(
+                          color: blackColor,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 17),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 4.5),
+                      child: FaIcon(
+                        FontAwesomeIcons.sackDollar,
+                        size: 18,
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),

@@ -29,35 +29,22 @@ class _MyAddToCardState extends State<MyAddToCard> {
           },
           child: Container(
             decoration: BoxDecoration(
-              border: Border.all(
-                  color: const Color.fromARGB(255, 37, 36, 34), width: 2),
+              border: Border.all(color: blackColor, width: 2),
               borderRadius: BorderRadius.circular(50),
-              color: const Color.fromARGB(255, 198, 172, 143),
+              color: primaryColor,
             ),
             width: 90,
             height: 28,
             child: Center(
-              child: Row(
-                children: [
-                  const MyDivider(
-                      thickness: 0.3,
-                      horizontalPadding: 0,
-                      dividerColor: Color.fromARGB(255, 37, 36, 34)),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 9),
-                    child: Text(
-                      "Order",
-                      style: GoogleFonts.dosis(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                          color: const Color.fromARGB(255, 37, 36, 34)),
-                    ),
-                  ),
-                  const MyDivider(
-                      thickness: 0.3,
-                      horizontalPadding: 0,
-                      dividerColor: Color.fromARGB(255, 37, 36, 34)),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 9),
+                child: Text(
+                  "Order",
+                  style: GoogleFonts.dosis(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: const Color.fromARGB(255, 37, 36, 34)),
+                ),
               ),
             ),
           ),
@@ -65,7 +52,7 @@ class _MyAddToCardState extends State<MyAddToCard> {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: const Color.fromARGB(255, 198, 172, 143),
+            color: whiteColor,
           ),
           width: 80,
           height: 20,
@@ -82,13 +69,13 @@ class _MyAddToCardState extends State<MyAddToCard> {
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                      color: primaryColor,
-                      border: Border.all(color: primaryColor),
+                      color: blackColor,
+                      border: Border.all(color: blackColor),
                       borderRadius: BorderRadius.circular(50)),
                   child: Icon(
                     Icons.add,
                     size: 18,
-                    color: secondaryColor,
+                    color: whiteColor,
                   ),
                 ),
               ),
@@ -109,15 +96,15 @@ class _MyAddToCardState extends State<MyAddToCard> {
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                      color: primaryColor,
-                      border: Border.all(color: primaryColor),
+                      color: blackColor,
+                      border: Border.all(color: blackColor),
                       borderRadius: BorderRadius.circular(50)),
                   child: Column(
                     children: [
                       Icon(
                         Icons.minimize,
                         size: 18,
-                        color: secondaryColor,
+                        color: whiteColor,
                       ),
                     ],
                   ),
@@ -150,7 +137,7 @@ class _MyShopCardAddToCardState extends State<MyShopCardAddToCard> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: blackColor,
+          color: whiteColor,
         ),
         width: 80,
         height: 20,
@@ -167,7 +154,7 @@ class _MyShopCardAddToCardState extends State<MyShopCardAddToCard> {
                 width: 28,
                 height: 28,
                 decoration: BoxDecoration(
-                    color: secondaryColor,
+                    color: blackColor,
                     border: Border.all(color: secondaryColor),
                     borderRadius: BorderRadius.circular(50)),
                 child: Icon(
@@ -180,7 +167,7 @@ class _MyShopCardAddToCardState extends State<MyShopCardAddToCard> {
             Text(
               '${count}x',
               style: GoogleFonts.dosis(
-                  fontWeight: FontWeight.bold, fontSize: 16, color: whiteColor),
+                  fontWeight: FontWeight.bold, fontSize: 16, color: blackColor),
             ),
             InkWell(
               onTap: () {
@@ -194,7 +181,7 @@ class _MyShopCardAddToCardState extends State<MyShopCardAddToCard> {
                 width: 28,
                 height: 28,
                 decoration: BoxDecoration(
-                    color: secondaryColor,
+                    color: blackColor,
                     border: Border.all(color: secondaryColor),
                     borderRadius: BorderRadius.circular(50)),
                 child: Column(
