@@ -43,10 +43,17 @@ dependencies:
   chips_choice: ^3.0.0
   lottie: ^2.4.0
   flutter_staggered_animations: ^1.1.1
+  json_annotation: ^4.8.1
+  chopper: ^7.0.4
+  shared_preferences: ^2.2.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  chopper_generator: ^7.0.1
+  json_serializable: ^6.7.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
