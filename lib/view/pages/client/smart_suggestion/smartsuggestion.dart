@@ -112,9 +112,8 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
         endDrawer: const MyDrawer(),
         bottomSheet: Container(
           decoration: BoxDecoration(
-              border: Border.all(
-                  color: const Color.fromARGB(255, 221, 217, 210), width: 0.1),
-              color: const Color.fromARGB(255, 34, 34, 34)),
+              border: Border(top: BorderSide(color: blackColor, width: 2)),
+              color: primaryColor),
           width: double.infinity,
           height: 45,
           child: Row(
@@ -128,15 +127,16 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
                 },
                 child: Container(
                   width: 150,
-                  height: 30,
+                  height: 33,
                   decoration: BoxDecoration(
+                      border: Border.all(color: blackColor, width: 2),
                       borderRadius: BorderRadius.circular(10),
                       color: secondaryColor),
                   child: Center(
                     child: Text(
                       'Suggess',
                       style: GoogleFonts.dosis(
-                          color: primaryColor,
+                          color: blackColor,
                           fontWeight: FontWeight.w700,
                           fontSize: 16),
                     ),
@@ -147,6 +147,10 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
           ),
         ),
         appBar: AppBar(
+          shape: LinearBorder.bottom(
+              side: BorderSide(color: blackColor, width: 2)),
+          elevation: 0,
+          iconTheme: IconThemeData(color: blackColor),
           centerTitle: true,
           leading: IconButton(
               onPressed: () {
@@ -162,15 +166,13 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
               },
               icon: FaIcon(
                 FontAwesomeIcons.arrowLeft,
-                color: secondaryColor,
+                color: blackColor,
                 size: 20,
               )),
           title: Text(
             'Marzocco',
             style: GoogleFonts.dosis(
-                color: secondaryColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 25),
+                color: blackColor, fontWeight: FontWeight.bold, fontSize: 25),
           ),
           backgroundColor: primaryColor,
         ),
@@ -195,7 +197,7 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
                     Text(
                       'Your Suggestion',
                       style: GoogleFonts.dosis(
-                        color: secondaryColor,
+                        color: blackColor,
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
                       ),
@@ -230,7 +232,7 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
                   MyDivider(
                       thickness: 0.3,
                       horizontalPadding: 20,
-                      dividerColor: secondaryColor),
+                      dividerColor: blackColor),
                 ],
               ),
               const SizedBox(
@@ -239,7 +241,7 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
               Text(
                 'Choose your #Favorites flavor buddy',
                 style: GoogleFonts.dosis(
-                  color: secondaryColor,
+                  color: blackColor,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
@@ -259,11 +261,12 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
                 wrapped: true,
                 choiceCheckmark: true,
                 choiceStyle: C2ChipStyle.filled(
+                  color: primaryColor,
                   borderRadius: const BorderRadius.all(
                     Radius.circular(25),
                   ),
                   selectedStyle: C2ChipStyle(
-                    backgroundColor: secondaryColor,
+                    backgroundColor: blackColor,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(25),
                     ),

@@ -1,12 +1,16 @@
+import 'dart:ffi';
+
 import 'package:coffeeproject/controller/provider/products_state.dart';
+import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/model/models/productcategory_model.dart';
+import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
+import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
 import 'package:coffeeproject/view/components/posts/categorypost.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class BunkerScreen extends StatefulWidget {
   const BunkerScreen({super.key});
@@ -18,49 +22,34 @@ class BunkerScreen extends StatefulWidget {
 class _BunkerScreenState extends State<BunkerScreen> {
   late List<ProductCategoryModel> categoryList = [
     ProductCategoryModel(
-      categoryIcon: FontAwesomeIcons.mugHot,
-      engName: 'hot drinks',
+      categoryIcon: FontAwesomeIcons.seedling,
+      engName: 'Vegetables',
       perName: 'نوشیدنی گرم',
-      onTap: () {
-        // context.read<ProductsState>().handleProducts(hotDrinksList);
-        context.read<ProductsState>().enFa("نوشیدنی گرم", "hot drinks");
-      },
+      onTap: () {},
     ),
     ProductCategoryModel(
-      categoryIcon: FontAwesomeIcons.martiniGlassCitrus,
-      engName: 'cold drinks',
+      categoryIcon: FontAwesomeIcons.wineBottle,
+      engName: 'Drinks',
       perName: 'نوشیدنی سرد',
-      onTap: () {
-        // setState(() {
-        //   hotDrinksList = coldDrinks;
-        // });
-        // context.read<ProductsState>().handleProducts(coldDrinks);
-        context.read<ProductsState>().enFa('نوشیدنی سرد', "cold drinks");
-      },
+      onTap: () {},
     ),
     ProductCategoryModel(
-      onTap: () {
-        context.read<ProductsState>().enFa('پیتزا', "pizza");
-      },
-      categoryIcon: FontAwesomeIcons.pizzaSlice,
-      engName: 'pizza',
+      onTap: () {},
+      categoryIcon: FontAwesomeIcons.cow,
+      engName: 'Dairy',
       perName: 'پیتزا',
     ),
     ProductCategoryModel(
-      onTap: () {
-        context.read<ProductsState>().enFa('بستنی', "ice cream");
-      },
-      categoryIcon: FontAwesomeIcons.iceCream,
+      onTap: () {},
+      categoryIcon: FontAwesomeIcons.appleWhole,
       perName: 'بستنی',
-      engName: 'ice cream',
+      engName: 'Fruits',
     ),
     ProductCategoryModel(
-      onTap: () {
-        context.read<ProductsState>().enFa('برگر', "burger");
-      },
-      categoryIcon: FontAwesomeIcons.burger,
+      onTap: () {},
+      categoryIcon: FontAwesomeIcons.bottleDroplet,
       perName: 'برگر',
-      engName: 'burger',
+      engName: 'Syrups',
     )
   ];
   @override
@@ -69,6 +58,11 @@ class _BunkerScreenState extends State<BunkerScreen> {
         endDrawer: const MyDrawer(),
         backgroundColor: const Color.fromARGB(255, 243, 234, 226),
         appBar: AppBar(
+            shape: LinearBorder.bottom(
+                side: BorderSide(color: blackColor, width: 2)),
+            iconTheme: IconThemeData(
+              color: blackColor,
+            ),
             elevation: 0,
             centerTitle: true,
             title: Text(
@@ -89,10 +83,9 @@ class _BunkerScreenState extends State<BunkerScreen> {
                     child: widget,
                   )),
               children: [
-                Container(
-                  color: const Color.fromARGB(255, 198, 172, 143),
+                SizedBox(
                   width: double.infinity,
-                  height: 240,
+                  height: 200,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 35),
@@ -114,6 +107,114 @@ class _BunkerScreenState extends State<BunkerScreen> {
                       },
                       itemCount: categoryList.length,
                       scrollDirection: Axis.horizontal,
+                    ),
+                  ),
+                ),
+                Row(
+                  children: [
+                    MyDivider(
+                        thickness: 0.5,
+                        horizontalPadding: 20,
+                        dividerColor: blackColor),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        'Available',
+                        style: GoogleFonts.dosis(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 19,
+                            color: blackColor),
+                      ),
+                    ),
+                    MyDivider(
+                        thickness: 0.5,
+                        horizontalPadding: 20,
+                        dividerColor: blackColor),
+                  ],
+                ),
+                Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: SizedBox(
+                    width: 300,
+                    height: MediaQuery.of(context).size.height,
+                    child: ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: 10,
+                      itemBuilder: (BuildContext context, int index) => Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 7),
+                        child: ListTile(
+                            leading: Text(
+                              'Milk',
+                              style: GoogleFonts.dosis(
+                                  fontWeight: FontWeight.bold, fontSize: 18),
+                            ),
+                            shape: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            tileColor: whiteColor,
+                            title: Padding(
+                              padding: const EdgeInsets.only(top: 2),
+                              child: Text(
+                                '140/000',
+                                style: GoogleFonts.dosis(
+                                    fontWeight: FontWeight.w500, fontSize: 15),
+                              ),
+                            ),
+                            trailing: const MyWaiterAddToCard()),
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  children: [
+                    MyDivider(
+                        thickness: 0.5,
+                        horizontalPadding: 20,
+                        dividerColor: blackColor),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        'Unavailable',
+                        style: GoogleFonts.dosis(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 19,
+                            color: blackColor),
+                      ),
+                    ),
+                    MyDivider(
+                        thickness: 0.5,
+                        horizontalPadding: 20,
+                        dividerColor: blackColor),
+                  ],
+                ),
+                Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: SizedBox(
+                    width: 300,
+                    height: MediaQuery.of(context).size.height,
+                    child: ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: 10,
+                      itemBuilder: (BuildContext context, int index) => Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 7),
+                        child: ListTile(
+                            leading: Text(
+                              'Milk',
+                              style: GoogleFonts.dosis(
+                                  fontWeight: FontWeight.bold, fontSize: 18),
+                            ),
+                            shape: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            tileColor: whiteColor,
+                            title: Padding(
+                              padding: const EdgeInsets.only(top: 2),
+                              child: Text(
+                                '140/000',
+                                style: GoogleFonts.dosis(
+                                    fontWeight: FontWeight.w500, fontSize: 15),
+                              ),
+                            ),
+                            trailing: const MyWaiterAddToCard()),
+                      ),
                     ),
                   ),
                 ),

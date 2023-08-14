@@ -23,6 +23,10 @@ class _SingleCachierOrderScreenState extends State<SingleCachierOrderScreen> {
         endDrawer: const MyDrawer(),
         backgroundColor: secondaryColor,
         appBar: AppBar(
+          shape: LinearBorder.bottom(
+              side: BorderSide(color: blackColor, width: 2)),
+          iconTheme: IconThemeData(color: blackColor),
+          elevation: 0,
           leading: IconButton(
               onPressed: () {
                 Navigator.of(context).pushAndRemoveUntil(
@@ -37,16 +41,14 @@ class _SingleCachierOrderScreenState extends State<SingleCachierOrderScreen> {
               },
               icon: FaIcon(
                 FontAwesomeIcons.arrowLeft,
-                color: secondaryColor,
+                color: blackColor,
                 size: 20,
               )),
           centerTitle: true,
           title: Text(
             'Marzocco',
             style: GoogleFonts.dosis(
-                color: secondaryColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 25),
+                color: blackColor, fontWeight: FontWeight.bold, fontSize: 25),
           ),
           backgroundColor: primaryColor,
         ),
@@ -95,7 +97,7 @@ class _SingleCachierOrderScreenState extends State<SingleCachierOrderScreen> {
                             ),
                             shape: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10)),
-                            tileColor: secondaryColor,
+                            tileColor: whiteColor,
                             title: Padding(
                               padding: const EdgeInsets.only(top: 2),
                               child: Text(

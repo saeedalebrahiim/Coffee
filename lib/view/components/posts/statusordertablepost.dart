@@ -1,3 +1,4 @@
+import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/dialogs/status_dialog.dart';
 import 'package:coffeeproject/view/pages/cachier/cachier_orders/single_order_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,14 +17,7 @@ class MyStatusTablePost extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(width: 1),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.grey,
-            blurRadius: 1,
-            spreadRadius: 3,
-          )
-        ],
+        border: Border.all(width: 2, color: blackColor),
         borderRadius: BorderRadius.circular(10),
         color: const Color.fromARGB(255, 221, 217, 210),
       ),

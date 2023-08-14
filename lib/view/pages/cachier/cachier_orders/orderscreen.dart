@@ -76,16 +76,20 @@ class OrdersScreen extends StatelessWidget {
     return Scaffold(
       endDrawer: const MyDrawer(),
       appBar: AppBar(
+        shape:
+            LinearBorder.bottom(side: BorderSide(color: blackColor, width: 2)),
+        elevation: 0,
+        iconTheme: IconThemeData(color: blackColor),
         automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(
           'Marzocco',
           style: GoogleFonts.dosis(
-              color: secondaryColor, fontWeight: FontWeight.bold, fontSize: 25),
+              color: blackColor, fontWeight: FontWeight.bold, fontSize: 25),
         ),
         backgroundColor: primaryColor,
       ),
-      backgroundColor: const Color.fromARGB(255, 34, 34, 34),
+      backgroundColor: secondaryColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -94,39 +98,29 @@ class OrdersScreen extends StatelessWidget {
             ),
             Row(
               children: [
-                const MyDivider(
+                MyDivider(
                     thickness: 0.5,
                     horizontalPadding: 12,
-                    dividerColor: Color.fromARGB(255, 221, 217, 210)),
+                    dividerColor: blackColor),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 4),
+                  padding: const EdgeInsets.only(bottom: 10),
                   child: Text(
                     'Orders',
                     style: GoogleFonts.dosis(
-                        color: const Color.fromARGB(255, 221, 217, 210),
-                        fontSize: 18),
+                        color: blackColor,
+                        fontSize: 19,
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
-                const MyDivider(
+                MyDivider(
                     thickness: 0.5,
                     horizontalPadding: 12,
-                    dividerColor: Color.fromARGB(255, 221, 217, 210))
+                    dividerColor: blackColor)
               ],
             ),
             const SizedBox(
               height: 10,
             ),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: MyGridView(
-            //       posts: tableList,
-            //       gridCount: tableList.length,
-            //       gridCrossCount: 3,
-            //       gridViewHeight: 500,
-            //       gridViewWidth: 500,
-            //       padding: EdgeInsets.all(7),
-            //       scrollDirection: Axis.vertical),
-            // ),
             SizedBox(
               width: 800,
               child: Padding(

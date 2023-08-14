@@ -1,3 +1,4 @@
+import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/dialogs/status_dialog.dart';
 import 'package:coffeeproject/view/pages/waiter/sub_order/sub_order_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class MyTablePost extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(width: 1),
+        border: Border.all(width: 2, color: blackColor),
         borderRadius: BorderRadius.circular(10),
         color: const Color.fromARGB(255, 221, 217, 210),
       ),
@@ -75,7 +76,8 @@ class MyTablePost extends StatelessWidget {
             InkWell(
               onTap: () => showDialog<Dialog>(
                   context: context,
-                  builder: (BuildContext context) => const MyWaiterStatusDialog()),
+                  builder: (BuildContext context) =>
+                      const MyWaiterStatusDialog()),
               child: Container(
                 height: 35,
                 decoration: BoxDecoration(

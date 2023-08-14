@@ -234,7 +234,7 @@ class _MyWaiterAddToCardState extends State<MyWaiterAddToCard> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: secondaryColor,
+          color: whiteColor,
         ),
         width: 80,
         height: 20,
@@ -264,7 +264,7 @@ class _MyWaiterAddToCardState extends State<MyWaiterAddToCard> {
             Text(
               '${count}x',
               style: GoogleFonts.dosis(
-                  fontWeight: FontWeight.bold, fontSize: 16, color: whiteColor),
+                  fontWeight: FontWeight.bold, fontSize: 16, color: blackColor),
             ),
             InkWell(
               onTap: () {

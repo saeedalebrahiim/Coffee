@@ -74,19 +74,40 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
         endDrawer: const MyDrawer(),
         backgroundColor: secondaryColor,
         appBar: AppBar(
+          elevation: 0,
+          leading: IconButton(
+            icon: FaIcon(
+              FontAwesomeIcons.arrowLeft,
+              size: 20,
+            ),
+            onPressed: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                  PageRouteBuilder(
+                      pageBuilder: (_, __, ___) => TablesScreen(),
+                      transitionDuration: const Duration(milliseconds: 500),
+                      transitionsBuilder: (_, a, __, c) => FadeTransition(
+                            opacity: a,
+                            child: c,
+                          )),
+                  (route) => false);
+            },
+          ),
+          shape: LinearBorder.bottom(
+              side: BorderSide(color: blackColor, width: 2)),
+          iconTheme: IconThemeData(color: blackColor),
           centerTitle: true,
           title: Text(
             'Marzocco',
             style: GoogleFonts.dosis(
-                color: secondaryColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 25),
+                color: blackColor, fontWeight: FontWeight.bold, fontSize: 25),
           ),
           backgroundColor: primaryColor,
         ),
         bottomSheet: Container(
           height: 50,
-          decoration: BoxDecoration(color: primaryColor),
+          decoration: BoxDecoration(
+              color: primaryColor,
+              border: Border(top: BorderSide(width: 2, color: blackColor))),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -196,7 +217,7 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
                             ),
                             shape: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10)),
-                            tileColor: secondaryColor,
+                            tileColor: whiteColor,
                             title: Padding(
                               padding: const EdgeInsets.only(top: 2),
                               child: Text(

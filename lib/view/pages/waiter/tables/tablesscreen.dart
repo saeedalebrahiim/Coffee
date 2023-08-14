@@ -47,14 +47,16 @@ class TablesScreen extends StatelessWidget {
     return Scaffold(
         endDrawer: const MyDrawer(),
         appBar: AppBar(
+          elevation: 0,
+          shape: LinearBorder.bottom(
+              side: BorderSide(color: blackColor, width: 2)),
+          iconTheme: IconThemeData(color: blackColor),
           automaticallyImplyLeading: false,
           centerTitle: true,
           title: Text(
             'Marzocco',
             style: GoogleFonts.dosis(
-                color: secondaryColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 25),
+                color: blackColor, fontWeight: FontWeight.bold, fontSize: 25),
           ),
           backgroundColor: primaryColor,
         ),

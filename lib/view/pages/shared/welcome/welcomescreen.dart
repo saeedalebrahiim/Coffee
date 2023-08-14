@@ -1,3 +1,4 @@
+import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/pages/client/products/productlistscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,7 +35,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 198, 172, 143),
+      backgroundColor: primaryColor,
       // secondaryColor,
       body: Center(
         child: Column(
@@ -56,7 +57,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 Text(
                   'Marzocco',
                   style: GoogleFonts.dosis(
-                      color: const Color.fromARGB(255, 21, 97, 109),
+                      color: blackColor,
                       // primaryColor,
                       fontWeight: FontWeight.bold,
                       fontSize: 50),

@@ -18,7 +18,7 @@ class _MyDrawerState extends State<MyDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: secondaryColor,
+      backgroundColor: primaryColor,
       width: 240,
       child: ListView(
         children: [
@@ -32,13 +32,13 @@ class _MyDrawerState extends State<MyDrawer> {
                   image: const AssetImage('lib/assets/images/logo.png'),
                   width: 68,
                   height: 68,
-                  color: primaryColor,
+                  color: blackColor,
                 ),
                 Text(
                   'M a r z o o c o',
                   style: GoogleFonts.dosis(
                       fontSize: 33,
-                      color: primaryColor,
+                      color: blackColor,
                       fontWeight: FontWeight.bold),
                 ),
               ],
@@ -51,14 +51,14 @@ class _MyDrawerState extends State<MyDrawer> {
             child: ListTile(
               leading: Icon(
                 Icons.arrow_left,
-                color: primaryColor,
+                color: blackColor,
                 size: 23,
               ),
               title: Text(
                 textAlign: TextAlign.end,
                 'MENU ',
                 style: GoogleFonts.dosis(
-                    color: primaryColor,
+                    color: blackColor,
                     fontSize: 18,
                     fontWeight: FontWeight.w600),
               ),
@@ -79,14 +79,14 @@ class _MyDrawerState extends State<MyDrawer> {
             child: ListTile(
               leading: Icon(
                 Icons.arrow_left,
-                color: primaryColor,
+                color: blackColor,
                 size: 23,
               ),
               title: Text(
                 textAlign: TextAlign.end,
                 'WAITER',
                 style: GoogleFonts.dosis(
-                    color: primaryColor,
+                    color: blackColor,
                     fontSize: 18,
                     fontWeight: FontWeight.w600),
               ),
@@ -107,14 +107,14 @@ class _MyDrawerState extends State<MyDrawer> {
             child: ListTile(
               leading: Icon(
                 Icons.arrow_left,
-                color: primaryColor,
+                color: blackColor,
                 size: 23,
               ),
               title: Text(
                 textAlign: TextAlign.end,
                 'CACHIER',
                 style: GoogleFonts.dosis(
-                    color: primaryColor,
+                    color: blackColor,
                     fontSize: 18,
                     fontWeight: FontWeight.w600),
               ),
@@ -135,14 +135,14 @@ class _MyDrawerState extends State<MyDrawer> {
             child: ListTile(
               leading: Icon(
                 Icons.arrow_left,
-                color: primaryColor,
+                color: blackColor,
                 size: 23,
               ),
               title: Text(
                 textAlign: TextAlign.end,
                 'ADMIN',
                 style: GoogleFonts.dosis(
-                    color: primaryColor,
+                    color: blackColor,
                     fontSize: 18,
                     fontWeight: FontWeight.w600),
               ),
@@ -163,14 +163,14 @@ class _MyDrawerState extends State<MyDrawer> {
             child: ListTile(
               leading: Icon(
                 Icons.arrow_left,
-                color: primaryColor,
+                color: blackColor,
                 size: 23,
               ),
               title: Text(
                 textAlign: TextAlign.end,
                 'BUNKER',
                 style: GoogleFonts.dosis(
-                    color: primaryColor,
+                    color: blackColor,
                     fontSize: 18,
                     fontWeight: FontWeight.w600),
               ),
@@ -190,27 +190,28 @@ class _MyDrawerState extends State<MyDrawer> {
           const SizedBox(
             height: 150,
           ),
-          // Column(
-          //   children: [
-          //     Container(
-          //       decoration: BoxDecoration(
-          //         borderRadius: BorderRadius.circular(5),
-          //         color: primaryColor,
-          //       ),
-          //       child: Padding(
-          //         padding: const EdgeInsets.all(5),
-          //         child: TextButton(
-          //           onPressed: () {},
-          //           child: Text('Log Out',
-          //               style: GoogleFonts.dosis(
-          //                   color: Colors.red,
-          //                   fontSize: 18,
-          //                   fontWeight: FontWeight.bold)),
-          //         ),
-          //       ),
-          //     ),
-          //   ],
-          // )
+          Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(width: 2, color: secondaryColor),
+                  borderRadius: BorderRadius.circular(5),
+                  color: primaryColor,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text('Log Out',
+                        style: GoogleFonts.dosis(
+                            color: Colors.red,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
