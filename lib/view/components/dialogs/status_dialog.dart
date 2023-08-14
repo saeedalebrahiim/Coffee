@@ -134,11 +134,11 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
                           fontWeight: FontWeight.w700,
                           fontSize: 17),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 4.5),
+                    const Padding(
+                      padding: EdgeInsets.only(bottom: 4.5),
                       child: FaIcon(
                         FontAwesomeIcons.sackDollar,
                         size: 18,
@@ -247,6 +247,90 @@ class _MyWaiterStatusDialogState extends State<MyWaiterStatusDialog> {
                 child: Center(
                   child: Text(
                     'EMPTY',
+                    style: GoogleFonts.dosis(
+                        color: blackColor,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 17),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 100,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                width: 130,
+                height: 40,
+                decoration: BoxDecoration(
+                    border: Border.all(color: blackColor),
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.white),
+                child: Center(
+                  child: Text(
+                    'Back',
+                    style: GoogleFonts.dosis(
+                        color: blackColor,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 17),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MyKitchenStatusDialog extends StatefulWidget {
+  const MyKitchenStatusDialog({Key? key}) : super(key: key);
+
+  @override
+  State<MyKitchenStatusDialog> createState() => _MyKitchenStatusDialogState();
+}
+
+class _MyKitchenStatusDialogState extends State<MyKitchenStatusDialog> {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      elevation: 1,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      child: Container(
+        width: 300,
+        height: MediaQuery.of(context).size.height - 300,
+        decoration: BoxDecoration(
+            color: secondaryColor,
+            borderRadius: BorderRadius.circular(15.0),
+            boxShadow: [
+              BoxShadow(
+                  offset: const Offset(12, 26),
+                  blurRadius: 50,
+                  spreadRadius: 0,
+                  color: Colors.grey.withOpacity(.1)),
+            ]),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 30,
+            ),
+            InkWell(
+              onTap: () {},
+              child: Container(
+                width: 130,
+                height: 40,
+                decoration: BoxDecoration(
+                    border: Border.all(color: blackColor),
+                    borderRadius: BorderRadius.circular(5),
+                    color: readyOrderStatusColor),
+                child: Center(
+                  child: Text(
+                    'READY',
                     style: GoogleFonts.dosis(
                         color: blackColor,
                         fontWeight: FontWeight.w700,

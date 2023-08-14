@@ -6,8 +6,8 @@ import 'package:coffeeproject/view/components/posts/statusordertablepost.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class OrdersScreen extends StatelessWidget {
-  OrdersScreen({super.key});
+class OrdersCachierScreen extends StatelessWidget {
+  OrdersCachierScreen({super.key});
   final List<OrderStatusModel> tableList = [
     OrderStatusModel(
       tableNumber: '1',

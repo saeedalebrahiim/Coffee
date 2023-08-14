@@ -1,9 +1,7 @@
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
-import 'package:coffeeproject/view/pages/cachier/cachier_orders/orderscreen.dart';
-import 'package:coffeeproject/view/pages/client/products/productlistscreen.dart';
+import 'package:coffeeproject/view/pages/cachier/cachier_orders/kitchenorder_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -32,7 +30,7 @@ class _SubPayScreenState extends State<SubPayScreen> {
               onPressed: () {
                 Navigator.of(context).pushAndRemoveUntil(
                     PageRouteBuilder(
-                        pageBuilder: (_, __, ___) => OrdersScreen(),
+                        pageBuilder: (_, __, ___) => OrdersCachierScreen(),
                         transitionDuration: const Duration(milliseconds: 500),
                         transitionsBuilder: (_, a, __, c) => FadeTransition(
                               opacity: a,

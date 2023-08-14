@@ -1,5 +1,4 @@
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

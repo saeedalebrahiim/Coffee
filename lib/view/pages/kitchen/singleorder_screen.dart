@@ -1,22 +1,21 @@
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
-import 'package:coffeeproject/view/pages/cachier/cachier_orders/orderscreen.dart';
+import 'package:coffeeproject/view/pages/kitchen/kitchenorder_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SingleCachierOrderScreen extends StatefulWidget {
-  const SingleCachierOrderScreen({super.key});
+class SingleKitchenOrderScreen extends StatefulWidget {
+  const SingleKitchenOrderScreen({super.key});
 
   @override
-  State<SingleCachierOrderScreen> createState() =>
-      _SingleCachierOrderScreenState();
+  State<SingleKitchenOrderScreen> createState() =>
+      _SingleKitchenOrderScreenState();
 }
 
-class _SingleCachierOrderScreenState extends State<SingleCachierOrderScreen> {
+class _SingleKitchenOrderScreenState extends State<SingleKitchenOrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +30,7 @@ class _SingleCachierOrderScreenState extends State<SingleCachierOrderScreen> {
               onPressed: () {
                 Navigator.of(context).pushAndRemoveUntil(
                     PageRouteBuilder(
-                        pageBuilder: (_, __, ___) => OrdersScreen(),
+                        pageBuilder: (_, __, ___) => OrdersKitchenScreen(),
                         transitionDuration: const Duration(milliseconds: 500),
                         transitionsBuilder: (_, a, __, c) => FadeTransition(
                               opacity: a,
@@ -90,23 +89,22 @@ class _SingleCachierOrderScreenState extends State<SingleCachierOrderScreen> {
                       itemBuilder: (BuildContext context, int index) => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 7),
                         child: ListTile(
-                            leading: Text(
-                              'Latte',
-                              style: GoogleFonts.dosis(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
-                            ),
-                            shape: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            tileColor: whiteColor,
-                            title: Padding(
-                              padding: const EdgeInsets.only(top: 2),
-                              child: Text(
-                                '140/000',
-                                style: GoogleFonts.dosis(
-                                    fontWeight: FontWeight.w500, fontSize: 15),
-                              ),
-                            ),
-                            trailing: const MyWaiterAddToCard()),
+                          leading: Text(
+                            'Latte',
+                            style: GoogleFonts.dosis(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          shape: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          tileColor: whiteColor,
+                          trailing: Text(
+                            '4x',
+                            style: GoogleFonts.dosis(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: blackColor),
+                          ),
+                        ),
                       ),
                     ),
                   ),

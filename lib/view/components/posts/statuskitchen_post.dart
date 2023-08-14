@@ -1,14 +1,14 @@
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/dialogs/status_dialog.dart';
 import 'package:coffeeproject/view/components/forms/my_statusbutton.dart';
-import 'package:coffeeproject/view/pages/cachier/cachier_orders/singleorder_screen.dart';
+import 'package:coffeeproject/view/pages/kitchen/singleorder_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MyStatusTablePost extends StatelessWidget {
+class MyStatusKitchenTablePost extends StatelessWidget {
   final String tableNumber, statusString;
   final Color statusColor;
-  const MyStatusTablePost(
+  const MyStatusKitchenTablePost(
       {super.key,
       required this.tableNumber,
       required this.statusColor,
@@ -26,7 +26,7 @@ class MyStatusTablePost extends StatelessWidget {
         onTap: () {
           Navigator.of(context).pushAndRemoveUntil(
               PageRouteBuilder(
-                  pageBuilder: (_, __, ___) => const SingleOrderScreen(),
+                  pageBuilder: (_, __, ___) => const SingleKitchenOrderScreen(),
                   transitionDuration: const Duration(milliseconds: 500),
                   transitionsBuilder: (_, a, __, c) => FadeTransition(
                         opacity: a,
@@ -50,7 +50,8 @@ class MyStatusTablePost extends StatelessWidget {
             StatusButtonWidget(
                 onTap: () => showDialog<Dialog>(
                     context: context,
-                    builder: (BuildContext context) => const MyStatusDialog()),
+                    builder: (BuildContext context) =>
+                        const MyKitchenStatusDialog()),
                 statusColor: statusColor,
                 statusString: statusString)
           ],

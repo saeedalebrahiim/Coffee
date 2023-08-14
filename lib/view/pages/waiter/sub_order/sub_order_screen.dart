@@ -76,7 +76,7 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
         appBar: AppBar(
           elevation: 0,
           leading: IconButton(
-            icon: FaIcon(
+            icon: const FaIcon(
               FontAwesomeIcons.arrowLeft,
               size: 20,
             ),

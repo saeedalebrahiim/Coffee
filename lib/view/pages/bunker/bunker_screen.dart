@@ -1,6 +1,3 @@
-import 'dart:ffi';
-
-import 'package:coffeeproject/controller/provider/products_state.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/model/models/productcategory_model.dart';
 import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
