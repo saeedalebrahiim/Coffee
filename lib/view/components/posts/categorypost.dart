@@ -5,12 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 class MyCategoryPost extends StatelessWidget {
   final Function()? onTap;
   final IconData categoryIcon;
-  final String engName, perName;
+  final String engName;
   const MyCategoryPost({
     super.key,
     required this.categoryIcon,
     required this.engName,
-    required this.perName,
     this.onTap,
   });
 

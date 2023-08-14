@@ -133,7 +133,6 @@ class _ProducstScreenState extends State<ProducstScreen> {
     ProductCategoryModel(
       categoryIcon: FontAwesomeIcons.mugHot,
       engName: 'hot drinks',
-      perName: 'نوشیدنی گرم',
       onTap: () {
         context.read<ProductsState>().handleProducts(hotDrinksList);
         context.read<ProductsState>().enFa("نوشیدنی گرم", "hot drinks");
@@ -142,7 +141,6 @@ class _ProducstScreenState extends State<ProducstScreen> {
     ProductCategoryModel(
       categoryIcon: FontAwesomeIcons.martiniGlassCitrus,
       engName: 'cold drinks',
-      perName: 'نوشیدنی سرد',
       onTap: () {
         // setState(() {
         //   hotDrinksList = coldDrinks;
@@ -157,14 +155,12 @@ class _ProducstScreenState extends State<ProducstScreen> {
       },
       categoryIcon: FontAwesomeIcons.pizzaSlice,
       engName: 'pizza',
-      perName: 'پیتزا',
     ),
     ProductCategoryModel(
       onTap: () {
         context.read<ProductsState>().enFa('بستنی', "ice cream");
       },
       categoryIcon: FontAwesomeIcons.iceCream,
-      perName: 'بستنی',
       engName: 'ice cream',
     ),
     ProductCategoryModel(
@@ -172,7 +168,6 @@ class _ProducstScreenState extends State<ProducstScreen> {
         context.read<ProductsState>().enFa('برگر', "burger");
       },
       categoryIcon: FontAwesomeIcons.burger,
-      perName: 'برگر',
       engName: 'burger',
     )
   ];
@@ -296,7 +291,6 @@ class _ProducstScreenState extends State<ProducstScreen> {
                             child: MyCategoryPost(
                               categoryIcon: categoryList[index].categoryIcon,
                               engName: categoryList[index].engName,
-                              perName: categoryList[index].perName,
                               onTap: categoryList[index].onTap,
                             ),
                           ),

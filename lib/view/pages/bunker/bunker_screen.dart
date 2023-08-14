@@ -21,31 +21,26 @@ class _BunkerScreenState extends State<BunkerScreen> {
     ProductCategoryModel(
       categoryIcon: FontAwesomeIcons.seedling,
       engName: 'Vegetables',
-      perName: 'نوشیدنی گرم',
       onTap: () {},
     ),
     ProductCategoryModel(
       categoryIcon: FontAwesomeIcons.wineBottle,
       engName: 'Drinks',
-      perName: 'نوشیدنی سرد',
       onTap: () {},
     ),
     ProductCategoryModel(
       onTap: () {},
       categoryIcon: FontAwesomeIcons.cow,
       engName: 'Dairy',
-      perName: 'پیتزا',
     ),
     ProductCategoryModel(
       onTap: () {},
       categoryIcon: FontAwesomeIcons.appleWhole,
-      perName: 'بستنی',
       engName: 'Fruits',
     ),
     ProductCategoryModel(
       onTap: () {},
       categoryIcon: FontAwesomeIcons.bottleDroplet,
-      perName: 'برگر',
       engName: 'Syrups',
     )
   ];
@@ -96,7 +91,6 @@ class _BunkerScreenState extends State<BunkerScreen> {
                             child: MyCategoryPost(
                               categoryIcon: categoryList[index].categoryIcon,
                               engName: categoryList[index].engName,
-                              perName: categoryList[index].perName,
                               onTap: categoryList[index].onTap,
                             ),
                           ),
