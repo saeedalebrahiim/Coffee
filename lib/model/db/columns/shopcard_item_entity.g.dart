@@ -1,38 +1,41 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'productcategory_entity.dart';
+part of 'shopcard_item_entity.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ProductEntityAdapter extends TypeAdapter<ProductCategoryEntity> {
+class ShopCardItemEntityAdapter extends TypeAdapter<ShopCardItemEntity> {
   @override
-  final int typeId = 0;
+  final int typeId = 3;
 
   @override
-  ProductCategoryEntity read(BinaryReader reader) {
+  ShopCardItemEntity read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return ProductCategoryEntity(
-      fields[1] as dynamic Function()?,
+    return ShopCardItemEntity(
       fields[0] as String,
-      fields[2] as IconData,
+      fields[1] as int,
+      fields[2] as int,
+      fields[3] as int,
     );
   }
 
   @override
-  void write(BinaryWriter writer, ProductCategoryEntity obj) {
+  void write(BinaryWriter writer, ShopCardItemEntity obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
-      ..write(obj.engName)
+      ..write(obj.totalPrice)
       ..writeByte(1)
-      ..write(obj.onTap)
+      ..write(obj.count)
       ..writeByte(2)
-      ..write(obj.categoryIcon);
+      ..write(obj.shopCardId)
+      ..writeByte(3)
+      ..write(obj.productId);
   }
 
   @override
@@ -41,7 +44,7 @@ class ProductEntityAdapter extends TypeAdapter<ProductCategoryEntity> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ProductEntityAdapter &&
+      other is ShopCardItemEntityAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

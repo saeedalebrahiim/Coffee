@@ -36,26 +36,6 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            InkWell(
-              onTap: () {},
-              child: Container(
-                width: 130,
-                height: 40,
-                decoration: BoxDecoration(
-                    border: Border.all(color: blackColor),
-                    borderRadius: BorderRadius.circular(5),
-                    color: readyOrderStatusColor),
-                child: Center(
-                  child: Text(
-                    'READY',
-                    style: GoogleFonts.dosis(
-                        color: blackColor,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 17),
-                  ),
-                ),
-              ),
-            ),
             const SizedBox(
               height: 30,
             ),
@@ -81,26 +61,6 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
             ),
             const SizedBox(
               height: 30,
-            ),
-            InkWell(
-              onTap: () {},
-              child: Container(
-                width: 130,
-                height: 40,
-                decoration: BoxDecoration(
-                    border: Border.all(color: blackColor),
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.grey),
-                child: Center(
-                  child: Text(
-                    'EMPTY',
-                    style: GoogleFonts.dosis(
-                        color: blackColor,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 17),
-                  ),
-                ),
-              ),
             ),
             const SizedBox(
               height: 30,

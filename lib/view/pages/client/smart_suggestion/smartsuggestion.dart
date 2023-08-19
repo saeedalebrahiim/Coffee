@@ -1,7 +1,6 @@
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
-import 'package:coffeeproject/view/components/posts/productpost.dart';
 import 'package:coffeeproject/view/pages/client/products/productlistscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -202,24 +201,24 @@ class _SmartSuggestionScreenState extends State<SmartSuggestionScreen> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: MyProductPost(
-                        imageWidth: 100,
-                        imageHeight: 100,
-                        borderWidth: 0,
-                        titleSize: 16,
-                        stringSize: 14,
-                        imagePath: 'lib/assets/images/11.png',
-                        mainTitle: 'Latte',
-                        stringOne: '70/000',
-                        postColor: const Color.fromARGB(255, 221, 217, 210),
-                        postBorderColor:
-                            const Color.fromARGB(255, 221, 217, 210),
-                        borderRadius: BorderRadius.circular(10),
-                        tags: '#Hot drink #Milk #Sweet',
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.all(10.0),
+                    //   child: MyProductPost(
+                    //     imageWidth: 100,
+                    //     imageHeight: 100,
+                    //     borderWidth: 0,
+                    //     titleSize: 16,
+                    //     stringSize: 14,
+                    //     imagePath: 'lib/assets/images/11.png',
+                    //     mainTitle: 'Latte',
+                    //     stringOne: '70/000',
+                    //     postColor: const Color.fromARGB(255, 221, 217, 210),
+                    //     postBorderColor:
+                    //         const Color.fromARGB(255, 221, 217, 210),
+                    //     borderRadius: BorderRadius.circular(10),
+                    //     tags: '#Hot drink #Milk #Sweet',
+                    //   ),
+                    // ),
                   ],
                 ),
               ),

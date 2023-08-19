@@ -1,4 +1,4 @@
-import 'package:coffeeproject/model/db/product_entity.dart';
+import 'package:coffeeproject/model/db/columns/product_entity.dart';
 import 'package:hive/hive.dart';
 
 class MyProductBox {

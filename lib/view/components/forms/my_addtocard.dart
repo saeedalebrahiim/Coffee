@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyAddToCard extends StatefulWidget {
+  final Function()? onPressed;
   const MyAddToCard({
     super.key,
+    this.onPressed,
   });
 
   @override
@@ -21,10 +23,8 @@ class _MyAddToCardState extends State<MyAddToCard> {
       child: Visibility(
         visible: count > 0,
         replacement: RawMaterialButton(
-          onPressed: () {
-            setState(() {
-              count++;
-            });
+          onPressed: () async {
+            widget.onPressed;
           },
           child: Container(
             decoration: BoxDecoration(

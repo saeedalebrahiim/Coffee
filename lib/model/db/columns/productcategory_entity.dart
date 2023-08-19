@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 part 'productcategory_entity.g.dart';
 
-@HiveType(typeId: 0)
+@HiveType(typeId: 1)
 class ProductCategoryEntity {
   @HiveField(0)
   final String engName;
-
   @HiveField(1)
   final Function()? onTap;
   @HiveField(2)

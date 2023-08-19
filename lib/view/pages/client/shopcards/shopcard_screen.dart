@@ -1,12 +1,15 @@
+import 'package:coffeeproject/model/db/box/shopcardbox.dart';
+import 'package:coffeeproject/model/db/columns/shopcard_entity.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
-import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
+import 'package:coffeeproject/view/components/posts/productpost.dart';
 import 'package:coffeeproject/view/pages/client/products/productlistscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_listener/hive_listener.dart';
 
 class ShopCardScreen extends StatefulWidget {
   const ShopCardScreen({super.key});
@@ -16,6 +19,20 @@ class ShopCardScreen extends StatefulWidget {
 }
 
 class _ShopCardScreenState extends State<ShopCardScreen> {
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
+
+  List<ShopCardEntity> shopCardItems = [];
+
+  getData() async {
+    MyShopCardBox.shopCardBox = await Hive.openBox("shopCardBox");
+    shopCardItems = MyShopCardBox.shopCardBox.values.toList();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,76 +83,37 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                   child: Center(
                     child: Column(
                       children: [
-                        Container(
-                          width: 350,
-                          height: 350,
-                          decoration: BoxDecoration(
-                              color: whiteColor,
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: blackColor, width: 2)),
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 5),
-                            child: ListView.builder(
-                              itemCount: 10,
-                              scrollDirection: Axis.vertical,
-                              itemBuilder: (context, index) => Column(
-                                children: [
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10),
-                                    child: Row(
-                                      textDirection: TextDirection.ltr,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(bottom: 5),
-                                          child: Text(
-                                            'Espresso',
-                                            style: GoogleFonts.dosis(
-                                                fontWeight: FontWeight.w500,
-                                                color: blackColor,
-                                                fontSize: 18),
-                                          ),
-                                        ),
-                                        MyDivider(
-                                            thickness: 0.3,
-                                            horizontalPadding: 5,
-                                            dividerColor: blackColor),
-                                        const MyShopCardAddToCard(),
-                                        MyDivider(
-                                            thickness: 0.3,
-                                            horizontalPadding: 5,
-                                            dividerColor: blackColor),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(bottom: 3),
-                                          child: Text(
-                                            '140/000',
-                                            style: GoogleFonts.dosis(
-                                                color: blackColor,
-                                                fontSize: 17,
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  Row(
-                                    children: [
-                                      MyDivider(
-                                          thickness: 0.4,
-                                          horizontalPadding: 20,
-                                          dividerColor: secondaryColor),
-                                    ],
-                                  )
-                                ],
-                              ),
+                        HiveListener<dynamic>(
+                          box: MyShopCardBox.shopCardBox,
+                          builder: (box) => Container(
+                            width: 350,
+                            height: 350,
+                            decoration: BoxDecoration(
+                                color: whiteColor,
+                                borderRadius: BorderRadius.circular(12),
+                                border:
+                                    Border.all(color: blackColor, width: 2)),
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 5),
+                              child: ListView.builder(
+                                  itemCount:
+                                      MyShopCardBox.shopCardBox.values.length,
+                                  scrollDirection: Axis.vertical,
+                                  itemBuilder: (context, index) {
+                                    return MyProductPost(
+                                      imagePath:
+                                          box.values.toList()[index].imagePath,
+                                      mainTitle:
+                                          box.values.toList()[index].mainTitle,
+                                      stringOne:
+                                          box.values.toList()[index].stringOne,
+                                      tags: box.values.toList()[index].tags,
+                                      product:
+                                          box.values.toList()[index].product,
+                                      productId:
+                                          box.values.toList()[index].productId,
+                                    );
+                                  }),
                             ),
                           ),
                         ),

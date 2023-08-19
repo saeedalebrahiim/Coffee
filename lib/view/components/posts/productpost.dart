@@ -1,10 +1,16 @@
+import 'package:coffeeproject/model/db/box/shopcardbox.dart';
+import 'package:coffeeproject/model/db/columns/shopcard_entity.dart';
+import 'package:coffeeproject/model/models/product_model.dart';
 import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-class MyProductPost extends StatelessWidget {
+class MyProductPost extends StatefulWidget {
   final double? imageWidth, imageHeight, borderWidth, titleSize, stringSize;
   final String imagePath, mainTitle, stringOne, tags;
+  final ProductModel product;
+  final Function()? onPressed;
 
   final Color? postColor, postBorderColor;
   final BorderRadius? borderRadius;
@@ -22,8 +28,17 @@ class MyProductPost extends StatelessWidget {
     this.postBorderColor,
     this.borderRadius,
     required this.tags,
+    required this.product,
+    this.onPressed,
+    required this.productId,
   });
+  final String productId;
 
+  @override
+  State<MyProductPost> createState() => _MyProductPostState();
+}
+
+class _MyProductPostState extends State<MyProductPost> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -33,7 +48,7 @@ class MyProductPost extends StatelessWidget {
         width: 200,
         decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: borderRadius ?? BorderRadius.circular(10),
+            borderRadius: widget.borderRadius ?? BorderRadius.circular(10),
             border: Border.all(color: Colors.black, width: 2)),
         child: SingleChildScrollView(
           physics: const NeverScrollableScrollPhysics(),
@@ -46,14 +61,15 @@ class MyProductPost extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
-                          image: AssetImage(imagePath), fit: BoxFit.cover)),
-                  width: imageWidth ?? 100,
-                  height: imageHeight ?? 100,
+                          image: AssetImage(widget.product.imagePath),
+                          fit: BoxFit.cover)),
+                  width: widget.imageWidth ?? 100,
+                  height: widget.imageHeight ?? 100,
                 ),
                 const SizedBox(
                   height: 5,
                 ),
-                Text(mainTitle,
+                Text(widget.product.mainTitle,
                     style: GoogleFonts.dosis(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -65,14 +81,32 @@ class MyProductPost extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  "$stringOne T",
+                  "${widget.product.stringOne} T",
                   style: GoogleFonts.dosis(
                       fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 const SizedBox(
                   height: 15,
                 ),
-                const MyAddToCard(),
+                MyAddToCard(
+                  onPressed: () async {
+                    widget.onPressed;
+                    MyShopCardBox.shopCardBox = await Hive.openBox("CafeDb");
+                    ShopCardEntity myItem = MyShopCardBox.shopCardBox.values
+                        .firstWhere(
+                            (element) => element.tableId == widget.productId);
+                    int index = MyShopCardBox.shopCardBox.values
+                        .toList()
+                        .indexOf(myItem);
+                    int count = myItem.count + 1;
+                    MyShopCardBox.shopCardBox.putAt(
+                        index,
+                        ShopCardEntity(
+                            count: myItem.count,
+                            totalPrice: myItem.totalPrice,
+                            tableId: myItem.tableId));
+                  },
+                ),
               ],
             ),
           ),
