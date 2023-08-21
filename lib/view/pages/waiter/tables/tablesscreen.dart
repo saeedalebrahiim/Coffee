@@ -1,53 +1,20 @@
+import 'package:coffeeproject/controller/provider/table_state.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/model/models/orderstatus_model.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
 import 'package:coffeeproject/view/components/posts/tablepost.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
-class TablesScreen extends StatelessWidget {
+class TablesScreen extends StatefulWidget {
   TablesScreen({super.key});
 
-  final List<OrderStatusModel> tableList = [
-    const OrderStatusModel(
-      tableNumber: '1',
-      statusString: 'Loding ...',
-    ),
-    const OrderStatusModel(
-      tableNumber: '2',
-      statusString: 'Loding ...',
-    ),
-    const OrderStatusModel(
-      tableNumber: '3',
-      statusString: 'Loding ...',
-    ),
-    const OrderStatusModel(
-      tableNumber: '4',
-      statusString: 'Ready',
-    ),
-    const OrderStatusModel(
-      tableNumber: '5',
-      statusString: '...',
-    ),
-    const OrderStatusModel(
-      tableNumber: '6',
-      statusString: 'Loding ...',
-    ),
-    const OrderStatusModel(
-      tableNumber: '7',
-      statusString: 'Loding ...',
-    ),
-    const OrderStatusModel(
-      tableNumber: '8',
-      statusString: '...',
-    ),
-    const OrderStatusModel(
-      tableNumber: '9',
-      statusString: '...',
-    )
-  ];
+  @override
+  State<TablesScreen> createState() => _TablesScreenState();
+}
 
+class _TablesScreenState extends State<TablesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,27 +50,21 @@ class TablesScreen extends StatelessWidget {
                     child: SizedBox(
                       width: 300,
                       height: 600,
-                      child: GridView.builder(
-                        scrollDirection: Axis.vertical,
-                        itemCount: tableList.length,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2),
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: MyTablePost(
-                              statusString: tableList[index].statusString,
-                              statusColor:
-                                  tableList[index].statusString == "LOADING ..."
-                                      ? loadingTableColor
-                                      : tableList[index].statusString == "..."
-                                          ? emptyTableColor
-                                          : readyOrderStatusColor,
-                              tableNumber: tableList[index].tableNumber,
-                            ),
-                          );
-                        },
+                      child: Consumer<TableState>(
+                        builder: (context, value, child) => GridView.builder(
+                          scrollDirection: Axis.vertical,
+                          itemCount: TableState.tables.length,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: MyTablePost(
+                                  product: TableState.tables[index]),
+                            );
+                          },
+                        ),
                       ),
                     ),
                   )

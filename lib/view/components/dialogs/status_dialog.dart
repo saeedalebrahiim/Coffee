@@ -1,8 +1,13 @@
+import 'package:coffeeproject/controller/provider/table_state.dart';
+import 'package:coffeeproject/model/db/columns/table_entity.dart';
+import 'package:coffeeproject/model/enums/order_status.dart';
+import 'package:coffeeproject/model/enums/table_status.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/pages/cachier/payment/subpay_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 //Use this for call dialog on pressed
 //()=> showDialog<Dialog>(context:context,builder:(BuildContext context) => MyDialog())
@@ -141,7 +146,8 @@ class _MyStatusDialogState extends State<MyStatusDialog> {
 }
 
 class MyWaiterStatusDialog extends StatefulWidget {
-  const MyWaiterStatusDialog({Key? key}) : super(key: key);
+  const MyWaiterStatusDialog({Key? key, required this.table}) : super(key: key);
+  final TableEntity table;
 
   @override
   State<MyWaiterStatusDialog> createState() => _MyWaiterStatusDialogState();
@@ -173,7 +179,14 @@ class _MyWaiterStatusDialogState extends State<MyWaiterStatusDialog> {
               height: 30,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                context.read<TableState>().changeStatus(
+                      tableId: widget.table.id,
+                      newOrderStatus: widget.table.orderStatus,
+                      newtableStatus: TableStatus.reserve.name,
+                    );
+                context.read<TableState>().getTables();
+              },
               child: Container(
                 width: 130,
                 height: 40,

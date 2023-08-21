@@ -1,3 +1,4 @@
+import 'package:coffeeproject/model/db/columns/table_entity.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/dialogs/status_dialog.dart';
 import 'package:coffeeproject/view/components/forms/my_statusbutton.dart';
@@ -5,16 +6,18 @@ import 'package:coffeeproject/view/pages/waiter/sub_order/sub_order_screen.dart'
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MyTablePost extends StatelessWidget {
-  final String tableNumber;
-  final String statusString;
-  final Color statusColor;
-  const MyTablePost(
-      {super.key,
-      required this.tableNumber,
-      required this.statusString,
-      required this.statusColor});
+class MyTablePost extends StatefulWidget {
+  final TableEntity product;
+  const MyTablePost({
+    super.key,
+    required this.product,
+  });
 
+  @override
+  State<MyTablePost> createState() => _MyTablePostState();
+}
+
+class _MyTablePostState extends State<MyTablePost> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,7 +66,7 @@ class MyTablePost extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 6),
                       child: Text(
-                        tableNumber,
+                        widget.product.number,
                         style: GoogleFonts.dosis(
                             fontSize: 35, fontWeight: FontWeight.w600),
                       ),
@@ -77,10 +80,13 @@ class MyTablePost extends StatelessWidget {
             StatusButtonWidget(
                 onTap: () => showDialog<Dialog>(
                     context: context,
-                    builder: (BuildContext context) =>
-                        const MyWaiterStatusDialog()),
-                statusColor: statusColor,
-                statusString: statusString),
+                    builder: (BuildContext context) => MyWaiterStatusDialog(
+                          table: widget.product,
+                        )),
+                statusColor: widget.product.tableStatus == "ready"
+                    ? Colors.green
+                    : Colors.yellow,
+                statusString: widget.product.tableStatus),
           ],
         ),
       ),

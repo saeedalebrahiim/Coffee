@@ -1,4 +1,6 @@
 import 'package:coffeeproject/controller/provider/products_state.dart';
+import 'package:coffeeproject/model/db/box/boxes.dart';
+import 'package:coffeeproject/model/db/columns/category_entity.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/model/models/productcategory_model.dart';
 import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
@@ -6,11 +8,13 @@ import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/forms/my_searchbar.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
 import 'package:coffeeproject/view/components/posts/categorypost.dart';
+import 'package:coffeeproject/view/pages/waiter/components/product.dart';
 import 'package:coffeeproject/view/pages/waiter/tables/tablesscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 class SubOrderScreen extends StatefulWidget {
@@ -21,48 +25,20 @@ class SubOrderScreen extends StatefulWidget {
 }
 
 class _SubOrderScreenState extends State<SubOrderScreen> {
-  late List<ProductCategoryModel> categoryList = [
-    ProductCategoryModel(
-      categoryIcon: FontAwesomeIcons.mugHot,
-      engName: 'hot drinks',
-      onTap: () {
-        // context.read<ProductsState>().handleProducts(hotDrinksList);
-        context.read<ProductsState>().enFa("نوشیدنی گرم", "hot drinks");
-      },
-    ),
-    ProductCategoryModel(
-      categoryIcon: FontAwesomeIcons.martiniGlassCitrus,
-      engName: 'cold drinks',
-      onTap: () {
-        // setState(() {
-        //   hotDrinksList = coldDrinks;
-        // });
-        // context.read<ProductsState>().handleProducts(coldDrinks);
-        context.read<ProductsState>().enFa('نوشیدنی سرد', "cold drinks");
-      },
-    ),
-    ProductCategoryModel(
-      onTap: () {
-        context.read<ProductsState>().enFa('پیتزا', "pizza");
-      },
-      categoryIcon: FontAwesomeIcons.pizzaSlice,
-      engName: 'pizza',
-    ),
-    ProductCategoryModel(
-      onTap: () {
-        context.read<ProductsState>().enFa('بستنی', "ice cream");
-      },
-      categoryIcon: FontAwesomeIcons.iceCream,
-      engName: 'ice cream',
-    ),
-    ProductCategoryModel(
-      onTap: () {
-        context.read<ProductsState>().enFa('برگر', "burger");
-      },
-      categoryIcon: FontAwesomeIcons.burger,
-      engName: 'burger',
-    )
-  ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getCategories();
+  }
+
+  List<CategoryEntity> categories = [];
+  getCategories() async {
+    Boxes.categoryBox = await Hive.openBox("categoryBox");
+    categories = Boxes.categoryBox.values.toList();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -168,14 +144,21 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
                           child: SizedBox(
                             width: 100,
                             child: MyCategoryPost(
-                              categoryIcon: categoryList[index].categoryIcon,
-                              engName: categoryList[index].engName,
-                              onTap: categoryList[index].onTap,
+                              categoryIcon: FontAwesomeIcons.mugHot,
+                              engName: categories[index].name,
+                              onTap: () {
+                                context
+                                    .read<ProductsState>()
+                                    .changeChoosedCtg(categories[index]);
+                                context
+                                    .read<ProductsState>()
+                                    .changeProductsByChangedCategory();
+                              },
                             ),
                           ),
                         );
                       },
-                      itemCount: categoryList.length,
+                      itemCount: categories.length,
                       scrollDirection: Axis.horizontal,
                     ),
                   ),
@@ -194,37 +177,27 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
                 const SizedBox(
                   height: 15,
                 ),
-                Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: SizedBox(
-                    width: 300,
-                    height: MediaQuery.of(context).size.height,
-                    child: ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: 10,
-                      itemBuilder: (BuildContext context, int index) => Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 7),
-                        child: ListTile(
-                            leading: Text(
-                              'Latte',
-                              style: GoogleFonts.dosis(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                Consumer<ProductsState>(
+                  builder: (context, value, child) {
+                    return Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: SizedBox(
+                        width: 300,
+                        height: MediaQuery.of(context).size.height,
+                        child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: ProductsState.products.length,
+                          itemBuilder: (BuildContext context, int index) =>
+                              Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 7),
+                            child: WaiterProductComponents(
+                              product: ProductsState.products[index],
                             ),
-                            shape: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            tileColor: whiteColor,
-                            title: Padding(
-                              padding: const EdgeInsets.only(top: 2),
-                              child: Text(
-                                '140/000',
-                                style: GoogleFonts.dosis(
-                                    fontWeight: FontWeight.w500, fontSize: 15),
-                              ),
-                            ),
-                            trailing: const MyWaiterAddToCard()),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
+                    );
+                  },
                 )
               ],
             ),

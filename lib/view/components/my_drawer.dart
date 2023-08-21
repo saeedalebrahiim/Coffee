@@ -1,3 +1,4 @@
+import 'package:coffeeproject/controller/provider/table_state.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/pages/admin/adminpages/home/adminhome_screen.dart';
 import 'package:coffeeproject/view/pages/bunker/bunker_screen.dart';
@@ -7,6 +8,7 @@ import 'package:coffeeproject/view/pages/kitchen/kitchenorder_screen.dart';
 import 'package:coffeeproject/view/pages/waiter/tables/tablesscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
@@ -92,6 +94,8 @@ class _MyDrawerState extends State<MyDrawer> {
                     fontWeight: FontWeight.w600),
               ),
               onTap: () {
+                context.read<TableState>().getTables();
+
                 Navigator.of(context).pushAndRemoveUntil(
                     PageRouteBuilder(
                         pageBuilder: (_, __, ___) => TablesScreen(),

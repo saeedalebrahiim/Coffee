@@ -1,4 +1,6 @@
 import 'package:coffeeproject/controller/provider/products_state.dart';
+import 'package:coffeeproject/model/db/box/boxes.dart';
+import 'package:coffeeproject/model/db/columns/category_entity.dart';
 import 'package:coffeeproject/model/models/product_model.dart';
 import 'package:coffeeproject/model/models/productcategory_model.dart';
 import 'package:coffeeproject/view/components/forms/my_searchbar.dart';
@@ -12,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 class ProducstScreen extends StatefulWidget {
@@ -24,154 +27,17 @@ class ProducstScreen extends StatefulWidget {
 class _ProducstScreenState extends State<ProducstScreen> {
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
-    // getdataFromDB();
-    context.read<ProductsState>().handleProducts(hotDrinksList);
-    context.read<ProductsState>().enFa("نوشیدنی گرم", "hot drinks");
+    getCategory();
   }
 
-  late List<ProductModel> hotDrinksList = [
-    ProductModel(
-      mainTitle: 'Espresso',
-      borderWidth: 0,
-      titleSize: 16,
-      stringSize: 14,
-      imagePath: 'lib/assets/images/22.png',
-      stringOne: '40/000',
-      postColor: const Color.fromARGB(255, 221, 217, 210),
-      postBorderColor: const Color.fromARGB(255, 221, 217, 210),
-      borderRadius: BorderRadius.circular(10),
-      tags: '#tags #tags #tags',
-    ),
-    ProductModel(
-      borderWidth: 0,
-      titleSize: 16,
-      stringSize: 14,
-      imagePath: 'lib/assets/images/11.png',
-      mainTitle: 'Latte',
-      stringOne: '70/000',
-      postColor: const Color.fromARGB(255, 221, 217, 210),
-      postBorderColor: const Color.fromARGB(255, 221, 217, 210),
-      borderRadius: BorderRadius.circular(10),
-      tags: '#tags #tags #tags',
-    ),
-    ProductModel(
-      borderWidth: 0,
-      titleSize: 16,
-      stringSize: 14,
-      imagePath: 'lib/assets/images/11.png',
-      mainTitle: 'Latte',
-      stringOne: '70/000',
-      postColor: const Color.fromARGB(255, 221, 217, 210),
-      postBorderColor: const Color.fromARGB(255, 221, 217, 210),
-      borderRadius: BorderRadius.circular(10),
-      tags: '#tags #tags #tags',
-    ),
-    ProductModel(
-      borderWidth: 0,
-      titleSize: 16,
-      stringSize: 14,
-      imagePath: 'lib/assets/images/33.png',
-      mainTitle: 'Tea ',
-      stringOne: '20/000',
-      postColor: const Color.fromARGB(255, 221, 217, 210),
-      postBorderColor: const Color.fromARGB(255, 221, 217, 210),
-      borderRadius: BorderRadius.circular(10),
-      tags: '#tags #tags #tags',
-    ),
-  ];
-  late List<ProductModel> coldDrinks = [
-    ProductModel(
-      borderWidth: 0,
-      titleSize: 16,
-      stringSize: 14,
-      imagePath: 'lib/assets/images/11.png',
-      mainTitle: 'Latte',
-      stringOne: '70/000',
-      postColor: const Color.fromARGB(255, 221, 217, 210),
-      postBorderColor: const Color.fromARGB(255, 221, 217, 210),
-      borderRadius: BorderRadius.circular(10),
-      tags: '#tags #tags #tags',
-    ),
-    ProductModel(
-      mainTitle: 'Espresso',
-      borderWidth: 0,
-      titleSize: 16,
-      stringSize: 14,
-      imagePath: 'lib/assets/images/22.png',
-      stringOne: '40/000',
-      postColor: const Color.fromARGB(255, 221, 217, 210),
-      postBorderColor: const Color.fromARGB(255, 221, 217, 210),
-      borderRadius: BorderRadius.circular(10),
-      tags: '#tags #tags #tags',
-    ),
-    ProductModel(
-      borderWidth: 0,
-      titleSize: 16,
-      stringSize: 14,
-      imagePath: 'lib/assets/images/11.png',
-      mainTitle: 'Latte',
-      stringOne: '70/000',
-      postColor: const Color.fromARGB(255, 221, 217, 210),
-      postBorderColor: const Color.fromARGB(255, 221, 217, 210),
-      borderRadius: BorderRadius.circular(10),
-      tags: '#tags #tags #tags',
-    ),
-    ProductModel(
-      borderWidth: 0,
-      titleSize: 16,
-      stringSize: 14,
-      imagePath: 'lib/assets/images/33.png',
-      mainTitle: 'Tea ',
-      stringOne: '20/000',
-      postColor: const Color.fromARGB(255, 221, 217, 210),
-      postBorderColor: const Color.fromARGB(255, 221, 217, 210),
-      borderRadius: BorderRadius.circular(10),
-      tags: '#tags #tags #tags',
-    ),
-  ];
-  late List<ProductCategoryModel> categoryList = [
-    ProductCategoryModel(
-      categoryIcon: FontAwesomeIcons.mugHot,
-      engName: 'hot drinks',
-      onTap: () {
-        context.read<ProductsState>().handleProducts(hotDrinksList);
-        context.read<ProductsState>().enFa("نوشیدنی گرم", "hot drinks");
-      },
-    ),
-    ProductCategoryModel(
-      categoryIcon: FontAwesomeIcons.martiniGlassCitrus,
-      engName: 'cold drinks',
-      onTap: () {
-        // setState(() {
-        //   hotDrinksList = coldDrinks;
-        // });
-        context.read<ProductsState>().handleProducts(coldDrinks);
-        context.read<ProductsState>().enFa('نوشیدنی سرد', "cold drinks");
-      },
-    ),
-    ProductCategoryModel(
-      onTap: () {
-        context.read<ProductsState>().enFa('پیتزا', "pizza");
-      },
-      categoryIcon: FontAwesomeIcons.pizzaSlice,
-      engName: 'pizza',
-    ),
-    ProductCategoryModel(
-      onTap: () {
-        context.read<ProductsState>().enFa('بستنی', "ice cream");
-      },
-      categoryIcon: FontAwesomeIcons.iceCream,
-      engName: 'ice cream',
-    ),
-    ProductCategoryModel(
-      onTap: () {
-        context.read<ProductsState>().enFa('برگر', "burger");
-      },
-      categoryIcon: FontAwesomeIcons.burger,
-      engName: 'burger',
-    )
-  ];
+  List<CategoryEntity> categories = [];
+  getCategory() async {
+    Boxes.categoryBox = await Hive.openBox("categoryBox");
+    categories = Boxes.categoryBox.values.toList();
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -291,14 +157,21 @@ class _ProducstScreenState extends State<ProducstScreen> {
                           child: SizedBox(
                             width: 100,
                             child: MyCategoryPost(
-                              categoryIcon: categoryList[index].categoryIcon,
-                              engName: categoryList[index].engName,
-                              onTap: categoryList[index].onTap,
+                              categoryIcon: FontAwesomeIcons.mugHot,
+                              engName: categories[index].name,
+                              onTap: () {
+                                context
+                                    .read<ProductsState>()
+                                    .changeChoosedCtg(categories[index]);
+                                context
+                                    .read<ProductsState>()
+                                    .changeProductsByChangedCategory();
+                              },
                             ),
                           ),
                         );
                       },
-                      itemCount: categoryList.length,
+                      itemCount: categories.length,
                       scrollDirection: Axis.horizontal,
                     ),
                   ),
@@ -308,8 +181,8 @@ class _ProducstScreenState extends State<ProducstScreen> {
                 ),
                 Consumer<ProductsState>(
                   builder: (context, value, child) => MyCategoryDivider(
-                    engName: ProductsState.ctgNameEn,
-                    faName: ProductsState.ctgNameFa,
+                    engName: ProductsState.choosedCategory.name,
+                    faName: ProductsState.choosedCategory.name,
                   ),
                 ),
 
@@ -372,22 +245,8 @@ class _ProducstScreenState extends State<ProducstScreen> {
                       for (var element in ProductsState.products)
                         Padding(
                           padding: const EdgeInsets.all(10),
-                          child: MyProductPost(
+                          child: ProductsComponent(
                             product: element,
-                            productId: "",
-                            tags: "",
-                            onPressed: () {},
-                            imageWidth: element.imageWidth,
-                            imageHeight: element.imageHeight,
-                            borderWidth: element.borderWidth,
-                            titleSize: element.borderWidth,
-                            stringSize: element.borderWidth,
-                            imagePath: element.imagePath,
-                            mainTitle: element.mainTitle,
-                            stringOne: element.stringOne,
-                            postColor: element.postColor,
-                            postBorderColor: element.postBorderColor,
-                            borderRadius: element.borderRadius,
                           ),
                         ),
                     ],
