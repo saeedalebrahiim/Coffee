@@ -1,3 +1,4 @@
+import 'package:coffeeproject/model/db/box/productbox.dart';
 import 'package:coffeeproject/model/db/box/shopcardbox.dart';
 import 'package:coffeeproject/model/db/columns/shopcard_entity.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
@@ -84,7 +85,7 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                     child: Column(
                       children: [
                         HiveListener<dynamic>(
-                          box: MyShopCardBox.shopCardBox,
+                          box: MyProductBox.productBox,
                           builder: (box) => Container(
                             width: 350,
                             height: 350,
@@ -97,7 +98,7 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                               padding: const EdgeInsets.only(top: 5),
                               child: ListView.builder(
                                   itemCount:
-                                      MyShopCardBox.shopCardBox.values.length,
+                                      MyProductBox.productBox.values.length,
                                   scrollDirection: Axis.vertical,
                                   itemBuilder: (context, index) {
                                     return MyProductPost(
