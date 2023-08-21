@@ -1,7 +1,4 @@
-import 'package:coffeeproject/controller/provider/db_provider/db_provider.dart';
 import 'package:coffeeproject/controller/provider/products_state.dart';
-import 'package:coffeeproject/model/db/box/productbox.dart';
-import 'package:coffeeproject/model/db/columns/product_entity.dart';
 import 'package:coffeeproject/model/models/product_model.dart';
 import 'package:coffeeproject/model/models/productcategory_model.dart';
 import 'package:coffeeproject/view/components/forms/my_searchbar.dart';
@@ -15,7 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 class ProducstScreen extends StatefulWidget {
@@ -29,27 +25,9 @@ class _ProducstScreenState extends State<ProducstScreen> {
   @override
   void initState() {
     super.initState();
-    getdataFromDB();
+    // getdataFromDB();
     context.read<ProductsState>().handleProducts(hotDrinksList);
     context.read<ProductsState>().enFa("نوشیدنی گرم", "hot drinks");
-  }
-
-  List<ProductEntity> productItems = [];
-
-  getdataFromDB() async {
-    MyProductBox.productBox = await Hive.openBox("CafeDb");
-    productItems = MyProductBox.productBox.values.toList();
-    setState(() {});
-  }
-
-  void addToCart(ProductModel coffee) {
-    Provider.of<CoffeeShop>(context, listen: false).addItemToCart(coffee);
-    showDialog(
-      context: context,
-      builder: (context) => const AlertDialog(
-        title: Text('Successfully added to cart'),
-      ),
-    );
   }
 
   late List<ProductModel> hotDrinksList = [
@@ -194,6 +172,7 @@ class _ProducstScreenState extends State<ProducstScreen> {
       engName: 'burger',
     )
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -337,60 +316,83 @@ class _ProducstScreenState extends State<ProducstScreen> {
                 const SizedBox(
                   height: 8,
                 ),
-                Consumer<CoffeeShop>(
-                  builder: (context, value, child) => SizedBox(
-                    width: 500,
-                    height: MediaQuery.of(context).size.height - 150,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: GridView.builder(
-                        itemCount: value.coffeeShop.length,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                childAspectRatio: 0.7, crossAxisCount: 2),
-                        itemBuilder: (context, index) {
-                          ProductModel eachCoffee = value.coffeeShop[index];
-                          return MyProductPost(
-                              imagePath: productItems[index].imagePath,
-                              mainTitle: productItems[index].mainTitle,
-                              stringOne: productItems[index].stringOne,
-                              tags: productItems[index].tags,
-                              product: eachCoffee,
-                              onPressed: () => addToCart(eachCoffee),
-                              productId: productItems[index].stringOne);
-                        },
-                      ),
-                    ),
-                  ),
-                )
+                // Consumer(
+                //   builder: (context, value, child) {
+                //     return GridView.builder(
+                //       itemCount: 2,
+                //       gridDelegate:
+                //           const SliverGridDelegateWithFixedCrossAxisCount(
+                //               childAspectRatio: 0.7, crossAxisCount: 2),
+                //       itemBuilder: (context, index) {
+                //         return MyProductPost(
+                //             imagePath: imagePath,
+                //             mainTitle: mainTitle,
+                //             stringOne: stringOne,
+                //             tags: tags,
+                //             product: product,
+                //             productId: productId);
+                //       },
+                //     );
+                //   },
+                // ),
+                // Consumer<CoffeeShop>(
+                //   builder: (context, value, child) => SizedBox(
+                //     width: 500,
+                //     height: MediaQuery.of(context).size.height - 150,
+                //     child: Padding(
+                //       padding: const EdgeInsets.symmetric(horizontal: 15),
+                //       child: GridView.builder(
+                //         itemCount: value.coffeeShop.length,
+                //         gridDelegate:
+                //             const SliverGridDelegateWithFixedCrossAxisCount(
+                //                 childAspectRatio: 0.7, crossAxisCount: 2),
+                //         itemBuilder: (context, index) {
+                //           ProductModel eachCoffee = value.coffeeShop[index];
+                //           return MyProductPost(
+                //               imagePath: productItems[index].imagePath,
+                //               mainTitle: productItems[index].mainTitle,
+                //               stringOne: productItems[index].stringOne,
+                //               tags: productItems[index].tags,
+                //               product: eachCoffee,
+                //               onPressed: () => addToCart(eachCoffee),
+                //               productId: productItems[index].stringOne);
+                //         },
+                //       ),
+                //     ),
+                //   ),
+                // )
                 // for (var element in hotDrinksList)
                 //   Padding(
                 //     padding: const EdgeInsets.all(5),
                 //     child: element,
                 //   ),
-                // Consumer<ProductsState>(
-                //   builder: (context, gg, child) => Column(
-                //     children: [
-                //       for (var element in ProductsState.products)
-                //         Padding(
-                //           padding: const EdgeInsets.all(10),
-                //           child: MyProductPost(
-                //             imageWidth: element.imageWidth,
-                //             imageHeight: element.imageHeight,
-                //             borderWidth: element.borderWidth,
-                //             titleSize: element.borderWidth,
-                //             stringSize: element.borderWidth,
-                //             imagePath: element.imagePath,
-                //             mainTitle: element.mainTitle,
-                //             stringOne: element.stringOne,
-                //             postColor: element.postColor,
-                //             postBorderColor: element.postBorderColor,
-                //             borderRadius: element.borderRadius,
-                //           ),
-                //         ),
-                //     ],
-                //   ),
-                // ),
+                Consumer<ProductsState>(
+                  builder: (context, gg, child) => Column(
+                    children: [
+                      for (var element in ProductsState.products)
+                        Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: MyProductPost(
+                            product: element,
+                            productId: "",
+                            tags: "",
+                            onPressed: () {},
+                            imageWidth: element.imageWidth,
+                            imageHeight: element.imageHeight,
+                            borderWidth: element.borderWidth,
+                            titleSize: element.borderWidth,
+                            stringSize: element.borderWidth,
+                            imagePath: element.imagePath,
+                            mainTitle: element.mainTitle,
+                            stringOne: element.stringOne,
+                            postColor: element.postColor,
+                            postBorderColor: element.postBorderColor,
+                            borderRadius: element.borderRadius,
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

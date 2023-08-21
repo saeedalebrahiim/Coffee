@@ -1,5 +1,3 @@
-import 'package:coffeeproject/model/db/box/shopcardbox.dart';
-import 'package:coffeeproject/model/db/columns/shopcard_entity.dart';
 import 'package:coffeeproject/model/models/product_model.dart';
 import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
 import 'package:flutter/material.dart';
@@ -88,25 +86,7 @@ class _MyProductPostState extends State<MyProductPost> {
                 const SizedBox(
                   height: 15,
                 ),
-                MyAddToCard(
-                  onPressed: () async {
-                    widget.onPressed;
-                    MyShopCardBox.shopCardBox = await Hive.openBox("CafeDb");
-                    ShopCardEntity myItem = MyShopCardBox.shopCardBox.values
-                        .firstWhere(
-                            (element) => element.tableId == widget.productId);
-                    int index = MyShopCardBox.shopCardBox.values
-                        .toList()
-                        .indexOf(myItem);
-                    int count = myItem.count + 1;
-                    MyShopCardBox.shopCardBox.putAt(
-                        index,
-                        ShopCardEntity(
-                            count: myItem.count,
-                            totalPrice: myItem.totalPrice,
-                            tableId: myItem.tableId));
-                  },
-                ),
+                MyAddToCard(onPressed: () {}),
               ],
             ),
           ),

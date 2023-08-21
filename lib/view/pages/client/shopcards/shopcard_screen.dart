@@ -1,16 +1,10 @@
-import 'package:coffeeproject/model/db/box/productbox.dart';
-import 'package:coffeeproject/model/db/box/shopcardbox.dart';
-import 'package:coffeeproject/model/db/columns/shopcard_entity.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
-import 'package:coffeeproject/view/components/posts/productpost.dart';
 import 'package:coffeeproject/view/pages/client/products/productlistscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_listener/hive_listener.dart';
 
 class ShopCardScreen extends StatefulWidget {
   const ShopCardScreen({super.key});
@@ -20,20 +14,6 @@ class ShopCardScreen extends StatefulWidget {
 }
 
 class _ShopCardScreenState extends State<ShopCardScreen> {
-  @override
-  void initState() {
-    super.initState();
-    getData();
-  }
-
-  List<ShopCardEntity> shopCardItems = [];
-
-  getData() async {
-    MyShopCardBox.shopCardBox = await Hive.openBox("shopCardBox");
-    shopCardItems = MyShopCardBox.shopCardBox.values.toList();
-    setState(() {});
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,40 +64,40 @@ class _ShopCardScreenState extends State<ShopCardScreen> {
                   child: Center(
                     child: Column(
                       children: [
-                        HiveListener<dynamic>(
-                          box: MyProductBox.productBox,
-                          builder: (box) => Container(
-                            width: 350,
-                            height: 350,
-                            decoration: BoxDecoration(
-                                color: whiteColor,
-                                borderRadius: BorderRadius.circular(12),
-                                border:
-                                    Border.all(color: blackColor, width: 2)),
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 5),
-                              child: ListView.builder(
-                                  itemCount:
-                                      MyProductBox.productBox.values.length,
-                                  scrollDirection: Axis.vertical,
-                                  itemBuilder: (context, index) {
-                                    return MyProductPost(
-                                      imagePath:
-                                          box.values.toList()[index].imagePath,
-                                      mainTitle:
-                                          box.values.toList()[index].mainTitle,
-                                      stringOne:
-                                          box.values.toList()[index].stringOne,
-                                      tags: box.values.toList()[index].tags,
-                                      product:
-                                          box.values.toList()[index].product,
-                                      productId:
-                                          box.values.toList()[index].productId,
-                                    );
-                                  }),
-                            ),
-                          ),
-                        ),
+                        // HiveListener<dynamic>(
+                        //   box: MyProductBox.productBox,
+                        //   builder: (box) => Container(
+                        //     width: 350,
+                        //     height: 350,
+                        //     decoration: BoxDecoration(
+                        //         color: whiteColor,
+                        //         borderRadius: BorderRadius.circular(12),
+                        //         border:
+                        //             Border.all(color: blackColor, width: 2)),
+                        //     child: Padding(
+                        //       padding: const EdgeInsets.only(top: 5),
+                        //       child: ListView.builder(
+                        //           itemCount:
+                        //               MyProductBox.productBox.values.length,
+                        //           scrollDirection: Axis.vertical,
+                        //           itemBuilder: (context, index) {
+                        //             return MyProductPost(
+                        //               imagePath:
+                        //                   box.values.toList()[index].imagePath,
+                        //               mainTitle:
+                        //                   box.values.toList()[index].mainTitle,
+                        //               stringOne:
+                        //                   box.values.toList()[index].stringOne,
+                        //               tags: box.values.toList()[index].tags,
+                        //               product:
+                        //                   box.values.toList()[index].product,
+                        //               productId:
+                        //                   box.values.toList()[index].productId,
+                        //             );
+                        //           }),
+                        //     ),
+                        //   ),
+                        // ),
                         const SizedBox(
                           height: 8,
                         ),
