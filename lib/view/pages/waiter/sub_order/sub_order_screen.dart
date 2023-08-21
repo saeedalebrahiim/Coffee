@@ -2,8 +2,6 @@ import 'package:coffeeproject/controller/provider/products_state.dart';
 import 'package:coffeeproject/model/db/box/boxes.dart';
 import 'package:coffeeproject/model/db/columns/category_entity.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
-import 'package:coffeeproject/model/models/productcategory_model.dart';
-import 'package:coffeeproject/view/components/forms/my_addtocard.dart';
 import 'package:coffeeproject/view/components/forms/my_divider.dart';
 import 'package:coffeeproject/view/components/forms/my_searchbar.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
@@ -27,7 +25,6 @@ class SubOrderScreen extends StatefulWidget {
 class _SubOrderScreenState extends State<SubOrderScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getCategories();
   }
@@ -54,7 +51,7 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
                   PageRouteBuilder(
-                      pageBuilder: (_, __, ___) => TablesScreen(),
+                      pageBuilder: (_, __, ___) => const TablesScreen(),
                       transitionDuration: const Duration(milliseconds: 500),
                       transitionsBuilder: (_, a, __, c) => FadeTransition(
                             opacity: a,
@@ -86,7 +83,7 @@ class _SubOrderScreenState extends State<SubOrderScreen> {
                 onTap: () {
                   Navigator.of(context).pushAndRemoveUntil(
                       PageRouteBuilder(
-                          pageBuilder: (_, __, ___) => TablesScreen(),
+                          pageBuilder: (_, __, ___) => const TablesScreen(),
                           transitionDuration: const Duration(milliseconds: 500),
                           transitionsBuilder: (_, a, __, c) => FadeTransition(
                                 opacity: a,

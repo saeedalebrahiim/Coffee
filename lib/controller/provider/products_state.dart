@@ -1,7 +1,6 @@
 import 'package:coffeeproject/model/db/box/boxes.dart';
 import 'package:coffeeproject/model/db/columns/category_entity.dart';
 import 'package:coffeeproject/model/db/columns/product_entity.dart';
-import 'package:coffeeproject/model/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 

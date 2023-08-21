@@ -98,7 +98,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
                 Navigator.of(context).pushAndRemoveUntil(
                     PageRouteBuilder(
-                        pageBuilder: (_, __, ___) => TablesScreen(),
+                        pageBuilder: (_, __, ___) => const TablesScreen(),
                         transitionDuration: const Duration(milliseconds: 500),
                         transitionsBuilder: (_, a, __, c) => FadeTransition(
                               opacity: a,

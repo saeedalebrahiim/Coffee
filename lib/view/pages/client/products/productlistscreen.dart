@@ -1,8 +1,6 @@
 import 'package:coffeeproject/controller/provider/products_state.dart';
 import 'package:coffeeproject/model/db/box/boxes.dart';
 import 'package:coffeeproject/model/db/columns/category_entity.dart';
-import 'package:coffeeproject/model/models/product_model.dart';
-import 'package:coffeeproject/model/models/productcategory_model.dart';
 import 'package:coffeeproject/view/components/forms/my_searchbar.dart';
 import 'package:coffeeproject/view/components/my_categorydivider.dart';
 import 'package:coffeeproject/view/components/my_drawer.dart';
@@ -27,7 +25,6 @@ class ProducstScreen extends StatefulWidget {
 class _ProducstScreenState extends State<ProducstScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getCategory();
   }

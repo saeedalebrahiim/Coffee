@@ -1,6 +1,5 @@
 import 'package:coffeeproject/controller/provider/table_state.dart';
 import 'package:coffeeproject/model/db/columns/table_entity.dart';
-import 'package:coffeeproject/model/enums/order_status.dart';
 import 'package:coffeeproject/model/enums/table_status.dart';
 import 'package:coffeeproject/model/globals/globals.dart';
 import 'package:coffeeproject/view/pages/cachier/payment/subpay_screen.dart';

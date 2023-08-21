@@ -8,7 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class TablesScreen extends StatefulWidget {
-  TablesScreen({super.key});
+  const TablesScreen({super.key});
 
   @override
   State<TablesScreen> createState() => _TablesScreenState();
